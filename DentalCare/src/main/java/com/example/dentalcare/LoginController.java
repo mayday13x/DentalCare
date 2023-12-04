@@ -24,8 +24,8 @@ public class LoginController {
     }
 
     @FXML
-    public void registar(ActionEvent event) throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("registar.fxml"));
+    public void menuRegistar(ActionEvent event) throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("menuRegistar.fxml"));
         Scene regCena = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(regCena);
