@@ -17,6 +17,8 @@ public class Utilizador implements Serializable {
     private String morada;
     private String localidade;
 
+    public Utilizador(){}
+
     public Utilizador(String nome, int CC, int NIF, String morada, String localidade, String utilizador, String password) {
 
         this.nome = nome;
