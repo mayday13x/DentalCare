@@ -23,4 +23,15 @@ public class LoginController {
         stage.show();
     }
 
+    @FXML
+    public void registar(ActionEvent event) throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("registar.fxml"));
+        Scene regCena = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(regCena);
+        stage.setTitle("Registar User");
+        stage.show();
+    }
+
+
 }

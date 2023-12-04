@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.LoginController">
+   <children>
+      <TextField layoutX="101.0" layoutY="86.0" />
+      <Label layoutX="251.0" layoutY="33.0" text="Registar Utilizador" />
+      <TextField layoutX="101.0" layoutY="138.0" />
+      <Label layoutX="33.0" layoutY="90.0" text="Utilizador" />
+      <Label layoutX="33.0" layoutY="142.0" text="Password" />
+      <TextField layoutX="101.0" layoutY="187.0" />
+      <Label layoutX="42.0" layoutY="191.0" text="Nome" />
+      <TextField layoutX="397.0" layoutY="86.0" />
+      <TextField layoutX="397.0" layoutY="138.0" />
+      <TextField layoutX="397.0" layoutY="187.0" />
+      <TextField layoutX="101.0" layoutY="244.0" />
+      <TextField layoutX="397.0" layoutY="244.0" />
+      <Label layoutX="50.0" layoutY="248.0" text="CC" />
+      <Label layoutX="335.0" layoutY="142.0" text="Telefone" />
+      <Label layoutX="358.0" layoutY="90.0" text="NIF" />
+      <Label layoutX="335.0" layoutY="191.0" text="Morada" />
+      <Label layoutX="327.0" layoutY="248.0" text="Localidade" />
+   </children>
+</AnchorPane>
