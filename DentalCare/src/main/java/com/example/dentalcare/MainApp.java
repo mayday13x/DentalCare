@@ -11,17 +11,16 @@ import java.nio.ReadOnlyBufferException;
 public class MainApp extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("login.fxml"));
         //Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Test");
         stage.setScene(scene);
         stage.show();
-
     }
 
     public static void main(String[] args) {
-       //launch();
+       launch();
        Dono user = new Dono("Miguel",123,999999999,"Rua de Cima","Viana do Castelo","miguel","1234");
        Empresa company = new Empresa("Dental LDA.", "Rua de Baixo","VC",99,user);
        Funcionario employee = new Funcionario("Joao",223342,23423423,"Rua Atlantico","VC",ProfissaoFuncionario.ENFERMEIRO,
