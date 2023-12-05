@@ -52,7 +52,7 @@ public class Utilizador implements Serializable {
     }
 
     public void setNIF(int numFiscal) {
-        this.NIF = NIF;
+        this.NIF = numFiscal;
     }
 
     public int getTelefone() {

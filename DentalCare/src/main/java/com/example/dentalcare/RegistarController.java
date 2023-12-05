@@ -68,7 +68,6 @@ public class RegistarController implements Initializable {
             c1.setMorada(morada.getText());
             c1.setLocalidade(localidade.getText());
 
-
         }
 
         try {
