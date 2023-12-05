@@ -45,6 +45,7 @@ public class RegistarController implements Initializable {
     @FXML
     private TextField utilizadorId;
 
+
     @FXML
     public void voltarAtras(ActionEvent event) throws IOException{
         Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
@@ -58,18 +59,31 @@ public class RegistarController implements Initializable {
     @FXML
     public void registar(ActionEvent event) throws IOException{
         if(tipoUtilizador.getValue().equals("Cliente")){
-            Cliente c1 = new Cliente();
-            c1.setUtilizador(utilizadorId.getText());
-            c1.setPassword(password.getText());
-            c1.setNome(nome.getText());
-            c1.setCC(Integer.parseInt(cc.getText()));
-            c1.setNIF(Integer.parseInt(nif.getText()));
-            c1.setTelefone(Integer.parseInt(telefone.getText()));
-            c1.setMorada(morada.getText());
-            c1.setLocalidade(localidade.getText());
+            Cliente cl = new Cliente();
+            cl.setUtilizador(utilizadorId.getText());
+            cl.setPassword(password.getText());
+            cl.setNome(nome.getText());
+            cl.setCC(cc.getText());
+            cl.setNIF(nif.getText());
+            cl.setTelefone(telefone.getText());
+            cl.setMorada(morada.getText());
+            cl.setLocalidade(localidade.getText());
 
+            ClienteBLL.registarCliente(cl);
+
+        } else if (tipoUtilizador.getValue().equals("Funcionario")) {
+            Funcionario fn = new Funcionario();
+            fn.setUtilizador(utilizadorId.getText());
+            fn.setPassword(password.getText());
+            fn.setNome(nome.getText());
+            fn.setCC(cc.getText());
+            fn.setNIF(nif.getText());
+            fn.setTelefone(telefone.getText());
+            fn.setMorada(morada.getText());
+            fn.setLocalidade(localidade.getText());
+
+            FuncionarioBLL.registarFuncionario(fn);
         }
-
         try {
             Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
             Scene regCena = new Scene(root);

@@ -21,12 +21,12 @@ public class MainApp extends Application {
 
     public static void main(String[] args) {
        launch();
-       Dono user = new Dono("Miguel",123,999999999,"Rua de Cima","Viana do Castelo","miguel","1234");
+       Dono user = new Dono("Miguel","123","999999999","Rua de Cima","Viana do Castelo","miguel","1234");
        Empresa company = new Empresa("Dental LDA.", "Rua de Baixo","VC",99,user);
-       Funcionario employee = new Funcionario("Joao",223342,23423423,"Rua Atlantico","VC",ProfissaoFuncionario.ENFERMEIRO,
+       Funcionario employee = new Funcionario("Joao","223342","23423423","Rua Atlantico","VC",ProfissaoFuncionario.ENFERMEIRO,
                "joao","12345");
        Consultorio consultorio = new Consultorio("Rua de Lado","PVZ",923294234, TipoConsulta.DESTARTARIZACAO);
-       Funcionario employee2 = new Funcionario("Maria",2,2222,"Apartamento 22","PVZ",ProfissaoFuncionario.DENTISTA,
+       Funcionario employee2 = new Funcionario("Maria","2","2222","Apartamento 22","PVZ",ProfissaoFuncionario.DENTISTA,
                223344, "maria","1234");
 
        consultorio.addFuncionario(employee);

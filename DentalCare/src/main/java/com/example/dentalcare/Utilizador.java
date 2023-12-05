@@ -11,15 +11,15 @@ public class Utilizador implements Serializable {
     private String utilizador;
     private String password;
     private String nome;
-    private int CC;
-    private int NIF;
-    private int telefone;
+    private String CC;
+    private String NIF;
+    private String telefone;
     private String morada;
     private String localidade;
 
     public Utilizador(){}
 
-    public Utilizador(String nome, int CC, int NIF, String morada, String localidade, String utilizador, String password) {
+    public Utilizador(String nome, String CC, String NIF, String morada, String localidade, String utilizador, String password) {
 
         this.nome = nome;
         this.CC = CC;
@@ -39,27 +39,27 @@ public class Utilizador implements Serializable {
         this.nome = nome;
     }
 
-    public int getCC() {
+    public String getCC() {
         return CC;
     }
 
-    public void setCC(int CC) {
+    public void setCC(String CC) {
         this.CC = CC;
     }
 
-    public int getNIF() {
+    public String getNIF() {
         return NIF;
     }
 
-    public void setNIF(int numFiscal) {
+    public void setNIF(String numFiscal) {
         this.NIF = numFiscal;
     }
 
-    public int getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(int telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 
