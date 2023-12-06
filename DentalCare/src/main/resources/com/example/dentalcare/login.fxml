@@ -12,10 +12,10 @@
    <children>
       <Pane layoutX="-1.0" layoutY="-2.0" prefHeight="0.0" prefWidth="794.0" style="-fx-background-color: #324343;" />
       <Button layoutX="362.0" layoutY="329.0" mnemonicParsing="false" onAction="#login" text="Login" />
-      <TextField layoutX="310.0" layoutY="233.0" />
+      <TextField fx:id="utilizador" layoutX="310.0" layoutY="233.0" />
       <Label layoutX="221.0" layoutY="237.0" text="Username" />
       <Label layoutX="222.0" layoutY="282.0" text="Password" />
-      <PasswordField layoutX="310.0" layoutY="278.0" />
+      <PasswordField fx:id="password" layoutX="310.0" layoutY="278.0" />
       <Hyperlink layoutX="359.0" layoutY="380.0" onAction="#menuRegistar" text="Register" />
    </children>
 </AnchorPane>

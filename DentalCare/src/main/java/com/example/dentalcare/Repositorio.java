@@ -31,7 +31,7 @@ public class Repositorio implements Serializable {
 
             try {
                 System.out.println("A ler ficheiro...");
-                repositorio = Repositorio.desserializar("repositorio.dat");
+                repositorio = Repositorio.desserializar("DentalCare\\src\\main\\resources\\repo\\repositorio.dat");
                 System.out.println("Ficheiro lido com sucesso");
             }catch (Exception ignored) {
 
