@@ -58,32 +58,37 @@ public class RegistarController implements Initializable {
 
     @FXML
     public void registar(ActionEvent event) throws IOException{
-        if(tipoUtilizador.getValue().equals("Cliente")){
-            Cliente cl = new Cliente();
-            cl.setUtilizador(utilizadorId.getText());
-            cl.setPassword(password.getText());
-            cl.setNome(nome.getText());
-            cl.setCC(cc.getText());
-            cl.setNIF(nif.getText());
-            cl.setTelefone(telefone.getText());
-            cl.setMorada(morada.getText());
-            cl.setLocalidade(localidade.getText());
 
-            ClienteBLL.registarCliente(cl);
+        switch (tipoUtilizador.getValue()){
+            case "Cliente":
+                Cliente cl = new Cliente();
+                cl.setUtilizador(utilizadorId.getText());
+                cl.setPassword(password.getText());
+                cl.setNome(nome.getText());
+                cl.setCC(cc.getText());
+                cl.setNIF(nif.getText());
+                cl.setTelefone(telefone.getText());
+                cl.setMorada(morada.getText());
+                cl.setLocalidade(localidade.getText());
 
-        } else if (tipoUtilizador.getValue().equals("Funcionario")) {
-            Funcionario fn = new Funcionario();
-            fn.setUtilizador(utilizadorId.getText());
-            fn.setPassword(password.getText());
-            fn.setNome(nome.getText());
-            fn.setCC(cc.getText());
-            fn.setNIF(nif.getText());
-            fn.setTelefone(telefone.getText());
-            fn.setMorada(morada.getText());
-            fn.setLocalidade(localidade.getText());
+                ClienteBLL.registarCliente(cl);
+                break;
+            case "Funcionario":
+                Funcionario fn = new Funcionario();
+                fn.setUtilizador(utilizadorId.getText());
+                fn.setPassword(password.getText());
+                fn.setNome(nome.getText());
+                fn.setCC(cc.getText());
+                fn.setNIF(nif.getText());
+                fn.setTelefone(telefone.getText());
+                fn.setMorada(morada.getText());
+                fn.setLocalidade(localidade.getText());
 
-            FuncionarioBLL.registarFuncionario(fn);
+                FuncionarioBLL.registarFuncionario(fn);
+                break;
+
         }
+
 
         try {
             Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
@@ -100,7 +105,7 @@ public class RegistarController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb){
-        tipoUtilizador.getItems().addAll("Cliente", "Funcionario");
+        tipoUtilizador.getItems().addAll("Cliente", "Empresário");
     }
 
 

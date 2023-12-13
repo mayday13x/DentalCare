@@ -3,6 +3,7 @@ package com.example.dentalcare;
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class Repositorio implements Serializable {
 
@@ -11,6 +12,9 @@ public class Repositorio implements Serializable {
     private Map<String, Cliente> clientes = new HashMap<>();
 
     private Map<String,Funcionario> funcionarios = new HashMap<>();
+    private Map<Dono, Set<Empresa>> donos;
+    private Map<String, Set<Empresa>> empresas;  //localidade --> Empresas
+
 
     private Repositorio(){}
 
@@ -20,6 +24,14 @@ public class Repositorio implements Serializable {
 
     public Map<String,Funcionario> getFuncionarios(){
         return funcionarios;
+    }
+
+    public Map<Dono, Set<Empresa>> getDonos() {
+        return donos;
+    }
+
+    public Map<String, Set<Empresa>> getEmpresas() {
+        return empresas;
     }
 
     public static Repositorio getRepositorio(){
@@ -37,6 +49,7 @@ public class Repositorio implements Serializable {
         }
         return  repositorio;
     }
+
 
     public void serializar(String filename) {
 
