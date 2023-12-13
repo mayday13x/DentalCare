@@ -2,6 +2,7 @@ package com.example.dentalcare;
 
 import java.io.*;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -14,6 +15,7 @@ public class Repositorio implements Serializable {
     private Map<String,Funcionario> funcionarios = new HashMap<>();
     private Map<Dono, Set<Empresa>> donos;
     private Map<String, Set<Empresa>> empresas;  //localidade --> Empresas
+    private List<Consulta> consultas;
 
 
     private Repositorio(){}
