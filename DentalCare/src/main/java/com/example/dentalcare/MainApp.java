@@ -21,29 +21,13 @@ public class MainApp extends Application {
 
     public static void main(String[] args) {
        launch();
-       Dono user = new Dono("Miguel","123","999999999","Rua de Cima","Viana do Castelo","miguel","1234");
-       Empresa company = new Empresa("Dental LDA.", "Rua de Baixo","VC",99,user);
-       Funcionario employee = new Funcionario("Joao","223342","23423423","Rua Atlantico","VC",ProfissaoFuncionario.ENFERMEIRO,
-               "joao","12345");
-       Consultorio consultorio = new Consultorio("Rua de Lado","PVZ",923294234, TipoConsulta.DESTARTARIZACAO);
-       Funcionario employee2 = new Funcionario("Maria","2","2222","Apartamento 22","PVZ",ProfissaoFuncionario.DENTISTA,
-               223344, "maria","1234");
 
-       consultorio.addFuncionario(employee);
-       consultorio.addFuncionario(employee2);
-       company.addConsultorio(consultorio);
+      for( Cliente cliente: Repositorio.getRepositorio().getClientes().values()){
 
+          System.out.printf("%s , %s, %s, %s, %s, %s, %s\n", cliente.getCC(), cliente.getNome(), cliente.getMorada(),
+                  cliente.getUtilizador(), cliente.getPassword(), cliente.getTelefone(), cliente.getLocalidade());
 
-       for(Consultorio x : company.getConsultorios()){
-
-           System.out.printf("%s - %s - %s- %s\n", company.getNome(), x.getMorada(), x.getTpConsulta(), company.getDono().getNome());
-
-           for(Funcionario y : x.getFuncionarios()){
-
-               System.out.printf("%s - %s - %s- %d\n",y.getNome(),y.getProfissao(),y.getUtilizador(),y.getNumCarteiraProfissional());
-
-           }
-       }
+      }
 
     }
 

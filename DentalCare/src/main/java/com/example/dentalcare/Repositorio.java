@@ -31,10 +31,10 @@ public class Repositorio implements Serializable {
 
             try {
                 System.out.println("A ler ficheiro...");
-                repositorio = Repositorio.desserializar("DentalCare\\src\\main\\resources\\repo\\repositorio.dat");
+                repositorio = Repositorio.desserializar("src\\main\\resources\\repo\\repositorio.dat");
                 System.out.println("Ficheiro lido com sucesso");
             }catch (Exception ignored) {
-
+                System.out.println("Falha ao ler ficheiro (repositorio)");
             }
         }
         return  repositorio;
@@ -48,7 +48,7 @@ public class Repositorio implements Serializable {
             out.writeObject(this);
             out.close();
             fileOut.close();
-            System.out.println("Serialized data is saved in " + filename);
+            System.out.println("Repositorio serailizado para: " + filename);
         }catch( IOException ex){
             System.out.println("Erro: " + ex.getMessage());
         }

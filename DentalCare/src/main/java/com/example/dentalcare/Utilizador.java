@@ -19,11 +19,12 @@ public class Utilizador implements Serializable {
 
     public Utilizador(){}
 
-    public Utilizador(String nome, String CC, String NIF, String morada, String localidade, String utilizador, String password) {
+    public Utilizador(String nome, String CC, String NIF,String telefone,String morada, String localidade, String utilizador, String password) {
 
         this.nome = nome;
         this.CC = CC;
         this.NIF = NIF;
+        this.telefone = telefone;
         this.morada = morada;
         this.localidade = localidade;
         this.utilizador = utilizador;

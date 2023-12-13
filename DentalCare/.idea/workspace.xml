@@ -1,7 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e056b902-35fc-47dc-a9ca-0b5b5e188b9b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/ClienteBLL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/ClienteBLL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/Dono.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/Dono.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/Funcionario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/MainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/Repositorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/Repositorio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/Utilizador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/Utilizador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/repo/repositorio.dat" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/repo/repositorio.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentalcare/MainApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentalcare/MainApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/repo/repositorio.dat" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/repo/repositorio.dat" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2ZUlDGsywWAwwNC31bH4EpRzLUc" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/Miguel Silva/Desktop/EI/2_Ano - S1/Prog2/Trabalho/DentalCare/DentalCare",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e056b902-35fc-47dc-a9ca-0b5b5e188b9b" name="Changes" comment="" />
+      <created>1702484417234</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1702484417234</updated>
+      <workItem from="1702484418229" duration="3260000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

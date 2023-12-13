@@ -7,18 +7,18 @@ public class Funcionario extends Utilizador{
 
     public Funcionario(){}
 
-    public Funcionario(String nome, String CC, String NIF, String morada, String localidade,ProfissaoFuncionario profissao,
+    public Funcionario(String nome, String CC, String NIF,String telefone, String morada, String localidade,ProfissaoFuncionario profissao,
                        String utilizador, String password) {
 
-        super(nome,CC,NIF,morada,localidade, utilizador, password);
+        super(nome,CC,NIF,telefone,morada,localidade, utilizador, password);
         this.profissao = profissao;
 
     }
 
-    public Funcionario(String nome, String CC, String NIF, String morada,String localidade,ProfissaoFuncionario profissao,
+    public Funcionario(String nome, String CC, String NIF,String telefone, String morada,String localidade,ProfissaoFuncionario profissao,
                        int numCarteiraProfissional, String utilizador, String password) {
 
-        super(nome,CC,NIF,morada,localidade, utilizador, password);
+        super(nome,CC,NIF,telefone,morada,localidade, utilizador, password);
         this.profissao = profissao;
 
         //se for dentista tem de ter um numero de carteira prof.
