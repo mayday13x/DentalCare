@@ -1,21 +1,25 @@
 package com.example.dentalcare;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Consultorio {
 
     private String morada;
     private String localidade;
     private long numTelefone;
-    private TipoConsulta tpConsulta;
+    private String especialidade;
+    private Set<String> servicos;  //tipos de consulta disponiveis
     private List<Funcionario> funcionarios;
 
-    public Consultorio(String morada, String localidade, long numTelefone, TipoConsulta tpConsulta) {
+    public Consultorio(String morada, String localidade, long numTelefone, String especialidade) {
         this.morada = morada;
         this.localidade = localidade;
         this.numTelefone = numTelefone;
-        this.tpConsulta = tpConsulta;
+        this.especialidade = especialidade;
+        this.servicos = new HashSet<>();
         this.funcionarios = new ArrayList<>();
     }
 
@@ -43,12 +47,16 @@ public class Consultorio {
         this.numTelefone = numTelefone;
     }
 
-    public TipoConsulta getTpConsulta() {
-        return tpConsulta;
+    public String getEspecialidade() {
+        return especialidade;
     }
 
-    public void setTpConsulta(TipoConsulta tpConsulta) {
-        this.tpConsulta = tpConsulta;
+    public void setEspecialidade(String especialidade) {
+        this.especialidade = especialidade;
+    }
+
+    public Set<String> getServicos() {
+        return servicos;
     }
 
     public List<Funcionario> getFuncionarios() {
@@ -57,6 +65,10 @@ public class Consultorio {
 
     public void addFuncionario(Funcionario funcionario) {
         this.funcionarios.add(funcionario);
+    }
+
+    public void addServico(String servico) {
+        this.servicos.add(servico);
     }
 
 }
