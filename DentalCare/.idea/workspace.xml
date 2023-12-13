@@ -8,16 +8,12 @@
       <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/ClienteBLL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/ClienteBLL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/Dono.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/Dono.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/Funcionario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/FuncionarioBLL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/FuncionarioBLL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/MainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/RegistarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/RegistarController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/Repositorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/Repositorio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/Utilizador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/Utilizador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/repo/repositorio.dat" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/repo/repositorio.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentalcare/MainApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentalcare/MainApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/repo/repositorio.dat" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/repo/repositorio.dat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +44,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -59,7 +56,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1702484417234</updated>
-      <workItem from="1702484418229" duration="3260000" />
+      <workItem from="1702484418229" duration="8955000" />
     </task>
     <servers />
   </component>

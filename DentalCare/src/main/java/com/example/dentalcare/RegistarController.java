@@ -84,6 +84,7 @@ public class RegistarController implements Initializable {
 
             FuncionarioBLL.registarFuncionario(fn);
         }
+
         try {
             Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
             Scene regCena = new Scene(root);

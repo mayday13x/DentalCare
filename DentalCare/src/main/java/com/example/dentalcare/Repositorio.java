@@ -12,6 +12,8 @@ public class Repositorio implements Serializable {
 
     private Map<String,Funcionario> funcionarios = new HashMap<>();
 
+    private Repositorio(){}
+
     public Map<String,Cliente> getClientes(){
         return  clientes;
     }
@@ -19,10 +21,6 @@ public class Repositorio implements Serializable {
     public Map<String,Funcionario> getFuncionarios(){
         return funcionarios;
     }
-
-    public Repositorio(){}
-
-
 
     public static Repositorio getRepositorio(){
 

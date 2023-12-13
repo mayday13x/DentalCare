@@ -12,7 +12,6 @@ public class MainApp extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("login.fxml"));
-        //Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Test");
         stage.setScene(scene);
@@ -22,10 +21,17 @@ public class MainApp extends Application {
     public static void main(String[] args) {
        launch();
 
-      for( Cliente cliente: Repositorio.getRepositorio().getClientes().values()){
+      for( Utilizador cliente: Repositorio.getRepositorio().getClientes().values()){
 
           System.out.printf("%s , %s, %s, %s, %s, %s, %s\n", cliente.getCC(), cliente.getNome(), cliente.getMorada(),
                   cliente.getUtilizador(), cliente.getPassword(), cliente.getTelefone(), cliente.getLocalidade());
+
+      }
+      for( Utilizador funcionario: Repositorio.getRepositorio().getFuncionarios().values()){
+
+            System.out.printf("%s , %s, %s, %s, %s, %s, %s\n", funcionario.getCC(), funcionario.getNome(),
+                    funcionario.getMorada(), funcionario.getUtilizador(), funcionario.getPassword(),
+                    funcionario.getTelefone(), funcionario.getLocalidade());
 
       }
 
