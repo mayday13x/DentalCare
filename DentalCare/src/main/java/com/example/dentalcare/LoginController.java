@@ -13,6 +13,8 @@ import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import java.io.IOException;
 
+import static com.example.dentalcare.colors.Colors.*;
+
 
 public class LoginController {
 
@@ -37,7 +39,10 @@ public class LoginController {
                 stage.setScene(regCena);
                 stage.setTitle("Menu");
                 stage.show();
-               }
+                printGreen("Logged in: " + cl.getUtilizador()+"(CLIENTE)");
+               } else {
+                printRed("Crendenciais incorretas!");
+            }
            }
 
         for(Funcionario fn: repo.getFuncionarios().values()){
@@ -48,7 +53,9 @@ public class LoginController {
                 stage.setScene(regCena);
                 stage.setTitle("Menu");
                 stage.show();
-               }
+               } else {
+                printRed("Crendenciais incorretas!");
+            }
            }
 
     }

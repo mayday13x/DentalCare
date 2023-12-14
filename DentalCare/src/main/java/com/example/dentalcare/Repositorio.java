@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import static com.example.dentalcare.colors.Colors.*;
+
 public class Repositorio implements Serializable {
 
     private static Repositorio repositorio = null;
@@ -16,6 +18,8 @@ public class Repositorio implements Serializable {
     private Map<Dono, Set<Empresa>> donos;
     private Map<String, Set<Empresa>> empresas;  //localidade --> Empresas
     private List<Consulta> consultas;
+
+    public static final String ANSI_RED = "\u001B[31m";
 
 
     private Repositorio(){}
@@ -42,11 +46,13 @@ public class Repositorio implements Serializable {
             repositorio = new Repositorio();
 
             try {
-                System.out.println("A ler ficheiro...");
+                System.out.println("[/]A ler repositório...");
                 repositorio = Repositorio.desserializar("src\\main\\resources\\repo\\repositorio.dat");
-                System.out.println("Ficheiro lido com sucesso");
-            }catch (Exception ignored) {
-                System.out.println("Falha ao ler ficheiro (repositorio)");
+               // System.out.println(ANSI_GREEN + "Repositório OK" + ANSI_RESET);
+                printGreen("Repositório OK");
+            }catch (Exception e) {
+               // System.out.println(ANSI_RED + "[-] Falha ao ler ficheiro (repositorio): " + e.getMessage() + ANSI_RESET);
+                printRed("[-] Falha ao ler ficheiro (repositorio): " + e.getMessage());
             }
         }
         return  repositorio;
@@ -61,14 +67,13 @@ public class Repositorio implements Serializable {
             out.writeObject(this);
             out.close();
             fileOut.close();
-            System.out.println("Repositorio serailizado para: " + filename);
+            printGreen("[+] Dados guardados para: " + filename);
         }catch( IOException ex){
-            System.out.println("Erro: " + ex.getMessage());
+            printRed("Erro: " + ex.getMessage());
         }
     }
 
     public static Repositorio desserializar(String filename) throws ClassNotFoundException, IOException {
-        Repositorio carteira = null;
 
         FileInputStream fileIn = new FileInputStream(filename);
         ObjectInputStream in = new ObjectInputStream(fileIn);

@@ -5,16 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e056b902-35fc-47dc-a9ca-0b5b5e188b9b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/colors/Colors.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/Dono.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/Dono.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/MainApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/RegistarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/RegistarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/repo/repositorio.dat" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/repo/repositorio.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentalcare/Consultorio.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentalcare/Consultorio.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentalcare/Dono.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentalcare/Dono.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/Repositorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentalcare/Repositorio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/repo/repositorio.dat" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentalcare/MainApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentalcare/MainApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentalcare/menuRegistar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentalcare/menuRegistar.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/repo/repositorio.dat" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/repo/repositorio.dat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,12 +21,19 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2ZUlDGsywWAwwNC31bH4EpRzLUc" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -37,6 +43,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "miguel",
@@ -49,6 +56,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Miguel Silva\Desktop\EI\2_Ano - S1\Prog2\Trabalho\DentalCare\DentalCare\src\main\resources\repo" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

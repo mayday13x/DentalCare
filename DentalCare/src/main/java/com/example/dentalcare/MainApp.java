@@ -8,6 +8,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.nio.ReadOnlyBufferException;
 
+import static com.example.dentalcare.colors.Colors.*;
+
 public class MainApp extends Application {
     @Override
     public void start(Stage stage) throws IOException {
@@ -32,6 +34,7 @@ public class MainApp extends Application {
             System.out.printf("%s , %s, %s, %s, %s, %s, %s\n", funcionario.getCC(), funcionario.getNome(),
                     funcionario.getMorada(), funcionario.getUtilizador(), funcionario.getPassword(),
                     funcionario.getTelefone(), funcionario.getLocalidade());
+          System.out.println(123);
 
       }
 
