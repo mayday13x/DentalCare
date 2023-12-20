@@ -1,25 +1,33 @@
 package com.example.dentalcare;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Repositorio implements Serializable {
 
     private static Repositorio repositorio = null;
 
-    private Map<String, Cliente> clientes = new HashMap<>();
+    private List<Cliente> clientes = new ArrayList<>();
 
-    private Map<String,Funcionario> funcionarios = new HashMap<>();
+    private List<Funcionario> funcionarios = new ArrayList<>();
+
+    private List<Dono> donos = new ArrayList<>();
 
     private Repositorio(){}
 
-    public Map<String,Cliente> getClientes(){
+    public List<Cliente> getClientes(){
         return  clientes;
     }
 
-    public Map<String,Funcionario> getFuncionarios(){
+    public List<Funcionario> getFuncionarios(){
         return funcionarios;
+    }
+
+    public List<Dono> getDonos(){
+        return donos;
     }
 
     public static Repositorio getRepositorio(){
@@ -29,7 +37,7 @@ public class Repositorio implements Serializable {
 
             try {
                 System.out.println("A ler ficheiro...");
-                repositorio = Repositorio.desserializar("src\\main\\resources\\repo\\repositorio.dat");
+                repositorio = Repositorio.desserializar("DentalCare\\src\\main\\resources\\repo\\repositorio.dat");
                 System.out.println("Ficheiro lido com sucesso");
             }catch (Exception ignored) {
                 System.out.println("Falha ao ler ficheiro (repositorio)");

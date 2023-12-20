@@ -21,13 +21,13 @@ public class MainApp extends Application {
     public static void main(String[] args) {
        launch();
 
-      for( Utilizador cliente: Repositorio.getRepositorio().getClientes().values()){
+      for( Utilizador cliente: Repositorio.getRepositorio().getClientes()){
 
           System.out.printf("%s , %s, %s, %s, %s, %s, %s\n", cliente.getCC(), cliente.getNome(), cliente.getMorada(),
                   cliente.getUtilizador(), cliente.getPassword(), cliente.getTelefone(), cliente.getLocalidade());
 
       }
-      for( Utilizador funcionario: Repositorio.getRepositorio().getFuncionarios().values()){
+      for( Utilizador funcionario: Repositorio.getRepositorio().getFuncionarios()){
 
             System.out.printf("%s , %s, %s, %s, %s, %s, %s\n", funcionario.getCC(), funcionario.getNome(),
                     funcionario.getMorada(), funcionario.getUtilizador(), funcionario.getPassword(),

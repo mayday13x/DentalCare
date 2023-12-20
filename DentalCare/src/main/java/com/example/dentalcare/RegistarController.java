@@ -47,13 +47,20 @@ public class RegistarController implements Initializable {
 
 
     @FXML
-    public void voltarAtras(ActionEvent event) throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
-        Scene regCena = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(regCena);
-        stage.setTitle("Login");
-        stage.show();
+    public void voltarAtras(ActionEvent event) {
+
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
+            Scene regCena = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(regCena);
+            stage.setTitle("Login");
+            stage.show();
+        }catch (IOException ex){
+            System.out.println("Erro: " + ex.getMessage());
+        }
+
+
     }
 
     @FXML
@@ -83,7 +90,20 @@ public class RegistarController implements Initializable {
             fn.setLocalidade(localidade.getText());
 
             FuncionarioBLL.registarFuncionario(fn);
+        }else if(tipoUtilizador.getValue().equals("Dono de empresa")){
+            Dono dn = new Dono();
+            dn.setUtilizador(utilizadorId.getText());
+            dn.setPassword(password.getText());
+            dn.setNome(nome.getText());
+            dn.setCC(cc.getText());
+            dn.setNIF(nif.getText());
+            dn.setTelefone(telefone.getText());
+            dn.setMorada(morada.getText());
+            dn.setLocalidade(localidade.getText());
+
+            DonoBLL.registarDono(dn);
         }
+
 
         try {
             Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
@@ -92,15 +112,15 @@ public class RegistarController implements Initializable {
             stage.setScene(regCena);
             stage.setTitle("Login");
             stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception ex) {
+            System.out.println("Erro: " + ex.getMessage());
         }
 
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb){
-        tipoUtilizador.getItems().addAll("Cliente", "Funcionario");
+        tipoUtilizador.getItems().addAll("Cliente", "Funcionario", "Dono de empresa");
     }
 
 

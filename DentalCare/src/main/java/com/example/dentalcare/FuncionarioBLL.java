@@ -3,8 +3,8 @@ package com.example.dentalcare;
 public class FuncionarioBLL {
 
     public static void registarFuncionario(Funcionario funcionario){
-        Repositorio.getRepositorio().getFuncionarios().put(funcionario.getCC(), funcionario);
+        Repositorio.getRepositorio().getFuncionarios().add(funcionario);
         System.out.println("O funcionario foi registado");
-        Repositorio.getRepositorio().serializar("src\\main\\resources\\repo\\repositorio.dat");
+        Repositorio.getRepositorio().serializar("DentalCare\\src\\main\\resources\\repo\\repositorio.dat");
     }
 }

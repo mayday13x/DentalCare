@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -16,51 +17,84 @@ import java.io.IOException;
 
 public class LoginController {
 
-
-
     @FXML
     private PasswordField password;
 
     @FXML
     private TextField utilizador;
+
+    @FXML
+    private Label User_Pass_Wrong;
+
     @FXML
     public void login(ActionEvent event) throws IOException {
+         boolean message = true;
 
-        Repositorio repo = Repositorio.getRepositorio();
+
+        try{
+            Repositorio repo = Repositorio.getRepositorio();
 
 
-        for(Cliente cl : repo.getClientes().values()){
-            if(cl.getUtilizador().equals(utilizador.getText()) && cl.getPassword().equals(password.getText())){
-                Parent root = FXMLLoader.load(getClass().getResource("menuCliente.fxml"));
-                Scene regCena = new Scene(root);
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                stage.setScene(regCena);
-                stage.setTitle("Menu");
-                stage.show();
-               }
-           }
+            for(Cliente cl : repo.getClientes()){
+                if(cl.getUtilizador().equals(utilizador.getText()) && cl.getPassword().equals(password.getText())){
+                    message = false;
+                    Parent root = FXMLLoader.load(getClass().getResource("menuCliente.fxml"));
+                    Scene regCena = new Scene(root);
+                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    stage.setScene(regCena);
+                    stage.setTitle("Menu");
+                    stage.show();
+                }
+            }
 
-        for(Funcionario fn: repo.getFuncionarios().values()){
-            if(utilizador.getText().equals(fn.getUtilizador()) && password.getText().equals(password.getText())){
-                Parent root = FXMLLoader.load(getClass().getResource("menuFuncionario.fxml"));
-                Scene regCena = new Scene(root);
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                stage.setScene(regCena);
-                stage.setTitle("Menu");
-                stage.show();
-               }
-           }
+            for(Funcionario fn: repo.getFuncionarios()){
+                if(utilizador.getText().equals(fn.getUtilizador()) && fn.getPassword().equals(password.getText())){
+                    message = false;
+                    Parent root = FXMLLoader.load(getClass().getResource("menuFuncionario.fxml"));
+                    Scene regCena = new Scene(root);
+                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    stage.setScene(regCena);
+                    stage.setTitle("Menu");
+                    stage.show();
+                }
+            }
+
+            for(Dono dono: Repositorio.getRepositorio().getDonos()){
+                if(utilizador.getText().equals(dono.getUtilizador()) && dono.getPassword().equals(password.getText())){
+                    message = false;
+                    Parent root = FXMLLoader.load(getClass().getResource("menuDono.fxml"));
+                    Scene regCena = new Scene(root);
+                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    stage.setScene(regCena);
+                    stage.setTitle("Menu");
+                    stage.show();
+                }
+            }
+
+            if(message){
+                User_Pass_Wrong.setVisible(true);
+            }
+        }catch (Exception ex){
+            System.out.println("Erro no login: " + ex.getMessage());
+        }
 
     }
 
     @FXML
     public void menuRegistar(ActionEvent event) throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("menuRegistar.fxml"));
-        Scene regCena = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(regCena);
-        stage.setTitle("Registar User");
-        stage.show();
+
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("menuRegistar.fxml"));
+            Scene regCena = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(regCena);
+            stage.setTitle("Registar User");
+            stage.show();
+        }catch (IOException ex){
+            System.out.println("Erro: " + ex.getMessage());
+        }
+
+
     }
 
 
