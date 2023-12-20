@@ -12,4 +12,5 @@ module com.example.dentalcare {
     opens com.example.dentalcare to javafx.fxml;
     exports com.example.dentalcare;
 
+
 }

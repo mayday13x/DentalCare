@@ -35,6 +35,14 @@ public class MainApp extends Application {
 
       }
 
+      for(Empresa empresa: Repositorio.getRepositorio().getEmpresas().keySet()){
+          System.out.println("Nome " + empresa.getNome());
+      }
+
+      for(Dono dono: Repositorio.getRepositorio().getEmpresas().values()){
+          System.out.println("Dono " + dono.getNome());
+      }
+
     }
 
 }

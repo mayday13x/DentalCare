@@ -1,6 +1,10 @@
 package com.example.dentalcare;
 
 
+import com.example.dentalcare.Cliente;
+import com.example.dentalcare.Dono;
+import com.example.dentalcare.Funcionario;
+import com.example.dentalcare.Repositorio;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -33,28 +37,17 @@ public class LoginController {
 
         try{
             Repositorio repo = Repositorio.getRepositorio();
-
+            DataSessao ds = new DataSessao();
 
             for(Cliente cl : repo.getClientes()){
                 if(cl.getUtilizador().equals(utilizador.getText()) && cl.getPassword().equals(password.getText())){
                     message = false;
+                    DataSessao.cliente = cl;
                     Parent root = FXMLLoader.load(getClass().getResource("menuCliente.fxml"));
                     Scene regCena = new Scene(root);
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     stage.setScene(regCena);
-                    stage.setTitle("Menu");
-                    stage.show();
-                }
-            }
-
-            for(Funcionario fn: repo.getFuncionarios()){
-                if(utilizador.getText().equals(fn.getUtilizador()) && fn.getPassword().equals(password.getText())){
-                    message = false;
-                    Parent root = FXMLLoader.load(getClass().getResource("menuFuncionario.fxml"));
-                    Scene regCena = new Scene(root);
-                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    stage.setScene(regCena);
-                    stage.setTitle("Menu");
+                    stage.setTitle("Menu Cliente");
                     stage.show();
                 }
             }
@@ -62,11 +55,12 @@ public class LoginController {
             for(Dono dono: Repositorio.getRepositorio().getDonos()){
                 if(utilizador.getText().equals(dono.getUtilizador()) && dono.getPassword().equals(password.getText())){
                     message = false;
+                    DataSessao.dono = dono;
                     Parent root = FXMLLoader.load(getClass().getResource("menuDono.fxml"));
                     Scene regCena = new Scene(root);
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     stage.setScene(regCena);
-                    stage.setTitle("Menu");
+                    stage.setTitle("Menu Donos");
                     stage.show();
                 }
             }

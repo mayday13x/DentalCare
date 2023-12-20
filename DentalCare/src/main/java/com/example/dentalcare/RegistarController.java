@@ -1,5 +1,6 @@
 package com.example.dentalcare;
 
+import com.example.dentalcare.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -78,19 +79,7 @@ public class RegistarController implements Initializable {
 
             ClienteBLL.registarCliente(cl);
 
-        } else if (tipoUtilizador.getValue().equals("Funcionario")) {
-            Funcionario fn = new Funcionario();
-            fn.setUtilizador(utilizadorId.getText());
-            fn.setPassword(password.getText());
-            fn.setNome(nome.getText());
-            fn.setCC(cc.getText());
-            fn.setNIF(nif.getText());
-            fn.setTelefone(telefone.getText());
-            fn.setMorada(morada.getText());
-            fn.setLocalidade(localidade.getText());
-
-            FuncionarioBLL.registarFuncionario(fn);
-        }else if(tipoUtilizador.getValue().equals("Dono de empresa")){
+        } else if(tipoUtilizador.getValue().equals("Dono de empresa")){
             Dono dn = new Dono();
             dn.setUtilizador(utilizadorId.getText());
             dn.setPassword(password.getText());
@@ -120,7 +109,7 @@ public class RegistarController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb){
-        tipoUtilizador.getItems().addAll("Cliente", "Funcionario", "Dono de empresa");
+        tipoUtilizador.getItems().addAll("Cliente", "Dono de empresa");
     }
 
 

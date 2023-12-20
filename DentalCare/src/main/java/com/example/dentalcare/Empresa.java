@@ -7,11 +7,13 @@ public class Empresa {
     private String nome;
     private String morada;
     private String localidade;
-    private long numTelefone;
+    private String numTelefone;
     private List<Consultorio> consultorios;
     private Dono dono;
 
-    public Empresa(String nome, String morada, String localidade, long numTelefone, Dono dono) {
+    public Empresa(){}
+
+    public Empresa(String nome, String morada, String localidade, String numTelefone, Dono dono) {
         this.nome = nome;
         this.morada = morada;
         this.localidade = localidade;
@@ -44,11 +46,11 @@ public class Empresa {
         this.localidade = localidade;
     }
 
-    public long getNumTelefone() {
+    public String getNumTelefone() {
         return numTelefone;
     }
 
-    public void setNumTelefone(long numTelefone) {
+    public void setNumTelefone(String numTelefone) {
         this.numTelefone = numTelefone;
     }
 

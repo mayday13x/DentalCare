@@ -16,6 +16,8 @@ public class Repositorio implements Serializable {
 
     private List<Dono> donos = new ArrayList<>();
 
+    private Map<Empresa,Dono> empresas = new HashMap<>();
+
     private Repositorio(){}
 
     public List<Cliente> getClientes(){
@@ -28,6 +30,10 @@ public class Repositorio implements Serializable {
 
     public List<Dono> getDonos(){
         return donos;
+    }
+
+    public Map<Empresa,Dono> getEmpresas(){
+        return empresas;
     }
 
     public static Repositorio getRepositorio(){
@@ -61,7 +67,6 @@ public class Repositorio implements Serializable {
     }
 
     public static Repositorio desserializar(String filename) throws ClassNotFoundException, IOException {
-        Repositorio carteira = null;
 
         FileInputStream fileIn = new FileInputStream(filename);
         ObjectInputStream in = new ObjectInputStream(fileIn);
