@@ -1,20 +1,23 @@
 package com.example.dentalcare;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class Consultorio {
+public class Consultorio implements Serializable {
 
     private String morada;
     private String localidade;
-    private long numTelefone;
+    private String numTelefone;
     private String especialidade;
     private Set<String> servicos;  //tipos de consulta disponiveis
     private List<Funcionario> funcionarios;
 
-    public Consultorio(String morada, String localidade, long numTelefone, String especialidade) {
+    public Consultorio(){}
+
+    public Consultorio(String morada, String localidade, String numTelefone, String especialidade) {
         this.morada = morada;
         this.localidade = localidade;
         this.numTelefone = numTelefone;
@@ -39,11 +42,11 @@ public class Consultorio {
         this.localidade = localidade;
     }
 
-    public long getNumTelefone() {
+    public String getNumTelefone() {
         return numTelefone;
     }
 
-    public void setNumTelefone(long numTelefone) {
+    public void setNumTelefone(String numTelefone) {
         this.numTelefone = numTelefone;
     }
 

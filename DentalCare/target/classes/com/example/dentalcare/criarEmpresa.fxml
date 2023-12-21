@@ -14,7 +14,7 @@
       <TextField fx:id="moradaEmpresa" layoutX="112.0" layoutY="146.0" />
       <Label layoutX="51.0" layoutY="200.0" text="Localidade" />
       <TextField fx:id="localidadeEmpresa" layoutX="112.0" layoutY="196.0" />
-      <Label fx:id="localidadeEmpresa1" layoutX="51.0" layoutY="244.0" text="Telefone" />
+      <Label layoutX="51.0" layoutY="244.0" text="Telefone" />
       <TextField fx:id="telefoneEmpresa" layoutX="112.0" layoutY="240.0" />
       <Button layoutX="160.0" layoutY="318.0" mnemonicParsing="false" onAction="#criarEmpresa" prefHeight="26.0" prefWidth="63.0" text="Criar" />
    </children>

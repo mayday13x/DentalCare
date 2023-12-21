@@ -65,7 +65,7 @@ public class RegistarController implements Initializable {
     }
 
     @FXML
-    public void registar(ActionEvent event) throws IOException{
+    public void registar(ActionEvent event) {
         if(tipoUtilizador.getValue().equals("Cliente")){
             Cliente cl = new Cliente();
             cl.setUtilizador(utilizadorId.getText());

@@ -1,8 +1,9 @@
 package com.example.dentalcare;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class Empresa {
+public class Empresa implements Serializable {
 
     private String nome;
     private String morada;
@@ -19,7 +20,7 @@ public class Empresa {
         this.localidade = localidade;
         this.numTelefone = numTelefone;
         this.dono = dono;
-        consultorios = new ArrayList<>();
+        this.consultorios = new ArrayList<>();
     }
 
     public String getNome() {
@@ -66,6 +67,9 @@ public class Empresa {
         return consultorios;
     }
     public void addConsultorio(Consultorio consultorio) {
+        if (consultorios == null) {
+            consultorios = new ArrayList<>();
+        }
         this.consultorios.add(consultorio);
     }
 }

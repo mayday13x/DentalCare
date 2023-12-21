@@ -1,10 +1,9 @@
 package com.example.dentalcare;
 
+import javafx.fxml.Initializable;
+
 import java.io.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Repositorio implements Serializable {
 
@@ -16,7 +15,9 @@ public class Repositorio implements Serializable {
 
     private List<Dono> donos = new ArrayList<>();
 
-    private Map<Empresa,Dono> empresas = new HashMap<>();
+    private Map<Dono,Empresa> empresas = new HashMap<>();
+
+    private Map<Empresa, List<Consultorio>> consultorios = new HashMap<>();
 
     private Repositorio(){}
 
@@ -32,9 +33,16 @@ public class Repositorio implements Serializable {
         return donos;
     }
 
-    public Map<Empresa,Dono> getEmpresas(){
+    public Map<Dono,Empresa> getEmpresas(){
         return empresas;
     }
+
+    public Map<Empresa, List<Consultorio>> getConsultorios(){
+        return consultorios;
+    }
+
+    @Serial
+    private static final long serialVersionUID = 2341L;
 
     public static Repositorio getRepositorio(){
 
@@ -62,17 +70,24 @@ public class Repositorio implements Serializable {
             fileOut.close();
             System.out.println("Repositorio serailizado para: " + filename);
         }catch( IOException ex){
-            System.out.println("Erro: " + ex.getMessage());
+            System.out.println("Erro ao serializar: " + ex.getMessage());
         }
     }
 
     public static Repositorio desserializar(String filename) throws ClassNotFoundException, IOException {
 
-        FileInputStream fileIn = new FileInputStream(filename);
-        ObjectInputStream in = new ObjectInputStream(fileIn);
-        repositorio = (Repositorio) in.readObject();
-        in.close();
-        fileIn.close();
+        try {
+            FileInputStream fileIn = new FileInputStream(filename);
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            repositorio = (Repositorio) in.readObject();
+            in.close();
+            fileIn.close();
+        }catch(IOException ex){
+            System.out.println("Erro em desserializar: " + ex.getMessage());
+        } catch(ClassNotFoundException ex){
+            System.out.println("Class repositorio nao foi encontrada. " + ex.getMessage());
+        }
+
 
         return repositorio;
     }

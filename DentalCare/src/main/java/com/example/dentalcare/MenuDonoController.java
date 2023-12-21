@@ -13,32 +13,18 @@ import java.io.IOException;
 
 public class MenuDonoController {
 
-    @FXML
-    private Button criarConsultorio;
-
-    @FXML
-    private Button criarEmpresa;
-
-    @FXML
-    private Button  consultar_alterar_dados;
-
-    @FXML
-    private Button criarFuncionario;
-
-    @FXML
-    private Button listarMarcacoes;
-
 
     public void menuCriarConsultorio(ActionEvent event){
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("criarConsultorio.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("adicionarConsultorio.fxml"));
             Scene regCena = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(regCena);
             stage.setTitle("Criar consultorio");
             stage.show();
-        }catch (IOException ex){
-            System.out.println("Erro: " + ex.getMessage());
+        }catch (Exception ex){
+            System.out.println("Erro ao tentar acessar menu criar consultorio: " + ex.getMessage());
+            ex.printStackTrace();
         }
     }
 
@@ -51,7 +37,7 @@ public class MenuDonoController {
             stage.setTitle("Criar empresa");
             stage.show();
         }catch (IOException ex){
-            System.out.println("Erro: " + ex.getMessage());
+            System.out.println("Erro ao tentar acessar menu criar empresa: " + ex.getMessage());
         }
     }
 
@@ -64,7 +50,7 @@ public class MenuDonoController {
             stage.setTitle("Consultar Dados da Empresa");
             stage.show();
         }catch (IOException ex){
-            System.out.println("Erro: " + ex.getMessage());
+            System.out.println("Erro ao tentar acessar menu consultar dados de empresa : " + ex.getMessage());
         }
     }
 

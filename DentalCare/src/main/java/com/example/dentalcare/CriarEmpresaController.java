@@ -35,8 +35,9 @@ public class CriarEmpresaController {
         emp.setMorada(moradaEmpresa.getText());
         emp.setLocalidade(localidadeEmpresa.getText());
         emp.setNumTelefone(telefoneEmpresa.getText());
+        emp.setDono(DataSessao.dono);
 
-        EmpresaBLL.criarEmpresa(emp,DataSessao.dono);
+        EmpresaBLL.criarEmpresa(DataSessao.dono, emp);
 
         try {
             Parent root = FXMLLoader.load(getClass().getResource("menuDono.fxml"));
@@ -46,7 +47,7 @@ public class CriarEmpresaController {
             stage.setTitle("Menu Donos");
             stage.show();
         }catch (IOException ex){
-            System.out.println("Erro no login: " + ex.getMessage());
+            System.out.println("Erro ao carregar o menu: " + ex.getMessage());
         }
 
     }

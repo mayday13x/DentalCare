@@ -6,16 +6,22 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.nio.ReadOnlyBufferException;
+
 
 public class MainApp extends Application {
     @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("login.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Test");
-        stage.setScene(scene);
-        stage.show();
+    public void start(Stage stage) {
+
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("login.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            stage.setTitle("Test");
+            stage.setScene(scene);
+            stage.show();
+        }catch (IOException ex){
+            System.out.println("Erro: " + ex.getMessage());
+        }
+
     }
 
     public static void main(String[] args) {
@@ -35,11 +41,12 @@ public class MainApp extends Application {
 
       }
 
-      for(Empresa empresa: Repositorio.getRepositorio().getEmpresas().keySet()){
-          System.out.println("Nome " + empresa.getNome());
+      for(Empresa empresa: Repositorio.getRepositorio().getEmpresas().values()){
+          System.out.printf("%s , %s, %s, %s, %s, %s\n", empresa.getNome(), empresa.getMorada(), empresa.getLocalidade(),
+                  empresa.getNumTelefone(), empresa.getConsultorios(),empresa.getDono().getNome());
       }
 
-      for(Dono dono: Repositorio.getRepositorio().getEmpresas().values()){
+      for(Dono dono: Repositorio.getRepositorio().getEmpresas().keySet()){
           System.out.println("Dono " + dono.getNome());
       }
 
