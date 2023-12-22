@@ -8,11 +8,11 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.CriarConsultorioController">
     <children>
-        <Label layoutX="244.0" layoutY="52.0" text="Criar consultorio" />
+        <Label layoutX="247.0" layoutY="24.0" text="Criar consultorio" />
         <ChoiceBox fx:id="escolherEmpresa" layoutX="127.0" layoutY="105.0" prefWidth="150.0" />
         <Label layoutX="58.0" layoutY="109.0" text="Emprresa" />
         <TextField fx:id="moradaConsultorio" layoutX="128.0" layoutY="153.0" />
-        <Label layoutX="69.0" layoutY="157.0" text="Morada" />
+        <Label layoutX="69.0" layoutY="69.0" text="Nome" />
         <TextField fx:id="localidadeConsultorio" layoutX="128.0" layoutY="200.0" />
         <Label layoutX="54.0" layoutY="245.0" text="Telefone" />
         <ChoiceBox fx:id="especialidadeConsultorio" layoutX="127.0" layoutY="279.0" prefWidth="150.0" />
@@ -20,5 +20,7 @@
         <Label layoutX="61.0" layoutY="204.0" text="Localidade" />
         <TextField fx:id="telefoneConsultorio" layoutX="127.0" layoutY="241.0" />
         <Button layoutX="150.0" layoutY="334.0" mnemonicParsing="false" onAction="#criarConsulturio" text="Criar" />
+      <TextField fx:id="nomeConsultorio" layoutX="127.0" layoutY="65.0" />
+      <Label layoutX="69.0" layoutY="157.0" text="morada" />
     </children>
 </AnchorPane>

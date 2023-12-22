@@ -8,6 +8,7 @@ import java.util.Set;
 
 public class Consultorio implements Serializable {
 
+    private String nome;
     private String morada;
     private String localidade;
     private String numTelefone;
@@ -25,6 +26,10 @@ public class Consultorio implements Serializable {
         this.servicos = new HashSet<>();
         this.funcionarios = new ArrayList<>();
     }
+
+    public String getNome(){return nome;}
+
+    public void setNome(String nome){this.nome = nome;}
 
     public String getMorada() {
         return morada;
@@ -67,6 +72,9 @@ public class Consultorio implements Serializable {
     }
 
     public void addFuncionario(Funcionario funcionario) {
+        if(funcionarios == null){
+            funcionarios = new ArrayList<>();
+        }
         this.funcionarios.add(funcionario);
     }
 

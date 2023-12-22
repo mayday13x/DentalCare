@@ -54,5 +54,19 @@ public class MenuDonoController {
         }
     }
 
+    public void menuCriarFuncionario(ActionEvent event){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("criaFuncionario.fxml"));
+            Scene regCena = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(regCena);
+            stage.setTitle("Criar Funcionario");
+            stage.show();
+        }catch (IOException ex){
+            System.out.println("Erro ao tentar acessar menu criar funcionario : " + ex.getMessage());
+            ex.printStackTrace();
+        }
+    }
+
 
 }

@@ -3,7 +3,7 @@ package com.example.dentalcare;
 public class Funcionario extends Utilizador{
 
     private ProfissaoFuncionario profissao;
-    private int numCarteiraProfissional;
+    private String numCarteiraProfissional;
 
     public Funcionario(){}
 
@@ -16,7 +16,7 @@ public class Funcionario extends Utilizador{
     }
 
     public Funcionario(String nome, String CC, String NIF,String telefone, String morada,String localidade,ProfissaoFuncionario profissao,
-                       int numCarteiraProfissional, String utilizador, String password) {
+                       String numCarteiraProfissional, String utilizador, String password) {
 
         super(nome,CC,NIF,telefone,morada,localidade, utilizador, password);
         this.profissao = profissao;
@@ -37,11 +37,11 @@ public class Funcionario extends Utilizador{
         this.profissao = profissao;
     }
 
-    public int getNumCarteiraProfissional(){
+    public String getNumCarteiraProfissional(){
         return numCarteiraProfissional;
     }
 
-    public void setNumCarteiraProfissional(int numCarteiraProfissional) {   // considerar se é necessário
+    public void setNumCarteiraProfissional(String numCarteiraProfissional) {   // considerar se é necessário
         this.numCarteiraProfissional = numCarteiraProfissional;
     }
 }

@@ -25,6 +25,9 @@ public class CriarConsultorioController implements Initializable {
     private ChoiceBox<String> escolherEmpresa;
 
     @FXML
+    private TextField nomeConsultorio;
+
+    @FXML
     private ChoiceBox<String> especialidadeConsultorio;
 
     @FXML
@@ -55,6 +58,7 @@ public class CriarConsultorioController implements Initializable {
             Consultorio con = new Consultorio();
             List<Consultorio> consultorioList = new ArrayList<>();
 
+            con.setNome(nomeConsultorio.getText());
             con.setMorada(moradaConsultorio.getText());
             con.setLocalidade(localidadeConsultorio.getText());
             con.setNumTelefone(telefoneConsultorio.getText());
