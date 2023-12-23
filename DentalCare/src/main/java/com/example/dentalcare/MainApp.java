@@ -50,6 +50,13 @@ public class MainApp extends Application {
           System.out.println("Dono " + dono.getNome());
       }
 
+      for(Servico servico: Repositorio.getRepositorio().getServicos()){
+          System.out.println("Nome: " + servico.getNomeServico());
+          System.out.println("Id: " + servico.getIdServico());
+          System.out.println("Preco: " + servico.getPrecoServico());
+          System.out.println("Empresa: " + servico.getEmpresa());
+      }
+
     }
 
 }

@@ -15,6 +15,8 @@ public class Repositorio implements Serializable {
 
     private List<Dono> donos = new ArrayList<>();
 
+    private List<Servico> servicos = new ArrayList<>();
+
     private Map<Dono,Empresa> empresas = new HashMap<>();
 
     private Map<Empresa, List<Consultorio>> consultorios = new HashMap<>();
@@ -31,6 +33,13 @@ public class Repositorio implements Serializable {
 
     public List<Dono> getDonos(){
         return donos;
+    }
+
+    public List<Servico> getServicos(){
+        if(servicos == null){
+            servicos = new ArrayList<>();
+        }
+        return servicos;
     }
 
     public Map<Dono,Empresa> getEmpresas(){
