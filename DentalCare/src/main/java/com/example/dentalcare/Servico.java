@@ -7,11 +7,11 @@ public class Servico implements Serializable {
     private int idServico;
     private String nomeServico;
     private String empresa;
-    private String precoServico;
+    private float precoServico;
 
     public Servico(){}
 
-    public Servico(int idServico, String nomeServico, String empresa, String precoServico) {
+    public Servico(int idServico, String nomeServico, String empresa, float precoServico) {
         this.idServico = idServico;
         this.nomeServico = nomeServico;
         this.empresa = empresa;
@@ -42,11 +42,11 @@ public class Servico implements Serializable {
         this.empresa = empresa;
     }
 
-    public String getPrecoServico() {
+    public float getPrecoServico() {
         return precoServico;
     }
 
-    public void setPrecoServico(String precoServico) {
+    public void setPrecoServico(float precoServico) {
         this.precoServico = precoServico;
     }
 }

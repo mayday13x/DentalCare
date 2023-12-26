@@ -45,7 +45,7 @@ public class CriarServicoController implements Initializable {
 
             servi.setIdServico(Repositorio.getRepositorio().getServicos().size() + 1);
             servi.setNomeServico(nomeServico.getText());
-            servi.setPrecoServico(precoServico.getText());
+            servi.setPrecoServico(Float.parseFloat(precoServico.getText()));
             String empresa = escolherEmpresa.getValue();
 
             for(Empresa emp: Repositorio.getRepositorio().getEmpresas().values()){

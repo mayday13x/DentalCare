@@ -57,6 +57,16 @@ public class MainApp extends Application {
           System.out.println("Empresa: " + servico.getEmpresa());
       }
 
+      for(Consulta consulta: Repositorio.getRepositorio().getConsultas()){
+          System.out.println("Id : " + consulta.getIdConsulta());
+          System.out.println("Cliente : " + consulta.getCliente());
+          System.out.println("Data : " + consulta.getDataConsulta());
+          System.out.println("Especialidade : " + consulta.getEspecialidade());
+          System.out.println("Servico : " + consulta.getServico());
+          System.out.println("Funcionario : " + consulta.getFuncionario());
+          System.out.println("Preco: " + consulta.getPrecoTotal());
+      }
+
     }
 
 }

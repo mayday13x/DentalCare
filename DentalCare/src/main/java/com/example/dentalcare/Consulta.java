@@ -1,17 +1,18 @@
 package com.example.dentalcare;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Consulta implements Serializable {
 
     public int idConsulta;
     private Cliente cliente;
-    private Date dataConsulta;
+    private LocalDate dataConsulta;
     private String funcionario;
     private float precoTotal;
     private String servico;
-    private String tipo;
+    private String especialidade;
     private EstadoConsulta estadoConsulta;
 
     public Consulta(){}
@@ -32,11 +33,11 @@ public class Consulta implements Serializable {
         this.cliente = cliente;
     }
 
-    public Date getDataConsulta() {
+    public LocalDate getDataConsulta() {
         return dataConsulta;
     }
 
-    public void setDataConsulta(Date dataConsulta) {
+    public void setDataConsulta(LocalDate dataConsulta) {
         this.dataConsulta = dataConsulta;
     }
 
@@ -64,12 +65,12 @@ public class Consulta implements Serializable {
         this.servico = servico;
     }
 
-    public String getTipo() {
-        return tipo;
+    public String getEspecialidade() {
+        return especialidade;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setEspecialidade(String tipo) {
+        this.especialidade = tipo;
     }
 
     public EstadoConsulta getEstadoConsulta() {
