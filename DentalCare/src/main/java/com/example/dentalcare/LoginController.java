@@ -65,6 +65,19 @@ public class LoginController {
                 }
             }
 
+            for(Funcionario funcionario: Repositorio.getRepositorio().getFuncionarios()){
+                if(utilizador.getText().equals(funcionario.getUtilizador()) && password.getText().equals(funcionario.getPassword())){
+                    message = false;
+                    DataSessao.funcionario = funcionario;
+                    Parent root = FXMLLoader.load(getClass().getResource("menuFuncionario.fxml"));
+                    Scene regCena = new Scene(root);
+                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    stage.setScene(regCena);
+                    stage.setTitle("Menu Funcionarios");
+                    stage.show();
+                }
+            }
+
             if(message){
                 User_Pass_Wrong.setVisible(true);
             }
