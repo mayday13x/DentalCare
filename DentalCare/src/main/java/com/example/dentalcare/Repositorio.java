@@ -11,6 +11,8 @@ public class Repositorio implements Serializable {
 
     private List<Cliente> clientes = new ArrayList<>();
 
+    private List<Admin> admins = new ArrayList<>();
+
     private List<Funcionario> funcionarios = new ArrayList<>();
 
     private List<Dono> donos = new ArrayList<>();
@@ -28,6 +30,12 @@ public class Repositorio implements Serializable {
     public List<Cliente> getClientes(){
         return  clientes;
     }
+
+    public List<Admin> getAdmins(){
+        if(admins == null){
+            admins = new ArrayList<>();
+        }
+        return  admins;}
 
     public List<Funcionario> getFuncionarios(){
         return funcionarios;

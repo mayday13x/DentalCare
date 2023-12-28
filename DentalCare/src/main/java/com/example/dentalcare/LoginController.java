@@ -78,6 +78,19 @@ public class LoginController {
                 }
             }
 
+            for(Admin admin:Repositorio.getRepositorio().getAdmins()){
+                if(utilizador.getText().equals(admin.getUtilizador()) && password.getText().equals(admin.getPassword())){
+                    message = false;
+                    DataSessao.admin = admin;
+                    Parent root = FXMLLoader.load(getClass().getResource("menuAdmins.fxml"));
+                    Scene regCena = new Scene(root);
+                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    stage.setScene(regCena);
+                    stage.setTitle("Menu Admins");
+                    stage.show();
+                }
+            }
+
             if(message){
                 User_Pass_Wrong.setVisible(true);
             }
