@@ -59,12 +59,13 @@ public class MainApp extends Application {
 
       for(Consulta consulta: Repositorio.getRepositorio().getConsultas()){
           System.out.println("Id : " + consulta.getIdConsulta());
-          System.out.println("Cliente : " + consulta.getCliente());
+          System.out.println("Cliente : " + consulta.getCliente().getNome());
           System.out.println("Data : " + consulta.getDataConsulta());
           System.out.println("Especialidade : " + consulta.getEspecialidade());
           System.out.println("Servico : " + consulta.getServico());
           System.out.println("Funcionario : " + consulta.getFuncionario());
           System.out.println("Preco: " + consulta.getPrecoTotal());
+          System.out.println("Estado: " + consulta.getEstadoConsulta());
       }
 
     }
