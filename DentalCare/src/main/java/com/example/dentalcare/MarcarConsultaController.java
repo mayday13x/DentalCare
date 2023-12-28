@@ -1,5 +1,7 @@
 package com.example.dentalcare;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,10 +16,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class MarcarConsultaController implements Initializable {
 
@@ -31,7 +30,7 @@ public class MarcarConsultaController implements Initializable {
     private ChoiceBox<String> escolherFuncionario;
 
     @FXML
-    private TextField especialidadeEmpresa;
+    private TextField especialidadeConsultorio;
 
     @FXML
     private TextField precoTotal;
@@ -43,34 +42,63 @@ public class MarcarConsultaController implements Initializable {
     private DatePicker escolherData;
 
     @Override
-    public void initialize(URL url, ResourceBundle rb){
+    public void initialize(URL url, ResourceBundle rb) {
+
         Repositorio repo = Repositorio.getRepositorio();
-        especialidadeEmpresa.setEditable(false);
+        especialidadeConsultorio.setEditable(false);
         precoTotal.setEditable(false);
 
-        for(Empresa empresa: repo.getEmpresas().values()){
-
-                escolherEmpresa.getItems().addAll(empresa.getNome()); // adiciona as empresas a choicebox
-                List<Consultorio> consultorioList = empresa.getConsultorios();
-                if(consultorioList != null){
-                    for(Consultorio consultorio: consultorioList){
-                        escolherConsultorio.getItems().addAll(consultorio.getNome()); // adicionar os consultorios a choicebox
-                        List<Funcionario> funcionarioList = consultorio.getFuncionarios();
-                        for(Funcionario funcionario: funcionarioList){
-                            escolherFuncionario.getItems().addAll(funcionario.getNome()); // adicionar os funcionarioa a choicebox
-                        }
+        Servico.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                for(Servico servico: Repositorio.getRepositorio().getServicos()){
+                    if(servico.getNomeServico().equals(Servico.getValue())){
+                        precoTotal.setText(String.valueOf(servico.getPrecoServico()));
                     }
-
-                }
-
-            for(Servico servico: Repositorio.getRepositorio().getServicos()){
-                if(servico.getEmpresa().equals(empresa.getNome())){
-                    Servico.getItems().addAll(servico.getNomeServico()); // adiciona os servicos a choicebox
                 }
             }
-        }
+        });
 
+
+
+        for (Empresa empresa : repo.getEmpresas().values()) {
+
+            escolherEmpresa.getItems().addAll(empresa.getNome()); // adiciona as empresas a choicebox
+            List<Consultorio> consultorioList = empresa.getConsultorios();
+
+            if (consultorioList != null) {
+                for (Consultorio consultorio : consultorioList) {
+                    escolherConsultorio.getItems().addAll(consultorio.getNome()); // adicionar os consultorios a choicebox
+                }
+            }
+
+            escolherConsultorio.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {  // atualiza a lista de funcionarios de acordo com o consultorio
+                @Override
+                public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                    escolherFuncionario.getItems().clear();
+                    if(consultorioList != null){
+                        for (Consultorio consultorio : consultorioList) {
+                            if(consultorio.getNome().equals(escolherConsultorio.getValue())){
+                                List<Funcionario> funcionarioList = consultorio.getFuncionarios();
+                                for (Funcionario funcionario : funcionarioList) {
+                                    escolherFuncionario.getItems().addAll(funcionario.getNome());// adicionar os funcionarioa a choicebox
+                                }
+
+                                especialidadeConsultorio.setText(consultorio.getEspecialidade());
+                            }
+                    }
+                    }
+                }
+            });
+
+        for (Servico servico : Repositorio.getRepositorio().getServicos()) {
+            if (servico.getEmpresa().equals(empresa.getNome())) {
+                Servico.getItems().addAll(servico.getNomeServico()); // adiciona os servicos a choicebox
+            }
+        }
     }
+
+}
 
     public void MarcarConsulta(ActionEvent event){
         try{
@@ -88,20 +116,18 @@ public class MarcarConsultaController implements Initializable {
                     for(Consultorio consultorio: consultorioList){
                         if(consultorio.getNome().equals(escolherConsultorio.getValue())){
                             consulta.setEspecialidade(consultorio.getEspecialidade());
-                            especialidadeEmpresa.setText(consultorio.getEspecialidade());
                         }
                     }
                 }
             }
 
-            consulta.setEspecialidade(especialidadeEmpresa.getText());
+            consulta.setEspecialidade(especialidadeConsultorio.getText());
             consulta.setServico(Servico.getValue());
 
             String servico = consulta.getServico();
             for(Servico serv: Repositorio.getRepositorio().getServicos()){
                 if(serv.getNomeServico().equals(servico)){
                     consulta.setPrecoTotal(serv.getPrecoServico());
-                    precoTotal.setText(String.valueOf(serv.getPrecoServico()));
                 }
             }
 

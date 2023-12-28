@@ -22,7 +22,7 @@
       <Label layoutX="46.0" layoutY="278.0" prefHeight="17.0" prefWidth="85.0" text="Data Consulta" />
       <Button layoutX="62.0" layoutY="374.0" mnemonicParsing="false" onAction="#MarcarConsulta" text="Marcar" />
       <TextField fx:id="precoTotal" layoutX="418.0" layoutY="137.0" />
-      <TextField fx:id="especialidadeEmpresa" layoutX="418.0" layoutY="89.0" />
+      <TextField fx:id="especialidadeConsultorio" layoutX="418.0" layoutY="89.0" />
       <Label layoutX="333.0" layoutY="93.0" text="Especialidade" />
       <Label layoutX="346.0" layoutY="141.0" text="Preco" />
    </children>
