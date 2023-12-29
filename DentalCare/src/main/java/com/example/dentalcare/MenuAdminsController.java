@@ -62,4 +62,17 @@ public class MenuAdminsController {
             System.out.println("Erro ao tentar acessar ao menu listar consultorios: " + ex.getMessage());
         }
     }
+
+    public void listarFuncionarios(ActionEvent event){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("listarFuncionario.fxml"));
+            Scene regCena = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(regCena);
+            stage.setTitle("Listar funcionarios");
+            stage.show();
+        }catch (Exception ex){
+            System.out.println("Erro ao tentar acessar ao menu listar funcionarios: " + ex.getMessage());
+        }
+    }
 }

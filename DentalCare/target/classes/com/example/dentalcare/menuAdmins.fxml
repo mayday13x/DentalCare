@@ -11,5 +11,6 @@
       <Button layoutX="247.0" layoutY="96.0" mnemonicParsing="false" onAction="#listarEmpresas" prefHeight="39.0" prefWidth="124.0" text="Listar Empresas" />
       <Button layoutX="415.0" layoutY="96.0" mnemonicParsing="false" onAction="#listarClientes" prefHeight="39.0" prefWidth="124.0" text="Listar Clientes" />
       <Button layoutX="64.0" layoutY="187.0" mnemonicParsing="false" onAction="#listarConsultorio" prefHeight="39.0" prefWidth="124.0" text="Listar Consultorios" />
+      <Button layoutX="247.0" layoutY="187.0" mnemonicParsing="false" onAction="#listarFuncionarios" prefHeight="39.0" prefWidth="124.0" text="Listar funcionarios" />
    </children>
 </AnchorPane>
