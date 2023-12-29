@@ -30,7 +30,7 @@ public class MainApp extends Application {
         for(Admin adm: Repositorio.getRepositorio().getAdmins()){
             System.out.println("Admins");
             System.out.println("User: " + adm.getUtilizador());
-            System.out.println("Pass: " + adm.getPassword());
+            System.out.println("Pass:  " + adm.getPassword());
         }
 
         for( Utilizador cliente: Repositorio.getRepositorio().getClientes()){
