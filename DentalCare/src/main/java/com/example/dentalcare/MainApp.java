@@ -78,5 +78,6 @@ public class MainApp extends Application {
             System.out.println("Estado: " + consulta.getEstadoConsulta());
         }
 
+
     }
 }

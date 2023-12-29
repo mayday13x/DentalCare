@@ -60,7 +60,6 @@ public class MarcarConsultaController implements Initializable {
         });
 
 
-
         for (Empresa empresa : repo.getEmpresas().values()) {
 
             escolherEmpresa.getItems().addAll(empresa.getNome()); // adiciona as empresas a choicebox

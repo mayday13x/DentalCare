@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.CriarConsultorioController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.CriarConsultorioController">
     <children>
         <Label layoutX="247.0" layoutY="24.0" text="Criar consultorio" />
         <ChoiceBox fx:id="escolherEmpresa" layoutX="127.0" layoutY="105.0" prefWidth="150.0" />
-        <Label layoutX="58.0" layoutY="109.0" text="Emprresa" />
+        <Label layoutX="58.0" layoutY="109.0" text="Empresa" />
         <TextField fx:id="moradaConsultorio" layoutX="128.0" layoutY="153.0" />
         <Label layoutX="69.0" layoutY="69.0" text="Nome" />
         <TextField fx:id="localidadeConsultorio" layoutX="128.0" layoutY="200.0" />
         <Label layoutX="54.0" layoutY="245.0" text="Telefone" />
         <ChoiceBox fx:id="especialidadeConsultorio" layoutX="127.0" layoutY="279.0" prefWidth="150.0" />
-        <Label layoutX="38.0" layoutY="283.0" text="Escpecialidade" />
+        <Label layoutX="38.0" layoutY="283.0" text="Especialidade" />
         <Label layoutX="61.0" layoutY="204.0" text="Localidade" />
         <TextField fx:id="telefoneConsultorio" layoutX="127.0" layoutY="241.0" />
         <Button layoutX="150.0" layoutY="334.0" mnemonicParsing="false" onAction="#criarConsulturio" text="Criar" />

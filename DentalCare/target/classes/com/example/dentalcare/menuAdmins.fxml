@@ -7,8 +7,9 @@
 <AnchorPane prefHeight="431.0" prefWidth="635.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.MenuAdminsController">
    <children>
       <Label layoutX="273.0" layoutY="44.0" prefHeight="17.0" prefWidth="72.0" text="Menu admin" />
-      <Button layoutX="93.0" layoutY="96.0" mnemonicParsing="false" onAction="#registarAdmins" prefHeight="39.0" prefWidth="108.0" text="Registar Admins" />
-      <Button layoutX="280.0" layoutY="96.0" mnemonicParsing="false" onAction="#listarEmpresas" prefHeight="39.0" prefWidth="108.0" text="Listar Empresas" />
-      <Button layoutX="443.0" layoutY="96.0" mnemonicParsing="false" onAction="#listarClientes" prefHeight="39.0" prefWidth="108.0" text="Listar Clientes" />
+      <Button layoutX="64.0" layoutY="96.0" mnemonicParsing="false" onAction="#registarAdmins" prefHeight="39.0" prefWidth="124.0" text="Registar Admins" />
+      <Button layoutX="247.0" layoutY="96.0" mnemonicParsing="false" onAction="#listarEmpresas" prefHeight="39.0" prefWidth="124.0" text="Listar Empresas" />
+      <Button layoutX="415.0" layoutY="96.0" mnemonicParsing="false" onAction="#listarClientes" prefHeight="39.0" prefWidth="124.0" text="Listar Clientes" />
+      <Button layoutX="64.0" layoutY="187.0" mnemonicParsing="false" onAction="#listarConsultorio" prefHeight="39.0" prefWidth="124.0" text="Listar Consultorios" />
    </children>
 </AnchorPane>
