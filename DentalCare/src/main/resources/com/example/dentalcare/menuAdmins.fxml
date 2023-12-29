@@ -14,5 +14,6 @@
       <Button layoutX="247.0" layoutY="187.0" mnemonicParsing="false" onAction="#listarFuncionarios" prefHeight="39.0" prefWidth="124.0" text="Listar Funcionarios" />
       <Button layoutX="422.0" layoutY="187.0" mnemonicParsing="false" onAction="#listarDonos" prefHeight="39.0" prefWidth="124.0" text="Listar Donos" />
       <Button layoutX="64.0" layoutY="253.0" mnemonicParsing="false" onAction="#listarServicos" prefHeight="39.0" prefWidth="124.0" text="Listar Servicos" />
+      <Button layoutX="247.0" layoutY="253.0" mnemonicParsing="false" onAction="#listarMarcacoes" prefHeight="39.0" prefWidth="124.0" text="Listar Marcacoes" />
    </children>
 </AnchorPane>

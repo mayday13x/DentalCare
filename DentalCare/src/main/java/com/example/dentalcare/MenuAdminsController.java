@@ -103,5 +103,19 @@ public class MenuAdminsController {
         }
     }
 
+    public void listarMarcacoes(ActionEvent event){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("listarMarcacoes.fxml"));
+            Scene regCena = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(regCena);
+            stage.setTitle("Listar marcacoes");
+            stage.show();
+        }catch (Exception ex){
+            System.out.println("Erro ao tentar acessar ao menu listar marcacoes: " + ex.getMessage());
+            ex.printStackTrace();
+        }
+    }
+
 
 }
