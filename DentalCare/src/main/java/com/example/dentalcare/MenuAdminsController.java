@@ -75,4 +75,19 @@ public class MenuAdminsController {
             System.out.println("Erro ao tentar acessar ao menu listar funcionarios: " + ex.getMessage());
         }
     }
+
+    public void listarDonos(ActionEvent event){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("listarDonos.fxml"));
+            Scene regCena = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(regCena);
+            stage.setTitle("Listar donos");
+            stage.show();
+        }catch (Exception ex){
+            System.out.println("Erro ao tentar acessar ao menu listar donos: " + ex.getMessage());
+        }
+    }
+
+
 }
