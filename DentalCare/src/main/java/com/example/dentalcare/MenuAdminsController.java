@@ -89,5 +89,19 @@ public class MenuAdminsController {
         }
     }
 
+    public void listarServicos(ActionEvent event){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("listarServicos.fxml"));
+            Scene regCena = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(regCena);
+            stage.setTitle("Listar servicos");
+            stage.show();
+        }catch (Exception ex){
+            System.out.println("Erro ao tentar acessar ao menu listar servicos: " + ex.getMessage());
+            ex.printStackTrace();
+        }
+    }
+
 
 }
