@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="444.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.ListarEmpresasController">
+    <children>
+        <TextField fx:id="nomeEmpresa" layoutX="112.0" layoutY="232.0" />
+        <Label layoutX="223.0" layoutY="25.0" text="Listar empresa" />
+        <Label layoutX="64.0" layoutY="236.0" text="Nome" />
+        <Label layoutX="347.0" layoutY="236.0" text="Morada" />
+        <TextField fx:id="moradaEmpresa" layoutX="405.0" layoutY="232.0" />
+        <Label layoutX="40.0" layoutY="280.0" text="Localidade" />
+        <TextField fx:id="localidadeEmpresa" layoutX="112.0" layoutY="276.0" />
+        <Label layoutX="345.0" layoutY="280.0" text="Telefone" />
+        <TextField fx:id="telefoneEmpresa" layoutX="405.0" layoutY="276.0" />
+      <ListView fx:id="empresaListView" layoutX="26.0" layoutY="53.0" prefHeight="153.0" prefWidth="604.0" />
+      <ListView fx:id="consultoriosViewList" layoutX="113.0" layoutY="335.0" prefHeight="71.0" prefWidth="170.0" />
+      <Label layoutX="31.0" layoutY="343.0" text="Consultorios" />
+    </children>
+</AnchorPane>

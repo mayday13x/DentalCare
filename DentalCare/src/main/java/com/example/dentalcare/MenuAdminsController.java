@@ -22,4 +22,18 @@ public class MenuAdminsController {
 
         }
     }
+
+    public void listarEmpresas(ActionEvent event){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("listarEmpresas.fxml"));
+            Scene regCena = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(regCena);
+            stage.setTitle("Listar empresas");
+            stage.show();
+        }catch (Exception ex){
+            System.out.println("Erro ao tentar acessar ao menu listar empresas: " + ex.getMessage());
+
+        }
+    }
 }
