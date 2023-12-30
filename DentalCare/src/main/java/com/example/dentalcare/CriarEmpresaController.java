@@ -29,15 +29,20 @@ public class CriarEmpresaController {
 
 
     public void criarEmpresa(ActionEvent event){
-        Empresa emp = new Empresa();
+        try{
+            Empresa emp = new Empresa();
 
-        emp.setNome(nomeEmpresa.getText());
-        emp.setMorada(moradaEmpresa.getText());
-        emp.setLocalidade(localidadeEmpresa.getText());
-        emp.setNumTelefone(telefoneEmpresa.getText());
-        emp.setDono(DataSessao.dono);
+            emp.setNome(nomeEmpresa.getText());
+            emp.setMorada(moradaEmpresa.getText());
+            emp.setLocalidade(localidadeEmpresa.getText());
+            emp.setNumTelefone(telefoneEmpresa.getText());
+            emp.setDono(DataSessao.dono);
 
-        EmpresaBLL.criarEmpresa(DataSessao.dono, emp);
+            EmpresaBLL.criarEmpresa(DataSessao.dono, emp);
+            EmpresaBLL.localidaEmpresa(localidadeEmpresa.getText(),emp);
+        }catch (Exception e){
+            System.out.println("Erro ao criar empresa: " + e.getMessage());
+        }
 
         try {
             Parent root = FXMLLoader.load(getClass().getResource("menuDono.fxml"));

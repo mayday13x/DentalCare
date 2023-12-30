@@ -8,4 +8,10 @@ public class EmpresaBLL {
         Repositorio.getRepositorio().serializar("DentalCare\\src\\main\\resources\\repo\\repositorio.dat");
     }
 
+    public static void localidaEmpresa(String localidade, Empresa empresa){
+        Repositorio.getRepositorio().getLocalidade().put(localidade,empresa);
+        System.out.println("A localicade foi asscociada a empresa!");
+        Repositorio.getRepositorio().serializar("DentalCare\\src\\main\\resources\\repo\\repositorio.dat");
+    }
+
 }
