@@ -109,6 +109,7 @@ public class MarcarConsultaController implements Initializable {
             consulta.setFuncionario(escolherFuncionario.getValue());
             consulta.setEstadoConsulta(EstadoConsulta.NAOPAGA);
             consulta.setConsultorio(escolherConsultorio.getValue());
+            consulta.setEmpresa(escolherEmpresa.getValue());
 
             for(Empresa empresa: Repositorio.getRepositorio().getEmpresas().values()){
                 if(empresa.getNome().equals(escolherEmpresa.getValue())){

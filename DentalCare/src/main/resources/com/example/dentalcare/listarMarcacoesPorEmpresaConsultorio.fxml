@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="516.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.ListarMarcacoesPorEmpresaConsultorioController">
+   <children>
+      <Label alignment="CENTER" layoutX="225.0" layoutY="36.0" text="Listar Marcacoes por empresa e consultorio">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <ListView fx:id="empresaListView" layoutX="42.0" layoutY="97.0" prefHeight="103.0" prefWidth="653.0" />
+      <Label layoutX="42.0" layoutY="72.0" prefHeight="17.0" prefWidth="73.0" text="Empresas" />
+      <Label layoutX="42.0" layoutY="218.0" text="Consultorios" />
+      <ListView fx:id="consultorioListView" layoutX="39.0" layoutY="235.0" prefHeight="103.0" prefWidth="653.0" />
+      <Label layoutX="42.0" layoutY="346.0" text="Marcacoes" />
+      <ListView fx:id="marcacoesListView" layoutX="39.0" layoutY="363.0" prefHeight="103.0" prefWidth="653.0" />
+      <Label fx:id="numMarcacoes" layoutX="42.0" layoutY="473.0" prefHeight="17.0" prefWidth="176.0" text="Numero de marcacoes: " />
+   </children>
+</AnchorPane>

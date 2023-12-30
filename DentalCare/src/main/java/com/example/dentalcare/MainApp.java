@@ -27,7 +27,6 @@ public class MainApp extends Application {
     public static void main(String[] args) {
        launch();
 
-
         for(Admin adm: Repositorio.getRepositorio().getAdmins()){
             System.out.println("Admins");
             System.out.println("User: " + adm.getUtilizador());

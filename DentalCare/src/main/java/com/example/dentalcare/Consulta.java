@@ -13,6 +13,8 @@ public class Consulta implements Serializable {
     private String servico;
     private String especialidade;
 
+    private String empresa;
+
     private String consultorio;
     private EstadoConsulta estadoConsulta;
 
@@ -20,6 +22,14 @@ public class Consulta implements Serializable {
 
     public String getConsultorio() {
         return consultorio;
+    }
+
+    public String getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(String empresa) {
+        this.empresa = empresa;
     }
 
     public void setConsultorio(String consultorio) {

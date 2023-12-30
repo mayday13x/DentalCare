@@ -24,4 +24,17 @@ public class MenuFuncionarioController {
             System.out.println("Erro: " + ex.getMessage());
         }
     }
+
+    public void listarMarcacoesPorEmpresaConsultorio(ActionEvent event){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("listarMarcacoesPorEmpresaConsultorio.fxml"));
+            Scene regCena = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(regCena);
+            stage.setTitle("Consulatar Marcacoes");
+            stage.show();
+        }catch (IOException ex){
+            System.out.println("Erro: " + ex.getMessage());
+        }
+    }
 }
