@@ -82,5 +82,18 @@ public class MenuDonoController {
         }
     }
 
+    public void menuListarMarcacoes(ActionEvent event){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("listarMarcacoesDono.fxml"));
+            Scene regCena = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(regCena);
+            stage.setTitle("Listar Marcacoes - Dono");
+            stage.show();
+        }catch (IOException ex){
+            System.out.println("Erro ao tentar acessar menu listar marcacoes - dono : " + ex.getMessage());
+            ex.printStackTrace();
+        }
+    }
 
 }

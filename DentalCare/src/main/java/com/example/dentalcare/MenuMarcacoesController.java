@@ -132,7 +132,7 @@ public class MenuMarcacoesController  implements Initializable {
                 voltarAtras(event);
 
             }catch (Exception e){
-                System.out.println("Erro ao guardar alteracoes na consulata!" + e.getMessage());
+                System.out.println("Erro ao guardar alteracoes na consulta!" + e.getMessage());
             }
         }
 

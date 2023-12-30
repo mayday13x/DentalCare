@@ -7,11 +7,11 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.MenuDonoController">
    <children>
       <Label layoutX="268.0" layoutY="43.0" text="Menu Dono" />
-      <Button fx:id="criarEmpresa" layoutX="98.0" layoutY="106.0" mnemonicParsing="false" onAction="#menuCriarEmpresa" prefHeight="42.0" prefWidth="108.0" text="Criar empresa" />
+      <Button fx:id="criarEmpresa" layoutX="75.0" layoutY="106.0" mnemonicParsing="false" onAction="#menuCriarEmpresa" prefHeight="42.0" prefWidth="166.0" text="Criar empresa" />
       <Button fx:id="consultar_alterar_dados" layoutX="357.0" layoutY="106.0" mnemonicParsing="false" onAction="#menuConsultarDadosEmpresa" prefHeight="42.0" prefWidth="166.0" text="Consultar/Alterar dados" />
-      <Button fx:id="criarFuncionario" layoutX="98.0" layoutY="200.0" mnemonicParsing="false" onAction="#menuCriarFuncionario" prefHeight="42.0" prefWidth="108.0" text="Criar funcionario" />
+      <Button fx:id="criarFuncionario" layoutX="75.0" layoutY="200.0" mnemonicParsing="false" onAction="#menuCriarFuncionario" prefHeight="42.0" prefWidth="166.0" text="Criar funcionario" />
       <Button fx:id="criarConsultorio" layoutX="357.0" layoutY="200.0" mnemonicParsing="false" onAction="#menuCriarConsultorio" prefHeight="42.0" prefWidth="166.0" text="Criar Consultorio" />
-      <Button fx:id="listarMarcacoes" layoutX="98.0" layoutY="282.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="108.0" text="Listar Marcações" />
+      <Button fx:id="listarMarcacoes" layoutX="75.0" layoutY="282.0" mnemonicParsing="false" onAction="#menuListarMarcacoes" prefHeight="42.0" prefWidth="166.0" text="Listar Marcações" />
       <Button layoutX="357.0" layoutY="282.0" mnemonicParsing="false" onAction="#menuCriarServico" prefHeight="42.0" prefWidth="166.0" text="Criar Servico" />
    </children>
 </AnchorPane>
