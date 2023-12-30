@@ -41,6 +41,21 @@ public class MenuClienteController {
         }
     }
 
+    @FXML
+    private void listarMarcacoes(ActionEvent event){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("listarMarcacoesCliente.fxml"));
+            Scene regCena = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(regCena);
+            stage.setTitle("Listar Marcacoes do cliente");
+            stage.show();
+        }catch (Exception ex){
+            System.out.println("Erro ao tentar acessar menu listar marcacoes: " + ex.getMessage());
+            ex.printStackTrace();
+        }
+    }
+
 
 
 }

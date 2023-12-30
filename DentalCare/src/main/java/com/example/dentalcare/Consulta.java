@@ -12,9 +12,19 @@ public class Consulta implements Serializable {
     private float precoTotal;
     private String servico;
     private String especialidade;
+
+    private String consultorio;
     private EstadoConsulta estadoConsulta;
 
     public Consulta(){}
+
+    public String getConsultorio() {
+        return consultorio;
+    }
+
+    public void setConsultorio(String consultorio) {
+        this.consultorio = consultorio;
+    }
 
     public int getIdConsulta() {
         return idConsulta;
