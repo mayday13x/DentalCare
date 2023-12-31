@@ -71,9 +71,9 @@ public class RegistarController implements Initializable {
             cl.setUtilizador(utilizadorId.getText());
             cl.setPassword(password.getText());
             cl.setNome(nome.getText());
-            cl.setCC(cc.getText());
-            cl.setNIF(nif.getText());
-            cl.setTelefone(telefone.getText());
+            cl.setCC(Integer.parseInt(cc.getText()));
+            cl.setNIF(Integer.parseInt(nif.getText()));
+            cl.setTelefone(Integer.parseInt(telefone.getText()));
             cl.setMorada(morada.getText());
             cl.setLocalidade(localidade.getText());
 
@@ -84,9 +84,9 @@ public class RegistarController implements Initializable {
             dn.setUtilizador(utilizadorId.getText());
             dn.setPassword(password.getText());
             dn.setNome(nome.getText());
-            dn.setCC(cc.getText());
-            dn.setNIF(nif.getText());
-            dn.setTelefone(telefone.getText());
+            dn.setCC(Integer.parseInt(cc.getText()));
+            dn.setNIF(Integer.parseInt(nif.getText()));
+            dn.setTelefone(Integer.parseInt(telefone.getText()));
             dn.setMorada(morada.getText());
             dn.setLocalidade(localidade.getText());
             dn.setEstado(EstadoDonoEmpresa.ATIVADA);

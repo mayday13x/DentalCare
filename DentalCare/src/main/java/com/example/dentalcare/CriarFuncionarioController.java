@@ -89,9 +89,9 @@ public class CriarFuncionarioController implements Initializable {
         fn.setUtilizador(utilizadorId.getText());
         fn.setPassword(password.getText());
         fn.setNome(nome.getText());
-        fn.setCC(cc.getText());
-        fn.setNIF(nif.getText());
-        fn.setTelefone(telefone.getText());
+        fn.setCC(Integer.parseInt(cc.getText()));
+        fn.setNIF(Integer.parseInt(nif.getText()));
+        fn.setTelefone(Integer.parseInt(telefone.getText()));
         fn.setMorada(morada.getText());
         fn.setLocalidade(localidade.getText());
         fn.setProfissao(escolherProfissao.getValue());

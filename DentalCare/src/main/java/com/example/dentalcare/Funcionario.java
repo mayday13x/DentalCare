@@ -7,7 +7,7 @@ public class Funcionario extends Utilizador{
 
     public Funcionario(){}
 
-    public Funcionario(String nome, String CC, String NIF,String telefone, String morada, String localidade,ProfissaoFuncionario profissao,
+    public Funcionario(String nome, int CC, int NIF,int telefone, String morada, String localidade,ProfissaoFuncionario profissao,
                        String utilizador, String password) {
 
         super(nome,CC,NIF,telefone,morada,localidade, utilizador, password);
@@ -15,7 +15,7 @@ public class Funcionario extends Utilizador{
 
     }
 
-    public Funcionario(String nome, String CC, String NIF,String telefone, String morada,String localidade,ProfissaoFuncionario profissao,
+    public Funcionario(String nome, int CC, int NIF,int telefone, String morada,String localidade,ProfissaoFuncionario profissao,
                        String numCarteiraProfissional, String utilizador, String password) {
 
         super(nome,CC,NIF,telefone,morada,localidade, utilizador, password);

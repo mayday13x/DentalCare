@@ -6,7 +6,7 @@ public class Dono extends Utilizador {
 
     public Dono(){}
 
-    public Dono(String nome, String CC, String NIF,String telefone, String morada, String localidade, String utilizador, String password) {
+    public Dono(String nome, int CC, int NIF,int telefone, String morada, String localidade, String utilizador, String password) {
         super(nome, CC,NIF,telefone,morada,localidade, utilizador, password);
     }
 

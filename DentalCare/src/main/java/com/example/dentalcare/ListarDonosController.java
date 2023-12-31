@@ -68,13 +68,13 @@ public class ListarDonosController implements Initializable {
             public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
                 for(Dono dono: Repositorio.getRepositorio().getDonos()){
                     if(DonosListView.getSelectionModel().getSelectedItem().equals(dono.getNome())){
-                        cc.setText(dono.getCC());
+                        cc.setText(String.valueOf(dono.getCC()));
                         localidade.setText(dono.getLocalidade());
                         morada.setText(dono.getMorada());
-                        nif.setText(dono.getNIF());
+                        nif.setText(String.valueOf(dono.getNIF()));
                         nome.setText(dono.getNome());
                         password.setText(dono.getPassword());
-                        telefone.setText(dono.getTelefone());
+                        telefone.setText(String.valueOf(dono.getTelefone()));
                         utilizadorId.setText(dono.getUtilizador());
                     }
 

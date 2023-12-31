@@ -27,7 +27,7 @@ public class MainApp extends Application {
     public static void main(String[] args) {
        launch();
 
-       //Admin admin = new Admin("Admin","123456789", "987654321", "123987654","Hax", "Hax", "admin",  "admin");
+       //Admin admin = new Admin("Admin",123456789, 987654321, 123987654,"Hax", "Hax", "admin",  "admin");
        //Repositorio.getRepositorio().getAdmins().add(admin);
        //Repositorio.getRepositorio().serializar("DentalCare\\src\\main\\resources\\repo\\repositorio.dat");
 

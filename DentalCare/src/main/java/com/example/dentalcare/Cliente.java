@@ -6,7 +6,7 @@ public class Cliente extends Utilizador{
 
     }
 
-    public Cliente(String nome, String CC, String NIF,String telefone, String morada, String localidade, String utilizador, String password) {
+    public Cliente(String nome, int CC, int NIF,int telefone, String morada, String localidade, String utilizador, String password) {
 
         super(nome, CC,NIF,telefone,morada,localidade, utilizador, password);
 

@@ -37,11 +37,11 @@ public class RegistarAdminController {
             admin.setUtilizador(utilizadorId.getText());
             admin.setPassword(password.getText());
             admin.setNome(nome.getText());
-            admin.setTelefone(telefone.getText());
-            admin.setNIF(nif.getText());
+            admin.setTelefone(Integer.parseInt(telefone.getText()));
+            admin.setNIF(Integer.parseInt(nif.getText()));
             admin.setMorada(morada.getText());
             admin.setLocalidade(localidade.getText());
-            admin.setCC(cc.getText());
+            admin.setCC(Integer.parseInt(cc.getText()));
 
             AdminBLL.adicionarAdmion(admin);
         }catch (Exception e){

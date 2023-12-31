@@ -65,13 +65,13 @@ public class ListarFuncionarioController implements Initializable {
             public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
                 for(Funcionario funcionario: Repositorio.getRepositorio().getFuncionarios()){
                     if(FuncionariosListView.getSelectionModel().getSelectedItem().equals(funcionario.getNome())){
-                        cc.setText(funcionario.getCC());
+                        cc.setText(String.valueOf(funcionario.getCC()));
                         localidade.setText(funcionario.getLocalidade());
                         morada.setText(funcionario.getMorada());
-                        nif.setText(funcionario.getNIF());
+                        nif.setText(String.valueOf(funcionario.getNIF()));
                         nome.setText(funcionario.getNome());
                         password.setText(funcionario.getPassword());
-                        telefone.setText(funcionario.getTelefone());
+                        telefone.setText(String.valueOf(funcionario.getTelefone()));
                         utilizadorId.setText(funcionario.getUtilizador());
                     }
                 }

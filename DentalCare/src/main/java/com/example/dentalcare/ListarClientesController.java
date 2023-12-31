@@ -68,13 +68,13 @@ public class ListarClientesController implements Initializable{
             public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
                 for(Cliente cliente: Repositorio.getRepositorio().getClientes()){
                     if(clientesListView.getSelectionModel().getSelectedItem().equals(cliente.getNome())){
-                        cc.setText(cliente.getCC());
+                        cc.setText(String.valueOf(cliente.getCC()));
                         localidade.setText(cliente.getLocalidade());
                         morada.setText(cliente.getMorada());
-                        nif.setText(cliente.getNIF());
+                        nif.setText(String.valueOf(cliente.getNIF()));
                         nome.setText(cliente.getNome());
                         password.setText(cliente.getPassword());
-                        telefone.setText(cliente.getTelefone());
+                        telefone.setText(String.valueOf(cliente.getTelefone()));
                         utilizadorId.setText(cliente.getUtilizador());
                     }
                 }
