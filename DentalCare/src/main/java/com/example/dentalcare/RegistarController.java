@@ -89,6 +89,7 @@ public class RegistarController implements Initializable {
             dn.setTelefone(telefone.getText());
             dn.setMorada(morada.getText());
             dn.setLocalidade(localidade.getText());
+            dn.setEstado(EstadoDonoEmpresa.ATIVADA);
 
             DonoBLL.registarDono(dn);
         }

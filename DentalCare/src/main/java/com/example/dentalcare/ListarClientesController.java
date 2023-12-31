@@ -58,6 +58,7 @@ public class ListarClientesController implements Initializable{
         telefone.setEditable(false);
         utilizadorId.setEditable(false);
 
+
         for(Cliente cliente: Repositorio.getRepositorio().getClientes()){
             clientesListView.getItems().addAll(cliente.getNome());
         }

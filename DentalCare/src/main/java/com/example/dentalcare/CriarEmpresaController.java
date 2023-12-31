@@ -37,6 +37,7 @@ public class CriarEmpresaController {
             emp.setLocalidade(localidadeEmpresa.getText());
             emp.setNumTelefone(telefoneEmpresa.getText());
             emp.setDono(DataSessao.dono);
+            emp.setEstado(EstadoDonoEmpresa.ATIVADA);
 
             EmpresaBLL.criarEmpresa(DataSessao.dono, emp);
             EmpresaBLL.localidaEmpresa(localidadeEmpresa.getText(),emp);

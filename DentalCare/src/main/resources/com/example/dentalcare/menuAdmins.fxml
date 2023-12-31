@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="431.0" prefWidth="635.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.MenuAdminsController">
+<AnchorPane prefHeight="431.0" prefWidth="635.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.MenuAdminsController">
    <children>
       <Label layoutX="273.0" layoutY="44.0" prefHeight="17.0" prefWidth="72.0" text="Menu admin" />
-      <Button layoutX="64.0" layoutY="96.0" mnemonicParsing="false" onAction="#registarAdmins" prefHeight="39.0" prefWidth="124.0" text="Registar Admins" />
-      <Button layoutX="247.0" layoutY="96.0" mnemonicParsing="false" onAction="#listarEmpresas" prefHeight="39.0" prefWidth="124.0" text="Listar Empresas" />
-      <Button layoutX="415.0" layoutY="96.0" mnemonicParsing="false" onAction="#listarClientes" prefHeight="39.0" prefWidth="124.0" text="Listar Clientes" />
-      <Button layoutX="64.0" layoutY="187.0" mnemonicParsing="false" onAction="#listarConsultorio" prefHeight="39.0" prefWidth="124.0" text="Listar Consultorios" />
-      <Button layoutX="247.0" layoutY="187.0" mnemonicParsing="false" onAction="#listarFuncionarios" prefHeight="39.0" prefWidth="124.0" text="Listar Funcionarios" />
-      <Button layoutX="422.0" layoutY="187.0" mnemonicParsing="false" onAction="#listarDonos" prefHeight="39.0" prefWidth="124.0" text="Listar Donos" />
-      <Button layoutX="64.0" layoutY="253.0" mnemonicParsing="false" onAction="#listarServicos" prefHeight="39.0" prefWidth="124.0" text="Listar Servicos" />
-      <Button layoutX="247.0" layoutY="253.0" mnemonicParsing="false" onAction="#listarMarcacoes" prefHeight="39.0" prefWidth="124.0" text="Listar Marcacoes" />
+      <Button layoutX="16.0" layoutY="96.0" mnemonicParsing="false" onAction="#registarAdmins" prefHeight="39.0" prefWidth="172.0" text="Registar Admins" />
+      <Button layoutX="223.0" layoutY="96.0" mnemonicParsing="false" onAction="#listarEmpresas" prefHeight="39.0" prefWidth="172.0" text="Listar Empresas" />
+      <Button layoutX="415.0" layoutY="96.0" mnemonicParsing="false" onAction="#listarClientes" prefHeight="39.0" prefWidth="172.0" text="Listar Clientes" />
+      <Button layoutX="20.0" layoutY="196.0" mnemonicParsing="false" onAction="#listarConsultorio" prefHeight="39.0" prefWidth="172.0" text="Listar Consultorios" />
+      <Button layoutX="227.0" layoutY="196.0" mnemonicParsing="false" onAction="#listarFuncionarios" prefHeight="39.0" prefWidth="172.0" text="Listar Funcionarios" />
+      <Button layoutX="426.0" layoutY="196.0" mnemonicParsing="false" onAction="#listarDonos" prefHeight="39.0" prefWidth="172.0" text="Listar Donos" />
+      <Button layoutX="14.0" layoutY="292.0" mnemonicParsing="false" onAction="#listarServicos" prefHeight="39.0" prefWidth="172.0" text="Listar Servicos" />
+      <Button layoutX="223.0" layoutY="292.0" mnemonicParsing="false" onAction="#listarMarcacoes" prefHeight="39.0" prefWidth="172.0" text="Listar Marcacoes" />
+      <Button layoutX="422.0" layoutY="292.0" mnemonicParsing="false" onAction="#desativarContaDonosEmpresas" prefHeight="39.0" prefWidth="172.0" text="Desativar Donos/Empresas" />
    </children>
 </AnchorPane>

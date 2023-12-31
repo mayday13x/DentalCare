@@ -115,7 +115,7 @@ public class ListarMarcacoesDonoController implements Initializable {
         estadoChoiceBox.getItems().addAll(EstadoConsulta.values());
 
         for(Empresa empresa:Repositorio.getRepositorio().getEmpresas().values()){
-            if(empresa.getDono().equals(DataSessao.dono)){
+            if(empresa.getDono().equals(DataSessao.dono) && empresa.getEstado().equals(EstadoDonoEmpresa.ATIVADA)){
                 empresaListView.getItems().addAll(empresa.getNome());
             }
 

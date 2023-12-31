@@ -61,8 +61,10 @@ public class MarcarConsultaController implements Initializable {
 
 
         for (Empresa empresa : repo.getEmpresas().values()) {
+            if(empresa.getEstado().equals(EstadoDonoEmpresa.ATIVADA)){
+                escolherEmpresa.getItems().addAll(empresa.getNome()); // adiciona as empresas a choicebox
+            }
 
-            escolherEmpresa.getItems().addAll(empresa.getNome()); // adiciona as empresas a choicebox
             List<Consultorio> consultorioList = empresa.getConsultorios();
 
             if (consultorioList != null) {

@@ -49,9 +49,12 @@ public class ListarMarcacoesClienteController implements Initializable {
         estado.setEditable(false);
 
         for(Consulta consulta: Repositorio.getRepositorio().getConsultas()){
-            if(Objects.equals(DataSessao.cliente,consulta.getCliente())){
-                MarcacoesListView.getItems().addAll(consulta.getIdConsulta());
+            for(Empresa empresa: Repositorio.getRepositorio().getEmpresas().values()){
+                if(Objects.equals(DataSessao.cliente,consulta.getCliente()) && empresa.getNome().equals(consulta.getEmpresa()) && empresa.getEstado().equals(EstadoDonoEmpresa.ATIVADA)){
+                    MarcacoesListView.getItems().addAll(consulta.getIdConsulta());
+                }
             }
+
 
         }
         MarcacoesListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Integer>() {

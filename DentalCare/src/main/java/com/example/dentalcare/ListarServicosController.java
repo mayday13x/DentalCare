@@ -41,7 +41,12 @@ public class ListarServicosController implements Initializable {
         idServico.setEditable(false);
 
         for(Servico servico: Repositorio.getRepositorio().getServicos()){
-            servicoListView.getItems().addAll(servico.getNomeServico());
+            for(Empresa empresa: Repositorio.getRepositorio().getEmpresas().values()){
+                if(empresa.getNome().equals(servico.getEmpresa()) && empresa.getEstado().equals(EstadoDonoEmpresa.ATIVADA)){
+                    servicoListView.getItems().addAll(servico.getNomeServico());
+                }
+            }
+
         }
 
         servicoListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {

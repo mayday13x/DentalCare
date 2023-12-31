@@ -36,7 +36,9 @@ public class ListarMarcacoesPorEmpresaConsultorioController implements Initializ
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         for(Empresa empresa:Repositorio.getRepositorio().getEmpresas().values()){
-            empresaListView.getItems().addAll(empresa.getNome());
+            if(empresa.getEstado().equals(EstadoDonoEmpresa.ATIVADA)){
+                empresaListView.getItems().addAll(empresa.getNome());
+            }
         }
 
         empresaListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {

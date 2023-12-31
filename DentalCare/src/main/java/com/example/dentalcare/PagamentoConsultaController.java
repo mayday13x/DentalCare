@@ -35,9 +35,13 @@ public class PagamentoConsultaController implements Initializable {
         idConsulta.setEditable(false);
 
         for(Consulta consulta:Repositorio.getRepositorio().getConsultas()){
-            if(consulta.getCliente().getNome().equals(DataSessao.cliente.getNome())&& consulta.getEstadoConsulta() == EstadoConsulta.NAOPAGA){
-                consultaListView.getItems().addAll(consulta.getIdConsulta());
+            for(Empresa empresa: Repositorio.getRepositorio().getEmpresas().values()){
+                if(consulta.getCliente().getNome().equals(DataSessao.cliente.getNome())
+                        && consulta.getEstadoConsulta() == EstadoConsulta.NAOPAGA && empresa.getNome().equals(consulta.getEmpresa()) && empresa.getEstado().equals(EstadoDonoEmpresa.ATIVADA)){
+                    consultaListView.getItems().addAll(consulta.getIdConsulta());
+                }
             }
+
         }
 
         consultaListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Integer>() {

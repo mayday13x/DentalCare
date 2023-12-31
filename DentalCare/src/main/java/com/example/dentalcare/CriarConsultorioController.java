@@ -44,7 +44,7 @@ public class CriarConsultorioController implements Initializable {
         Repositorio repo = Repositorio.getRepositorio();
 
         for(Empresa empresa: repo.getEmpresas().values()){
-            if(Objects.equals(empresa.getDono().getNome(), DataSessao.dono.getNome())){
+            if(Objects.equals(empresa.getDono().getNome(), DataSessao.dono.getNome()) && empresa.getEstado().equals(EstadoDonoEmpresa.ATIVADA)){
                 escolherEmpresa.getItems().addAll(empresa.getNome());
             }
         }

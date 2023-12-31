@@ -70,7 +70,7 @@ public class CriarFuncionarioController implements Initializable {
         }
 
         for(Empresa empresa: repo.getEmpresas().values()){
-            if(Objects.equals(empresa.getDono().getNome(), DataSessao.dono.getNome())){
+            if(Objects.equals(empresa.getDono().getNome(), DataSessao.dono.getNome()) && empresa.getEstado().equals(EstadoDonoEmpresa.ATIVADA)){
                 escolherEmpresa.getItems().addAll(empresa.getNome());
                 List<Consultorio> consultorioList = empresa.getConsultorios();
                 if(consultorioList != null){

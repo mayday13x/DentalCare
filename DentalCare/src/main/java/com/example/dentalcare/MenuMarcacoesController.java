@@ -73,9 +73,12 @@ public class MenuMarcacoesController  implements Initializable {
 
 
         for(Consulta consulta:Repositorio.getRepositorio().getConsultas()){
-            if(consulta.getFuncionario().equals(DataSessao.funcionario.getNome())){
-                escolherConsultas.getItems().addAll(consulta.getIdConsulta());
+            for(Empresa empresa: Repositorio.getRepositorio().getEmpresas().values()){
+                if(consulta.getFuncionario().equals(DataSessao.funcionario.getNome()) && consulta.getEmpresa().equals(empresa.getNome()) && empresa.getEstado().equals(EstadoDonoEmpresa.ATIVADA)){
+                    escolherConsultas.getItems().addAll(consulta.getIdConsulta());
                 }
+            }
+
             }
             escolherConsultas.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Integer>() {
                 @Override

@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -53,7 +54,7 @@ public class LoginController {
             }
 
             for(Dono dono: Repositorio.getRepositorio().getDonos()){
-                if(utilizador.getText().equals(dono.getUtilizador()) && dono.getPassword().equals(password.getText())){
+                if(utilizador.getText().equals(dono.getUtilizador()) && dono.getPassword().equals(password.getText()) && dono.getEstado().equals(EstadoDonoEmpresa.ATIVADA)){
                     message = false;
                     DataSessao.dono = dono;
                     Parent root = FXMLLoader.load(getClass().getResource("menuDono.fxml"));
@@ -62,6 +63,12 @@ public class LoginController {
                     stage.setScene(regCena);
                     stage.setTitle("Menu Donos");
                     stage.show();
+                }
+                if(utilizador.getText().equals(dono.getUtilizador()) && dono.getPassword().equals(password.getText()) && dono.getEstado().equals(EstadoDonoEmpresa.DESATIVADA)){
+                    Alert alertContaDesativada = new Alert(Alert.AlertType.WARNING);
+                    alertContaDesativada.setTitle("Aviso");
+                    alertContaDesativada.setHeaderText("Conta Desativada");
+                    alertContaDesativada.show();
                 }
             }
 

@@ -12,6 +12,8 @@ public class Empresa implements Serializable {
     private List<Consultorio> consultorios;
     private Dono dono;
 
+    private EstadoDonoEmpresa estado;
+
     public Empresa(){}
 
     public Empresa(String nome, String morada, String localidade, String numTelefone, Dono dono) {
@@ -21,6 +23,15 @@ public class Empresa implements Serializable {
         this.numTelefone = numTelefone;
         this.dono = dono;
         this.consultorios = new ArrayList<>();
+    }
+
+
+    public EstadoDonoEmpresa getEstado() {
+        return estado;
+    }
+
+    public void setEstado(EstadoDonoEmpresa estado) {
+        this.estado = estado;
     }
 
     public String getNome() {
