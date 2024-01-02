@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="451.0" prefWidth="678.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.PagamentoConsultaController">
+<AnchorPane prefHeight="451.0" prefWidth="678.0" style="-fx-background-color: #d8dfe9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.PagamentoConsultaController">
    <children>
       <Label layoutX="298.0" layoutY="41.0" prefHeight="19.0" prefWidth="70.0" text="Pagamentos" />
       <ListView fx:id="consultaListView" layoutX="41.0" layoutY="76.0" prefHeight="158.0" prefWidth="584.0" />
@@ -17,5 +17,6 @@
       <TextField fx:id="estadoConsulta" layoutX="119.0" layoutY="326.0" />
       <Label layoutX="55.0" layoutY="330.0" prefHeight="17.0" prefWidth="49.0" text="Estado" />
       <Button layoutX="591.0" layoutY="402.0" mnemonicParsing="false" onAction="#pagarConsulta" text="Pagar" />
+      <Button layoutX="28.0" layoutY="26.0" mnemonicParsing="false" onAction="#voltarAtras" text="&lt;" />
    </children>
 </AnchorPane>

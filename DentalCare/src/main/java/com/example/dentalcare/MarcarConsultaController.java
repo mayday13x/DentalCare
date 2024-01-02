@@ -154,6 +154,22 @@ public class MarcarConsultaController implements Initializable {
 
     }
 
+    @FXML
+    public void voltarAtras(ActionEvent event) {
+
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("menuCliente.fxml"));
+            Scene regCena = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(regCena);
+            stage.setTitle("Menu Cliente");
+            stage.show();
+        }catch (IOException ex){
+            System.out.println("Erro ao acessar menu cliente: " + ex.getMessage());
+        }
+
+
+    }
 
 
 

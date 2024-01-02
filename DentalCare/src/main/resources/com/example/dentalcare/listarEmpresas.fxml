@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="444.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.ListarEmpresasController">
+<AnchorPane prefHeight="444.0" prefWidth="647.0" style="-fx-background-color: #d8dfe9;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.ListarEmpresasController">
     <children>
         <TextField fx:id="nomeEmpresa" layoutX="112.0" layoutY="232.0" />
         <Label layoutX="223.0" layoutY="25.0" text="Listar empresa" />

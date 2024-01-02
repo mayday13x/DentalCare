@@ -7,7 +7,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="479.0" prefWidth="684.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.MenuMarcacoesController">
+<AnchorPane prefHeight="479.0" prefWidth="684.0" style="-fx-background-color: #d8dfe9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.MenuMarcacoesController">
    <children>
       <Label layoutX="294.0" layoutY="26.0" text="Marcacoes" />
       <ListView fx:id="escolherConsultas" layoutX="31.0" layoutY="52.0" prefHeight="157.0" prefWidth="613.0" />
@@ -31,5 +31,6 @@
       <ChoiceBox fx:id="estadoChoiceBox" layoutX="426.0" layoutY="379.0" prefWidth="150.0" visible="false" />
       <Button fx:id="Guardar" layoutX="501.0" layoutY="431.0" mnemonicParsing="false" onAction="#GuardarAlteracoes" text="Guardar" visible="false" />
       <Button fx:id="Cancelar" layoutX="597.0" layoutY="431.0" mnemonicParsing="false" onAction="#voltarAtras" text="Cancelar" visible="false" />
+      <Button layoutX="19.0" layoutY="14.0" mnemonicParsing="false" onAction="#voltarAtras" prefHeight="25.0" prefWidth="26.0" text="&lt;" />
    </children>
 </AnchorPane>

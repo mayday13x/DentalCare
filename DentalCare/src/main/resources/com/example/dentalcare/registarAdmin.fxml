@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.RegistarAdminController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #d8dfe9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.RegistarAdminController">
     <children>
         <TextField fx:id="utilizadorId" layoutX="110.0" layoutY="112.0" />
         <Label layoutX="252.0" layoutY="24.0" text="Registar Admin" />
@@ -27,20 +27,21 @@
         <Label layoutX="404.0" layoutY="234.0" text="Localidade" />
         <Button layoutX="496.0" layoutY="346.0" mnemonicParsing="false" onAction="#registarAdmin" prefHeight="0.0" prefWidth="59.0" text="Registar" />
         <PasswordField fx:id="password" layoutX="358.0" layoutY="112.0" />
-      <Label fx:id="nifError" layoutX="273.0" layoutY="158.0" text="Deve conter 9 digitos" textFill="RED">
+      <Label fx:id="nifError" layoutX="273.0" layoutY="158.0" text="Deve conter 9 digitos" textFill="RED" visible="false">
          <font>
             <Font size="10.0" />
          </font>
       </Label>
-      <Label fx:id="ccError" layoutX="460.0" layoutY="158.0" text="Deve conter 8 digitos" textFill="RED">
+      <Label fx:id="ccError" layoutX="460.0" layoutY="158.0" text="Deve conter 8 digitos" textFill="RED" visible="false">
          <font>
             <Font size="10.0" />
          </font>
       </Label>
-      <Label fx:id="telefoneError" layoutX="96.0" layoutY="235.0" text="Deve conter 9 digitos" textFill="RED">
+      <Label fx:id="telefoneError" layoutX="96.0" layoutY="235.0" text="Deve conter 9 digitos" textFill="RED" visible="false">
          <font>
             <Font size="10.0" />
          </font>
       </Label>
+      <Button layoutX="16.0" layoutY="12.0" mnemonicParsing="false" onAction="#voltarAtras" text="&lt;" />
     </children>
 </AnchorPane>

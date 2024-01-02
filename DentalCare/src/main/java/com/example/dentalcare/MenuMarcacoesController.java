@@ -141,18 +141,16 @@ public class MenuMarcacoesController  implements Initializable {
 
         public void voltarAtras(ActionEvent event){
             try {
-                Parent root = FXMLLoader.load(getClass().getResource("menuMarcacoes.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("menuFuncionario.fxml"));
                 Scene regCena = new Scene(root);
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 stage.setScene(regCena);
-                stage.setTitle("Consulatar Marcacoes");
+                stage.setTitle("Menu funcionario");
                 stage.show();
             }catch (IOException ex){
-                System.out.println("Erro: " + ex.getMessage());
+                System.out.println("Erro ao acessar menu funcionario: " + ex.getMessage());
             }
         }
-
-
 
         }
 

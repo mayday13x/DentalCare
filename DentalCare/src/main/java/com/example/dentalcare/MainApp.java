@@ -1,14 +1,18 @@
 package com.example.dentalcare;
 
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
-
+import java.io.InputStreamReader;
 
 public class MainApp extends Application {
+
     @Override
     public void start(Stage stage) {
 
@@ -25,7 +29,8 @@ public class MainApp extends Application {
     }
 
     public static void main(String[] args) {
-       launch();
+    launch();
+
 
        //Admin admin = new Admin("Admin",123456789, 987654321, 123987654,"Hax", "Hax", "admin",  "admin");
        //Repositorio.getRepositorio().getAdmins().add(admin);
@@ -81,7 +86,6 @@ public class MainApp extends Application {
             System.out.println("Preco: " + consulta.getPrecoTotal());
             System.out.println("Estado: " + consulta.getEstadoConsulta());
         }
-
-
     }
+
 }
