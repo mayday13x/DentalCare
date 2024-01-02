@@ -5,6 +5,7 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.RegistarAdminController">
     <children>
@@ -14,17 +15,32 @@
         <Label layoutX="356.0" layoutY="85.0" text="Password" />
         <TextField fx:id="nome" layoutX="36.0" layoutY="178.0" />
         <Label layoutX="42.0" layoutY="157.0" text="Nome" />
-        <TextField fx:id="nif" layoutX="226.0" layoutY="178.0" />
-        <TextField fx:id="telefone" layoutX="36.0" layoutY="257.0" />
+        <TextField fx:id="nif" layoutX="226.0" layoutY="178.0" onKeyTyped="#verifyNif" />
+        <TextField fx:id="telefone" layoutX="36.0" layoutY="257.0" onKeyTyped="#verifyTelefone" />
         <TextField fx:id="morada" layoutX="226.0" layoutY="257.0" />
-        <TextField fx:id="cc" layoutX="406.0" layoutY="178.0" />
+        <TextField fx:id="cc" layoutX="406.0" layoutY="178.0" onKeyTyped="#verifyCC" />
         <TextField fx:id="localidade" layoutX="406.0" layoutY="257.0" />
         <Label layoutX="406.0" layoutY="157.0" text="CC" />
-        <Label layoutX="42.0" layoutY="234.0" text="Telefone" />
+        <Label layoutX="36.0" layoutY="234.0" text="Telefone" />
         <Label layoutX="233.0" layoutY="157.0" prefHeight="8.0" prefWidth="19.0" text="NIF" />
         <Label layoutX="231.0" layoutY="234.0" text="Morada" />
         <Label layoutX="404.0" layoutY="234.0" text="Localidade" />
         <Button layoutX="496.0" layoutY="346.0" mnemonicParsing="false" onAction="#registarAdmin" prefHeight="0.0" prefWidth="59.0" text="Registar" />
         <PasswordField fx:id="password" layoutX="358.0" layoutY="112.0" />
+      <Label fx:id="nifError" layoutX="273.0" layoutY="158.0" text="Deve conter 9 digitos" textFill="RED">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <Label fx:id="ccError" layoutX="460.0" layoutY="158.0" text="Deve conter 8 digitos" textFill="RED">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <Label fx:id="telefoneError" layoutX="96.0" layoutY="235.0" text="Deve conter 9 digitos" textFill="RED">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

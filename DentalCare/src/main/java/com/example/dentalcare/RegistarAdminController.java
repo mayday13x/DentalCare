@@ -2,10 +2,16 @@ package com.example.dentalcare;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 
-public class RegistarAdminController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class RegistarAdminController implements Initializable {
     @FXML
     private TextField cc;
 
@@ -30,25 +36,105 @@ public class RegistarAdminController {
     @FXML
     private TextField utilizadorId;
 
+    @FXML
+    private Label nifError;
+
+    @FXML
+    private Label telefoneError;
+
+    @FXML
+    private Label ccError;
+
+    boolean ccEstado = false;
+
+    boolean nifEstado = false;
+
+    boolean telefoneEstado = false;
+
     public void registarAdmin(ActionEvent event){
-        try {
-            Admin admin = new Admin();
 
-            admin.setUtilizador(utilizadorId.getText());
-            admin.setPassword(password.getText());
-            admin.setNome(nome.getText());
-            admin.setTelefone(Integer.parseInt(telefone.getText()));
-            admin.setNIF(Integer.parseInt(nif.getText()));
-            admin.setMorada(morada.getText());
-            admin.setLocalidade(localidade.getText());
-            admin.setCC(Integer.parseInt(cc.getText()));
+        if(telefoneEstado && ccEstado && nifEstado){
+            try {
+                Admin admin = new Admin();
 
-            AdminBLL.adicionarAdmion(admin);
-        }catch (Exception e){
-            System.out.println("Erro ao tentar registar o admin: " + e.getMessage());
+                admin.setUtilizador(utilizadorId.getText());
+                admin.setPassword(password.getText());
+                admin.setNome(nome.getText());
+                admin.setTelefone(Integer.parseInt(telefone.getText()));
+                admin.setNIF(Integer.parseInt(nif.getText()));
+                admin.setMorada(morada.getText());
+                admin.setLocalidade(localidade.getText());
+                admin.setCC(Integer.parseInt(cc.getText()));
+
+                AdminBLL.adicionarAdmion(admin);
+            }catch (Exception e){
+                System.out.println("Erro ao tentar registar o admin: " + e.getMessage());
+            }
         }
 
 
+
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb){
+        ccError.setVisible(false);
+        nifError.setVisible(false);
+        telefoneError.setVisible(false);
+    }
+
+    @FXML
+    void verifyNif(KeyEvent event){
+        String text = nif.getText();
+        if(text.matches("[0-9]*")){
+            nifError.setVisible(false);
+            nifEstado = true;
+
+            if(text.length() != 9){
+                nifError.setVisible(true);
+                nifEstado = false;
+            }
+        }else {
+            nifError.setVisible(true);
+            nifEstado = false;
+        }
+    }
+
+    @FXML
+    void verifyCC(KeyEvent event){
+        String text = cc.getText();
+
+        if(text.matches("[0-9]*")){
+            ccError.setVisible(false);
+            ccEstado = true;
+
+            if(text.length() != 8){
+                ccError.setVisible(true);
+                ccEstado = false;
+            }
+        }
+        else {
+            ccError.setVisible(true);
+            ccEstado = false;
+        }
+    }
+
+    @FXML
+    void verifyTelefone(KeyEvent event){
+        String text = telefone.getText();
+
+        if(text.matches("[0-9]*")){
+            telefoneError.setVisible(false);
+            telefoneEstado = true;
+
+            if(text.length() != 9){
+                telefoneError.setVisible(true);
+                telefoneEstado = false;
+            }
+        }else {
+            telefoneError.setVisible(true);
+            telefoneEstado = false;
+        }
     }
 
 }
