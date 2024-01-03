@@ -134,6 +134,19 @@ public class MenuAdminsController {
         }
     }
 
+    public void valoresPagosClientes(ActionEvent event){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("valoresPagosClientes.fxml"));
+            Scene regCena = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(regCena);
+            stage.setTitle("Valores pagos por clientes");
+            stage.show();
+        }catch (IOException ex){
+            System.out.println("Erro ao acessar o menu de valores pagos por clientes: " + ex.getMessage());
+        }
+    }
+
     @FXML
     public void voltarAtras(ActionEvent event) {
 

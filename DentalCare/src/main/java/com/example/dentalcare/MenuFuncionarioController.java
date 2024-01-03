@@ -39,6 +39,8 @@ public class MenuFuncionarioController {
         }
     }
 
+
+
     @FXML
     public void voltarAtras(ActionEvent event) {
 
