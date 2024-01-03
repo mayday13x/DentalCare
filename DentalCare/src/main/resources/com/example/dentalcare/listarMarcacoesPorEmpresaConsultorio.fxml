@@ -4,19 +4,19 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="516.0" prefWidth="730.0" style="-fx-background-color: #d8dfe9;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.ListarMarcacoesPorEmpresaConsultorioController">
+<AnchorPane prefHeight="477.0" prefWidth="605.0" style="-fx-background-color: #d8dfe9;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.ListarMarcacoesPorEmpresaConsultorioController">
    <children>
-      <Label alignment="CENTER" layoutX="225.0" layoutY="36.0" text="Listar Marcacoes por empresa e consultorio">
+      <Label alignment="CENTER" layoutX="148.0" layoutY="26.0" text="Listar Marcacoes por empresa e consultorio">
          <font>
             <Font size="15.0" />
          </font></Label>
-      <ListView fx:id="empresaListView" layoutX="42.0" layoutY="97.0" prefHeight="103.0" prefWidth="653.0" />
-      <Label layoutX="42.0" layoutY="72.0" prefHeight="17.0" prefWidth="73.0" text="Empresas" />
-      <Label layoutX="42.0" layoutY="218.0" text="Consultorios" />
-      <ListView fx:id="consultorioListView" layoutX="39.0" layoutY="235.0" prefHeight="103.0" prefWidth="653.0" />
-      <Label layoutX="42.0" layoutY="346.0" text="Marcacoes" />
-      <ListView fx:id="marcacoesListView" layoutX="39.0" layoutY="363.0" prefHeight="103.0" prefWidth="653.0" />
-      <Label fx:id="numMarcacoes" layoutX="42.0" layoutY="473.0" prefHeight="17.0" prefWidth="176.0" text="Numero de marcacoes: " />
-      <Button layoutX="27.0" layoutY="24.0" mnemonicParsing="false" onAction="#voltarAtras" text="&lt;" />
+      <ListView fx:id="empresaListView" layoutX="39.0" layoutY="77.0" prefHeight="95.0" prefWidth="505.0" />
+      <Label layoutX="39.0" layoutY="60.0" prefHeight="17.0" prefWidth="73.0" text="Empresas" />
+      <Label layoutX="42.0" layoutY="189.0" text="Consultorios" />
+      <ListView fx:id="consultorioListView" layoutX="40.0" layoutY="206.0" prefHeight="95.0" prefWidth="505.0" />
+      <Label layoutX="42.0" layoutY="321.0" text="Marcacoes" />
+      <ListView fx:id="marcacoesListView" layoutX="39.0" layoutY="338.0" prefHeight="95.0" prefWidth="505.0" />
+      <Label fx:id="numMarcacoes" layoutX="42.0" layoutY="433.0" prefHeight="17.0" prefWidth="176.0" text="Numero de marcacoes: " />
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#voltarAtras" text="&lt;" />
    </children>
 </AnchorPane>

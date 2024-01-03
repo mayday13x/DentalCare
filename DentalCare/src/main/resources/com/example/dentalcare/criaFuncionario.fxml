@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="463.0" prefWidth="664.0" style="-fx-background-color: #d8dfe9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.CriarFuncionarioController">
+<AnchorPane prefHeight="477.0" prefWidth="605.0" style="-fx-background-color: #d8dfe9;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.CriarFuncionarioController">
     <children>
         <TextField fx:id="utilizadorId" layoutX="42.0" layoutY="112.0" />
         <Label layoutX="252.0" layoutY="24.0" text="Registar Funcionario" />
@@ -20,13 +16,13 @@
         <TextField fx:id="telefone" layoutX="421.0" layoutY="178.0" onKeyTyped="#verifyTelefone" />
         <TextField fx:id="morada" layoutX="226.0" layoutY="257.0" />
         <TextField fx:id="cc" layoutX="232.0" layoutY="178.0" onKeyTyped="#verifyCC" />
-        <TextField fx:id="localidade" layoutX="406.0" layoutY="257.0" />
+        <TextField fx:id="localidade" layoutX="406.0" layoutY="257.0" prefHeight="25.0" prefWidth="163.0" />
         <Label layoutX="236.0" layoutY="157.0" text="CC" />
         <Label layoutX="421.0" layoutY="157.0" text="Telefone" />
         <Label layoutX="42.0" layoutY="156.0" prefHeight="8.0" prefWidth="19.0" text="NIF" />
         <Label layoutX="231.0" layoutY="234.0" text="Morada" />
         <Label layoutX="404.0" layoutY="234.0" text="Localidade" />
-        <Button layoutX="555.0" layoutY="412.0" mnemonicParsing="false" onAction="#registarFuncionario" prefHeight="0.0" prefWidth="59.0" text="Registar" />
+        <Button layoutX="481.0" layoutY="412.0" mnemonicParsing="false" onAction="#registarFuncionario" prefHeight="0.0" prefWidth="59.0" text="Registar" />
         <Label layoutX="28.0" layoutY="374.0" text="Empresa" />
         <ChoiceBox fx:id="escolherEmpresa" layoutX="86.0" layoutY="370.0" prefWidth="150.0" />
         <PasswordField fx:id="password" layoutX="232.0" layoutY="112.0" />

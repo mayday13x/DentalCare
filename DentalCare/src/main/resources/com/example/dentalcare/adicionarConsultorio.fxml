@@ -6,22 +6,23 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #d8dfe9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.CriarConsultorioController">
+<AnchorPane prefHeight="477.0" prefWidth="605.0" style="-fx-background-color: #d8dfe9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.CriarConsultorioController">
     <children>
         <Label layoutX="247.0" layoutY="24.0" text="Criar consultorio" />
-        <ChoiceBox fx:id="escolherEmpresa" layoutX="127.0" layoutY="105.0" prefWidth="150.0" />
-        <Label layoutX="58.0" layoutY="109.0" text="Empresa" />
-        <TextField fx:id="moradaConsultorio" layoutX="128.0" layoutY="153.0" />
-        <Label layoutX="69.0" layoutY="69.0" text="Nome" />
-        <TextField fx:id="localidadeConsultorio" layoutX="128.0" layoutY="200.0" />
-        <Label layoutX="54.0" layoutY="245.0" text="Telefone" />
-        <ChoiceBox fx:id="especialidadeConsultorio" layoutX="127.0" layoutY="279.0" prefWidth="150.0" />
-        <Label layoutX="38.0" layoutY="283.0" text="Especialidade" />
-        <Label layoutX="61.0" layoutY="204.0" text="Localidade" />
-        <TextField fx:id="telefoneConsultorio" layoutX="127.0" layoutY="241.0" />
-        <Button layoutX="146.0" layoutY="334.0" mnemonicParsing="false" onAction="#criarConsulturio" prefHeight="25.0" prefWidth="57.0" text="Criar" />
-      <TextField fx:id="nomeConsultorio" layoutX="127.0" layoutY="65.0" />
-      <Label layoutX="69.0" layoutY="157.0" text="morada" />
+        <ChoiceBox fx:id="escolherEmpresa" layoutX="139.0" layoutY="148.0" prefHeight="25.0" prefWidth="365.0" />
+        <Label layoutX="71.0" layoutY="152.0" text="Empresa" />
+        <TextField fx:id="moradaConsultorio" layoutX="139.0" layoutY="196.0" prefHeight="25.0" prefWidth="365.0" />
+        <Label layoutX="78.0" layoutY="104.0" text="Nome" />
+        <TextField fx:id="localidadeConsultorio" layoutX="139.0" layoutY="243.0" prefHeight="25.0" prefWidth="365.0" />
+        <Label layoutX="71.0" layoutY="301.0" text="Telefone" />
+        <ChoiceBox fx:id="especialidadeConsultorio" layoutX="139.0" layoutY="344.0" prefHeight="25.0" prefWidth="365.0" />
+        <Label layoutX="42.0" layoutY="348.0" text="Especialidade" />
+        <Label layoutX="73.0" layoutY="247.0" text="Localidade" />
+        <TextField fx:id="telefoneConsultorio" layoutX="139.0" layoutY="297.0" onKeyTyped="#verifyTelefone" prefHeight="25.0" prefWidth="365.0" />
+        <Button layoutX="526.0" layoutY="430.0" mnemonicParsing="false" onAction="#criarConsulturio" prefHeight="25.0" prefWidth="57.0" text="Criar" />
+      <TextField fx:id="nomeConsultorio" layoutX="139.0" layoutY="100.0" prefHeight="25.0" prefWidth="365.0" />
+      <Label layoutX="74.0" layoutY="200.0" text="morada" />
       <Button layoutX="32.0" layoutY="20.0" mnemonicParsing="false" onAction="#voltarAtras" text="&lt;" />
+      <Label fx:id="telefoneError" layoutX="139.0" layoutY="280.0" text="Deve conter 9 digitos" textFill="RED" />
     </children>
 </AnchorPane>

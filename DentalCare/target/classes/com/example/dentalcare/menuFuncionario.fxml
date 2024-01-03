@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #d8dfe9;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.MenuFuncionarioController">
+<AnchorPane prefHeight="477.0" prefWidth="605.0" style="-fx-background-color: #d8dfe9;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.MenuFuncionarioController">
    <children>
       <Label layoutX="225.0" layoutY="31.0" prefHeight="17.0" prefWidth="102.0" text="Menu funcionario" />
       <Button layoutX="54.0" layoutY="89.0" mnemonicParsing="false" onAction="#MenuMarcacoes" prefHeight="43.0" prefWidth="102.0" text="Marcaçoes" />

@@ -1,44 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="548.0" prefWidth="778.0" style="-fx-background-color: #d8dfe9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.ListarMarcacoesDonoController">
+<AnchorPane prefHeight="477.0" prefWidth="605.0" style="-fx-background-color: #d8dfe9;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.ListarMarcacoesDonoController">
     <children>
-        <Label alignment="CENTER" layoutX="239.0" layoutY="39.0" text="Listar/Alterar dados de marcacoes ">
+        <Label alignment="CENTER" layoutX="232.0" layoutY="26.0" text="Listar/Alterar dados de marcacoes ">
             <font>
                 <Font size="15.0" />
             </font></Label>
-        <ListView fx:id="empresaListView" layoutX="42.0" layoutY="97.0" prefHeight="103.0" prefWidth="653.0" />
-        <Label fx:id="EmpresasText" layoutX="42.0" layoutY="72.0" prefHeight="17.0" prefWidth="73.0" text="Empresas" />
-        <Label fx:id="ConsultoriosText" layoutX="42.0" layoutY="218.0" text="Consultorios" />
-        <ListView fx:id="consultorioListView" layoutX="39.0" layoutY="235.0" prefHeight="103.0" prefWidth="653.0" />
-        <Label fx:id="MarcacoesText" layoutX="42.0" layoutY="346.0" text="Marcacoes" />
-        <ListView fx:id="marcacoesListView" layoutX="39.0" layoutY="363.0" prefHeight="103.0" prefWidth="653.0" />
-      <Button fx:id="Alterar" layoutX="673.0" layoutY="500.0" mnemonicParsing="false" onAction="#alterarDadosMarcacao" prefHeight="25.0" prefWidth="67.0" text="Alterar" />
-      <Button layoutX="24.0" layoutY="24.0" mnemonicParsing="false" onAction="#voltarAtras" text="&lt;" />
-        <Label fx:id="clienteText" layoutX="31.0" layoutY="121.0" text="Cliente" visible="false" />
-        <Label fx:id="ServicoText" layoutX="33.0" layoutY="176.0" prefHeight="17.0" prefWidth="85.0" text="Serviço" visible="false" />
-        <Label fx:id="FuncionarioText" layoutX="25.0" layoutY="241.0" prefHeight="17.0" prefWidth="85.0" text="Funcionario" visible="false" />
-        <Label fx:id="DataText" layoutX="389.0" layoutY="121.0" prefHeight="17.0" prefWidth="85.0" text="Data Consulta" visible="false" />
-        <TextField fx:id="precoTotal" layoutX="493.0" layoutY="295.0" prefHeight="25.0" prefWidth="180.0" visible="false" />
-        <TextField fx:id="especialidadeConsultorio" layoutX="493.0" layoutY="180.0" prefHeight="25.0" prefWidth="180.0" visible="false" />
-        <Label fx:id="EspecialidadeText" layoutX="389.0" layoutY="184.0" text="Especialidade" visible="false" />
-        <Label fx:id="PrecoText" layoutX="389.0" layoutY="299.0" text="Preco" visible="false" />
-        <TextField fx:id="cliente" layoutX="132.0" layoutY="117.0" prefHeight="25.0" prefWidth="180.0" visible="false" />
-        <TextField fx:id="Servico" layoutX="132.0" layoutY="180.0" prefHeight="25.0" prefWidth="180.0" visible="false" />
-        <TextField fx:id="Funcionario" layoutX="132.0" layoutY="237.0" prefHeight="25.0" prefWidth="180.0" visible="false" />
-        <TextField fx:id="dataMarcada" layoutX="493.0" layoutY="117.0" prefHeight="25.0" prefWidth="180.0" visible="false" />
-        <Label fx:id="EstadoText" layoutX="26.0" layoutY="299.0" prefHeight="17.0" prefWidth="46.0" text="Estado" visible="false" />
-      <ChoiceBox fx:id="estadoChoiceBox" layoutX="132.0" layoutY="295.0" prefHeight="25.0" prefWidth="180.0" visible="false" />
-      <Button fx:id="Cancelar" layoutX="681.0" layoutY="500.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" visible="false" />
-      <Button fx:id="Confirmar" layoutX="583.0" layoutY="500.0" mnemonicParsing="false" onAction="#confirmar" text="Confirmar" visible="false" />
-      <TextField fx:id="horaConsulta" layoutX="493.0" layoutY="237.0" prefHeight="25.0" prefWidth="180.0" visible="false" />
-      <Label fx:id="HoraText" layoutX="383.0" layoutY="241.0" prefHeight="17.0" prefWidth="85.0" text="Hora Conuslta" visible="false" />
+        <ListView fx:id="empresaListView" layoutX="40.0" layoutY="79.0" prefHeight="103.0" prefWidth="653.0" />
+        <Label fx:id="EmpresasText" layoutX="40.0" layoutY="54.0" prefHeight="17.0" prefWidth="73.0" text="Empresas" />
+        <Label fx:id="ConsultoriosText" layoutX="40.0" layoutY="200.0" text="Consultorios" />
+        <ListView fx:id="consultorioListView" layoutX="37.0" layoutY="217.0" prefHeight="103.0" prefWidth="653.0" />
+        <Label fx:id="MarcacoesText" layoutX="40.0" layoutY="328.0" text="Marcacoes" />
+        <ListView fx:id="marcacoesListView" layoutX="37.0" layoutY="345.0" prefHeight="103.0" prefWidth="653.0" />
+      <Button fx:id="Alterar" layoutX="620.0" layoutY="464.0" mnemonicParsing="false" onAction="#alterarDadosMarcacao" prefHeight="25.0" prefWidth="67.0" text="Alterar" />
+      <Button layoutX="12.0" layoutY="14.0" mnemonicParsing="false" onAction="#voltarAtras" text="&lt;" />
+        <Label fx:id="clienteText" layoutX="29.0" layoutY="103.0" text="Cliente" visible="false" />
+        <Label fx:id="ServicoText" layoutX="31.0" layoutY="158.0" prefHeight="17.0" prefWidth="85.0" text="Serviço" visible="false" />
+        <Label fx:id="FuncionarioText" layoutX="23.0" layoutY="223.0" prefHeight="17.0" prefWidth="85.0" text="Funcionario" visible="false" />
+        <Label fx:id="DataText" layoutX="387.0" layoutY="103.0" prefHeight="17.0" prefWidth="85.0" text="Data Consulta" visible="false" />
+        <TextField fx:id="precoTotal" layoutX="491.0" layoutY="277.0" prefHeight="25.0" prefWidth="180.0" visible="false" />
+        <TextField fx:id="especialidadeConsultorio" layoutX="491.0" layoutY="162.0" prefHeight="25.0" prefWidth="180.0" visible="false" />
+        <Label fx:id="EspecialidadeText" layoutX="387.0" layoutY="166.0" text="Especialidade" visible="false" />
+        <Label fx:id="PrecoText" layoutX="387.0" layoutY="281.0" text="Preco" visible="false" />
+        <TextField fx:id="cliente" layoutX="130.0" layoutY="99.0" prefHeight="25.0" prefWidth="180.0" visible="false" />
+        <TextField fx:id="Servico" layoutX="130.0" layoutY="162.0" prefHeight="25.0" prefWidth="180.0" visible="false" />
+        <TextField fx:id="Funcionario" layoutX="130.0" layoutY="219.0" prefHeight="25.0" prefWidth="180.0" visible="false" />
+        <TextField fx:id="dataMarcada" layoutX="491.0" layoutY="99.0" prefHeight="25.0" prefWidth="180.0" visible="false" />
+        <Label fx:id="EstadoText" layoutX="24.0" layoutY="281.0" prefHeight="17.0" prefWidth="46.0" text="Estado" visible="false" />
+      <ChoiceBox fx:id="estadoChoiceBox" layoutX="130.0" layoutY="277.0" prefHeight="25.0" prefWidth="180.0" visible="false" />
+      <Button fx:id="Cancelar" layoutX="653.0" layoutY="476.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" visible="false" />
+      <Button fx:id="Confirmar" layoutX="568.0" layoutY="476.0" mnemonicParsing="false" onAction="#confirmar" text="Confirmar" visible="false" />
+      <TextField fx:id="horaConsulta" layoutX="491.0" layoutY="219.0" prefHeight="25.0" prefWidth="180.0" visible="false" />
+      <Label fx:id="HoraText" layoutX="381.0" layoutY="223.0" prefHeight="17.0" prefWidth="85.0" text="Hora Conuslta" visible="false" />
     </children>
 </AnchorPane>
