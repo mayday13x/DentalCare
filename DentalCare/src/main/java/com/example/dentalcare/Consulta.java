@@ -18,7 +18,17 @@ public class Consulta implements Serializable {
     private String consultorio;
     private EstadoConsulta estadoConsulta;
 
+    private String horaConsulta;
+
     public Consulta(){}
+
+    public String getHoraConsulta() {
+        return horaConsulta;
+    }
+
+    public void setHoraConsulta(String horaConsulta) {
+        this.horaConsulta = horaConsulta;
+    }
 
     public String getConsultorio() {
         return consultorio;

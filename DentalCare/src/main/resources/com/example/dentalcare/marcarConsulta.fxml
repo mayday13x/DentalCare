@@ -20,11 +20,13 @@
       <ChoiceBox fx:id="escolherFuncionario" layoutX="141.0" layoutY="233.0" prefWidth="150.0" />
       <Label layoutX="57.0" layoutY="237.0" prefHeight="17.0" prefWidth="85.0" text="Funcionario" />
       <Label layoutX="46.0" layoutY="278.0" prefHeight="17.0" prefWidth="85.0" text="Data Consulta" />
-      <Button layoutX="62.0" layoutY="374.0" mnemonicParsing="false" onAction="#MarcarConsulta" text="Marcar" />
+      <Button layoutX="62.0" layoutY="395.0" mnemonicParsing="false" onAction="#MarcarConsulta" text="Marcar" />
       <TextField fx:id="precoTotal" layoutX="418.0" layoutY="137.0" />
       <TextField fx:id="especialidadeConsultorio" layoutX="418.0" layoutY="89.0" />
       <Label layoutX="333.0" layoutY="93.0" text="Especialidade" />
       <Label layoutX="346.0" layoutY="141.0" text="Preco" />
-      <Button layoutX="14.0" layoutY="26.0" mnemonicParsing="false" text="&lt;" />
+      <Button layoutX="14.0" layoutY="26.0" mnemonicParsing="false" onAction="#voltarAtras" text="&lt;" />
+      <ChoiceBox fx:id="horarioConsulta" layoutX="141.0" layoutY="317.0" prefWidth="150.0" />
+      <Label layoutX="49.0" layoutY="321.0" text="Horario" />
    </children>
 </AnchorPane>

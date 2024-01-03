@@ -85,6 +85,7 @@ public class MainApp extends Application {
             System.out.println("Funcionario : " + consulta.getFuncionario());
             System.out.println("Preco: " + consulta.getPrecoTotal());
             System.out.println("Estado: " + consulta.getEstadoConsulta());
+            System.out.println("Hora: " + consulta.getHoraConsulta());
         }
     }
 

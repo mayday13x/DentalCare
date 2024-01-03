@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.ListarMarcacoesClienteController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #d8dfe9;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.ListarMarcacoesClienteController">
     <children>
         <Label layoutX="229.0" layoutY="33.0" text="Listar consulta" />
         <Label layoutX="47.0" layoutY="242.0" prefHeight="17.0" prefWidth="85.0" text="Serviço" />

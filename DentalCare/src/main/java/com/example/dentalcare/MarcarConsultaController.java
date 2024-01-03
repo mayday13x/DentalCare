@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.*;
 
 public class MarcarConsultaController implements Initializable {
@@ -41,12 +42,29 @@ public class MarcarConsultaController implements Initializable {
     @FXML
     private DatePicker escolherData;
 
+    @FXML
+    private ChoiceBox<String> horarioConsulta;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
         Repositorio repo = Repositorio.getRepositorio();
         especialidadeConsultorio.setEditable(false);
         precoTotal.setEditable(false);
+
+        escolherData.valueProperty().addListener(new ChangeListener<LocalDate>() {
+            @Override
+            public void changed(ObservableValue<? extends LocalDate> observableValue, LocalDate localDate, LocalDate t1) {
+                horarioConsulta.getItems().clear();
+                horarioConsulta.getItems().addAll("9:00","10:00","11:00","12:00","14:00","15:00","16:00","17:00");
+                for(Consulta consulta: Repositorio.getRepositorio().getConsultas()){
+                    if(consulta.getDataConsulta().equals(escolherData.getValue()) && consulta.getFuncionario().equals(escolherFuncionario.getValue())){
+                        String itemaRemover = consulta.getHoraConsulta();
+                        horarioConsulta.getItems().remove(itemaRemover);
+                    }
+                }
+            }
+        });
 
         Servico.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
@@ -112,6 +130,7 @@ public class MarcarConsultaController implements Initializable {
             consulta.setEstadoConsulta(EstadoConsulta.NAOPAGA);
             consulta.setConsultorio(escolherConsultorio.getValue());
             consulta.setEmpresa(escolherEmpresa.getValue());
+            consulta.setHoraConsulta(horarioConsulta.getValue());
 
             for(Empresa empresa: Repositorio.getRepositorio().getEmpresas().values()){
                 if(empresa.getNome().equals(escolherEmpresa.getValue())){

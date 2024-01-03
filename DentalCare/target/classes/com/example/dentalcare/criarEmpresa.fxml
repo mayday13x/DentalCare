@@ -5,17 +5,18 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.CriarEmpresaController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #d8dfe9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.CriarEmpresaController">
    <children>
-      <TextField fx:id="nomeEmpresa" layoutX="112.0" layoutY="98.0" />
-      <Label layoutX="286.0" layoutY="30.0" text="Criar empresa" />
+      <TextField fx:id="nomeEmpresa" layoutX="112.0" layoutY="98.0" prefHeight="25.0" prefWidth="436.0" />
+      <Label layoutX="263.0" layoutY="32.0" text="Criar empresa" />
       <Label layoutX="63.0" layoutY="102.0" text="Nome" />
       <Label layoutX="58.0" layoutY="150.0" text="Morada" />
-      <TextField fx:id="moradaEmpresa" layoutX="112.0" layoutY="146.0" />
+      <TextField fx:id="moradaEmpresa" layoutX="112.0" layoutY="146.0" prefHeight="25.0" prefWidth="436.0" />
       <Label layoutX="51.0" layoutY="200.0" text="Localidade" />
-      <TextField fx:id="localidadeEmpresa" layoutX="112.0" layoutY="196.0" />
+      <TextField fx:id="localidadeEmpresa" layoutX="112.0" layoutY="196.0" prefHeight="25.0" prefWidth="436.0" />
       <Label layoutX="51.0" layoutY="244.0" text="Telefone" />
-      <TextField fx:id="telefoneEmpresa" layoutX="112.0" layoutY="240.0" />
-      <Button layoutX="160.0" layoutY="318.0" mnemonicParsing="false" onAction="#criarEmpresa" prefHeight="26.0" prefWidth="63.0" text="Criar" />
+      <TextField fx:id="telefoneEmpresa" layoutX="112.0" layoutY="240.0" prefHeight="25.0" prefWidth="436.0" />
+      <Button layoutX="485.0" layoutY="350.0" mnemonicParsing="false" onAction="#criarEmpresa" prefHeight="26.0" prefWidth="63.0" text="Criar" />
+      <Button layoutX="25.0" layoutY="28.0" mnemonicParsing="false" onAction="#voltarAtras" text="&lt;" />
    </children>
 </AnchorPane>
