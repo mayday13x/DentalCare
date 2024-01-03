@@ -42,6 +42,9 @@ public class ListarMarcacoesController implements Initializable {
     @FXML
     private TextField estado;
 
+    @FXML
+    private TextField horaConsulta;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -52,6 +55,7 @@ public class ListarMarcacoesController implements Initializable {
         especialidadeConsultorio.setEditable(false);
         precoTotal.setEditable(false);
         estado.setEditable(false);
+        horaConsulta.setEditable(false);
 
         for(Consulta consulta: Repositorio.getRepositorio().getConsultas()){
             MarcacoesListView.getItems().addAll(consulta.getIdConsulta());
@@ -69,6 +73,7 @@ public class ListarMarcacoesController implements Initializable {
                         especialidadeConsultorio.setText(consulta.getEspecialidade());
                         precoTotal.setText(String.valueOf(consulta.getPrecoTotal()));
                         estado.setText(String.valueOf(consulta.getEstadoConsulta()));
+                        horaConsulta.setText(consulta.getHoraConsulta());
                     }
                 }
             }

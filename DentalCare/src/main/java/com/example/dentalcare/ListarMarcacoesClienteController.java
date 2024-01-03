@@ -39,6 +39,9 @@ public class ListarMarcacoesClienteController implements Initializable {
     @FXML
     private TextField precoTotal;
 
+    @FXML
+    private TextField horaConsulta;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Funcionario.setEditable(false);
@@ -47,6 +50,7 @@ public class ListarMarcacoesClienteController implements Initializable {
         especialidadeConsultorio.setEditable(false);
         precoTotal.setEditable(false);
         estado.setEditable(false);
+        horaConsulta.setEditable(false);
 
         for(Consulta consulta: Repositorio.getRepositorio().getConsultas()){
             for(Empresa empresa: Repositorio.getRepositorio().getEmpresas().values()){
@@ -68,6 +72,7 @@ public class ListarMarcacoesClienteController implements Initializable {
                         especialidadeConsultorio.setText(consulta.getEspecialidade());
                         precoTotal.setText(String.valueOf(consulta.getPrecoTotal()));
                         estado.setText(String.valueOf(consulta.getEstadoConsulta()));
+                        horaConsulta.setText(consulta.getHoraConsulta());
                     }
                 }
             }

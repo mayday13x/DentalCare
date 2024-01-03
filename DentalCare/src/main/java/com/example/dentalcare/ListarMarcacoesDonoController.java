@@ -88,6 +88,12 @@ public class ListarMarcacoesDonoController implements Initializable {
     @FXML
     private TextField precoTotal;
 
+    @FXML
+    private TextField horaConsulta;
+
+    @FXML
+    private Label HoraText;
+
 
     public void voltarAtras(ActionEvent event){
         try {
@@ -110,6 +116,7 @@ public class ListarMarcacoesDonoController implements Initializable {
         dataMarcada.setEditable(false);
         especialidadeConsultorio.setEditable(false);
         precoTotal.setEditable(false);
+        horaConsulta.setEditable(false);
 
         ChangeStatus(false);
         estadoChoiceBox.getItems().addAll(EstadoConsulta.values());
@@ -176,6 +183,7 @@ public class ListarMarcacoesDonoController implements Initializable {
                 especialidadeConsultorio.setText(consulta.getEspecialidade());
                 precoTotal.setText(String.valueOf(consulta.getPrecoTotal()));
                 estadoChoiceBox.setValue(consulta.getEstadoConsulta());
+                horaConsulta.setText(consulta.getHoraConsulta());
             }
         }
 
@@ -190,6 +198,7 @@ public class ListarMarcacoesDonoController implements Initializable {
         ConsultoriosText.setVisible(true);
         MarcacoesText.setVisible(true);
         Alterar.setVisible(true);
+
 
         ChangeStatus(false);
     }
@@ -230,6 +239,7 @@ public class ListarMarcacoesDonoController implements Initializable {
         PrecoText.setVisible(status);
         ServicoText.setVisible(status);
         clienteText.setVisible(status);
+        HoraText.setVisible(status);
 
         Funcionario.setVisible(status);
         Servico.setVisible(status);
@@ -238,6 +248,7 @@ public class ListarMarcacoesDonoController implements Initializable {
         dataMarcada.setVisible(status);
         especialidadeConsultorio.setVisible(status);
         precoTotal.setVisible(status);
+        horaConsulta.setVisible(status);
 
     }
 

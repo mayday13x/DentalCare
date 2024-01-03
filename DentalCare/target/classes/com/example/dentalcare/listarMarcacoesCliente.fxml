@@ -1,24 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #d8dfe9;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.ListarMarcacoesClienteController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #d8dfe9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.ListarMarcacoesClienteController">
     <children>
         <Label layoutX="229.0" layoutY="33.0" text="Listar consulta" />
-        <Label layoutX="47.0" layoutY="242.0" prefHeight="17.0" prefWidth="85.0" text="Serviço" />
-        <Label layoutX="42.0" layoutY="281.0" prefHeight="17.0" prefWidth="85.0" text="Funcionario" />
-        <Label layoutX="328.0" layoutY="242.0" prefHeight="17.0" prefWidth="85.0" text="Data Consulta" />
+        <Label layoutX="37.0" layoutY="242.0" prefHeight="17.0" prefWidth="85.0" text="Serviço" />
+        <Label layoutX="37.0" layoutY="284.0" prefHeight="17.0" prefWidth="85.0" text="Funcionario" />
+        <Label layoutX="37.0" layoutY="357.0" prefHeight="17.0" prefWidth="85.0" text="Data Consulta" />
         <TextField fx:id="precoTotal" layoutX="411.0" layoutY="319.0" />
         <TextField fx:id="especialidadeConsultorio" layoutX="411.0" layoutY="280.0" />
         <Label layoutX="327.0" layoutY="284.0" text="Especialidade" />
         <Label layoutX="340.0" layoutY="319.0" text="Preco" />
         <TextField fx:id="Servico" layoutX="146.0" layoutY="238.0" />
         <TextField fx:id="Funcionario" layoutX="146.0" layoutY="280.0" />
-        <TextField fx:id="dataMarcada" layoutX="411.0" layoutY="238.0" />
+        <TextField fx:id="dataMarcada" layoutX="146.0" layoutY="353.0" />
         <ListView fx:id="MarcacoesListView" layoutX="37.0" layoutY="69.0" prefHeight="135.0" prefWidth="524.0" />
         <TextField fx:id="estado" layoutX="146.0" layoutY="319.0" />
-        <Label layoutX="43.0" layoutY="319.0" prefHeight="17.0" prefWidth="46.0" text="Estado" />
+        <Label layoutX="37.0" layoutY="319.0" prefHeight="17.0" prefWidth="46.0" text="Estado" />
         <Button layoutX="17.0" layoutY="21.0" mnemonicParsing="false" onAction="#voltarAtras" text="&lt;" />
+      <Label layoutX="325.0" layoutY="242.0" text="Hora Consulta" />
+      <TextField fx:id="horaConsulta" layoutX="411.0" layoutY="238.0" />
     </children>
 </AnchorPane>

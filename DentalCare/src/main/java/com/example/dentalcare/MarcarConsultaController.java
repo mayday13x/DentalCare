@@ -45,6 +45,8 @@ public class MarcarConsultaController implements Initializable {
     @FXML
     private ChoiceBox<String> horarioConsulta;
 
+
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
