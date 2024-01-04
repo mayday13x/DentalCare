@@ -4,49 +4,61 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="477.0" prefWidth="605.0" style="-fx-background-color: #d8dfe9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.RegistarAdminController">
     <children>
-        <TextField fx:id="utilizadorId" layoutX="110.0" layoutY="112.0" onKeyTyped="#verificarUtilizador" />
+        <TextField fx:id="utilizadorId" layoutX="283.0" layoutY="81.0" onKeyTyped="#verificarUtilizador" prefHeight="25.0" prefWidth="227.0" />
         <Label layoutX="252.0" layoutY="24.0" text="Registar Admin" />
-        <Label layoutX="110.0" layoutY="94.0" text="Utilizador" />
-        <Label layoutX="358.0" layoutY="94.0" text="Password" />
-        <TextField fx:id="nome" layoutX="36.0" layoutY="178.0" />
-        <Label layoutX="42.0" layoutY="157.0" text="Nome" />
-        <TextField fx:id="nif" layoutX="226.0" layoutY="178.0" onKeyTyped="#verificarNif" />
-        <TextField fx:id="telefone" layoutX="36.0" layoutY="257.0" onKeyTyped="#verificarTelefone" />
-        <TextField fx:id="morada" layoutX="226.0" layoutY="257.0" />
-        <TextField fx:id="cc" layoutX="406.0" layoutY="178.0" onKeyTyped="#verificarCC" />
-        <TextField fx:id="localidade" layoutX="406.0" layoutY="257.0" />
-        <Label layoutX="406.0" layoutY="157.0" text="CC" />
-        <Label layoutX="36.0" layoutY="234.0" text="Telefone" />
-        <Label layoutX="233.0" layoutY="157.0" prefHeight="8.0" prefWidth="19.0" text="NIF" />
-        <Label layoutX="231.0" layoutY="234.0" text="Morada" />
-        <Label layoutX="404.0" layoutY="234.0" text="Localidade" />
+        <Label layoutX="201.0" layoutY="85.0" text="Utilizador" />
+        <Label layoutX="201.0" layoutY="128.0" text="Password" />
+        <TextField fx:id="nome" layoutX="281.0" layoutY="165.0" prefHeight="25.0" prefWidth="227.0" />
+        <Label layoutX="220.0" layoutY="169.0" text="Nome" />
+        <TextField fx:id="nif" layoutX="282.0" layoutY="210.0" onKeyTyped="#verificarNif" prefHeight="25.0" prefWidth="227.0" />
+        <TextField fx:id="telefone" layoutX="280.0" layoutY="297.0" onKeyTyped="#verificarTelefone" prefHeight="25.0" prefWidth="227.0" />
+        <TextField fx:id="morada" layoutX="284.0" layoutY="342.0" prefHeight="25.0" prefWidth="227.0" />
+        <TextField fx:id="cc" layoutX="280.0" layoutY="254.0" onKeyTyped="#verificarCC" prefHeight="25.0" prefWidth="227.0" />
+        <TextField fx:id="localidade" layoutX="284.0" layoutY="381.0" prefHeight="25.0" prefWidth="227.0" />
+        <Label layoutX="237.0" layoutY="258.0" text="CC" />
+        <Label layoutX="209.0" layoutY="301.0" text="Telefone" />
+        <Label layoutX="237.0" layoutY="214.0" prefHeight="8.0" prefWidth="19.0" text="NIF" />
+        <Label layoutX="217.0" layoutY="346.0" text="Morada" />
+        <Label layoutX="201.0" layoutY="385.0" text="Localidade" />
         <Button layoutX="526.0" layoutY="432.0" mnemonicParsing="false" onAction="#registarAdmin" prefHeight="0.0" prefWidth="59.0" text="Registar" />
-        <PasswordField fx:id="password" layoutX="358.0" layoutY="112.0" />
-      <Label fx:id="nifError" layoutX="273.0" layoutY="158.0" text="Deve conter 9 digitos" textFill="RED" visible="false">
+        <PasswordField fx:id="password" layoutX="281.0" layoutY="124.0" prefHeight="25.0" prefWidth="227.0" />
+      <Label fx:id="nifError" layoutX="286.0" layoutY="195.0" text="Deve conter 9 digitos" textFill="RED" visible="false">
          <font>
             <Font size="10.0" />
          </font>
       </Label>
-      <Label fx:id="ccError" layoutX="460.0" layoutY="158.0" text="Deve conter 8 digitos" textFill="RED" visible="false">
+      <Label fx:id="ccError" layoutX="286.0" layoutY="235.0" text="Deve conter 8 digitos" textFill="RED" visible="false">
          <font>
             <Font size="10.0" />
          </font>
       </Label>
-      <Label fx:id="telefoneError" layoutX="96.0" layoutY="235.0" text="Deve conter 9 digitos" textFill="RED" visible="false">
+      <Label fx:id="telefoneError" layoutX="276.0" layoutY="284.0" text="Deve conter 9 digitos" textFill="RED" visible="false">
          <font>
             <Font size="10.0" />
          </font>
       </Label>
       <Button layoutX="16.0" layoutY="12.0" mnemonicParsing="false" onAction="#voltarAtras" text="&lt;" />
-      <Label fx:id="utilizadorError" layoutX="171.0" layoutY="95.0" text="Utilizador já existe" textFill="#fa0606" visible="false">
+      <Label fx:id="utilizadorError" layoutX="283.0" layoutY="60.0" text="Utilizador já existe" textFill="#fa0606" visible="false">
          <font>
             <Font size="10.0" />
          </font>
       </Label>
+      <ImageView fitHeight="160.0" fitWidth="143.0" layoutX="25.0" layoutY="106.0">
+         <image>
+            <Image url="@logo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="103.0" layoutX="45.0" layoutY="266.0">
+         <image>
+            <Image url="@dentalcare-high-resolution-logo-transparent.png" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>

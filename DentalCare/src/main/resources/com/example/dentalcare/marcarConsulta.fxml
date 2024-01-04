@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="471.0" prefWidth="590.0" style="-fx-background-color: #d8dfe9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.MarcarConsultaController">
+<AnchorPane prefHeight="448.0" prefWidth="608.0" style="-fx-background-color: #d8dfe9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.MarcarConsultaController">
    <children>
       <Label layoutX="246.0" layoutY="30.0" text="Marcar consulta">
          <font>
@@ -24,7 +24,7 @@
       <ChoiceBox fx:id="escolherFuncionario" layoutX="341.0" layoutY="179.0" prefHeight="25.0" prefWidth="198.0" />
       <Label layoutX="257.0" layoutY="183.0" prefHeight="17.0" prefWidth="85.0" text="Funcionario" />
       <Label layoutX="246.0" layoutY="224.0" prefHeight="17.0" prefWidth="85.0" text="Data Consulta" />
-      <Button layoutX="496.0" layoutY="432.0" mnemonicParsing="false" onAction="#MarcarConsulta" prefHeight="25.0" prefWidth="62.0" text="Marcar" />
+      <Button layoutX="493.0" layoutY="410.0" mnemonicParsing="false" onAction="#MarcarConsulta" prefHeight="25.0" prefWidth="62.0" text="Marcar" />
       <TextField fx:id="precoTotal" layoutX="334.0" layoutY="363.0" />
       <TextField fx:id="especialidadeConsultorio" layoutX="334.0" layoutY="315.0" />
       <Label layoutX="249.0" layoutY="319.0" text="Especialidade:" />

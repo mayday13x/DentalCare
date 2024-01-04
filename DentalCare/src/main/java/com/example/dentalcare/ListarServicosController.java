@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -19,26 +20,22 @@ import java.util.ResourceBundle;
 public class ListarServicosController implements Initializable {
 
     @FXML
-    private TextField empresaServico;
+    private Label empresaServico;
 
     @FXML
-    private TextField nomeServico;
+    private Label nomeServico;
 
     @FXML
-    private TextField precoServico;
+    private Label precoServico;
 
     @FXML
-    private TextField idServico;
+    private Label idServico;
 
     @FXML
     private ListView<String> servicoListView;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        empresaServico.setEditable(false);
-        nomeServico.setEditable(false);
-        precoServico.setEditable(false);
-        idServico.setEditable(false);
 
         for(Servico servico: Repositorio.getRepositorio().getServicos()){
             for(Empresa empresa: Repositorio.getRepositorio().getEmpresas().values()){

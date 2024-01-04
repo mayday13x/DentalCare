@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -25,34 +26,28 @@ public class ListarConsultoriosController implements Initializable{
     private ListView<String> consultorioListView;
 
     @FXML
-    private TextField empresaConsultorio;
+    private Label empresaConsultorio;
 
     @FXML
-    private TextField especialidadeConsultorio;
+    private Label especialidadeConsultorio;
 
     @FXML
     private ListView<String> funcionarioListView;
 
     @FXML
-    private TextField localidadeConsultorio;
+    private Label localidadeConsultorio;
 
     @FXML
-    private TextField moradaConsultorio;
+    private Label moradaConsultorio;
 
     @FXML
-    private TextField nomeConsultorio;
+    private Label nomeConsultorio;
 
     @FXML
-    private TextField telefoneConsultorio;
+    private Label telefoneConsultorio;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        empresaConsultorio.setEditable(false);
-        especialidadeConsultorio.setEditable(false);
-        localidadeConsultorio.setEditable(false);
-        moradaConsultorio.setEditable(false);
-        nomeConsultorio.setEditable(false);
-        telefoneConsultorio.setEditable(false);
 
         for(List<Consultorio> consultorio: Repositorio.getRepositorio().getConsultorios().values()){
             List<Consultorio> consultorioList = consultorio;

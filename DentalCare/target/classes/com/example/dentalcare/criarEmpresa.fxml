@@ -6,21 +6,24 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="477.0" prefWidth="605.0" style="-fx-background-color: #d8dfe9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.CriarEmpresaController">
+<AnchorPane prefHeight="402.0" prefWidth="570.0" style="-fx-background-color: #d8dfe9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.CriarEmpresaController">
    <children>
-      <TextField fx:id="nomeEmpresa" layoutX="112.0" layoutY="98.0" onKeyTyped="#verifyNome" prefHeight="25.0" prefWidth="436.0" />
-      <Label layoutX="263.0" layoutY="32.0" text="Criar empresa" />
-      <Label layoutX="63.0" layoutY="102.0" text="Nome" />
-      <Label layoutX="58.0" layoutY="150.0" text="Morada" />
-      <TextField fx:id="moradaEmpresa" layoutX="112.0" layoutY="146.0" prefHeight="25.0" prefWidth="436.0" />
-      <Label layoutX="51.0" layoutY="200.0" text="Localidade" />
-      <TextField fx:id="localidadeEmpresa" layoutX="112.0" layoutY="196.0" prefHeight="25.0" prefWidth="436.0" />
-      <Label layoutX="56.0" layoutY="253.0" text="Telefone" />
-      <TextField fx:id="telefoneEmpresa" layoutX="112.0" layoutY="249.0" onKeyTyped="#verifyTelefone" prefHeight="25.0" prefWidth="436.0" />
-      <Button layoutX="528.0" layoutY="427.0" mnemonicParsing="false" onAction="#criarEmpresa" prefHeight="26.0" prefWidth="63.0" text="Criar" />
+      <TextField fx:id="nomeEmpresa" layoutX="86.0" layoutY="104.0" onKeyTyped="#verifyNome" prefHeight="25.0" prefWidth="436.0" />
+      <Label layoutX="227.0" layoutY="31.0" text="Criar empresa">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label layoutX="37.0" layoutY="108.0" text="Nome" />
+      <Label layoutX="32.0" layoutY="156.0" text="Morada" />
+      <TextField fx:id="moradaEmpresa" layoutX="86.0" layoutY="152.0" prefHeight="25.0" prefWidth="436.0" />
+      <Label layoutX="25.0" layoutY="206.0" text="Localidade" />
+      <TextField fx:id="localidadeEmpresa" layoutX="86.0" layoutY="202.0" prefHeight="25.0" prefWidth="436.0" />
+      <Label layoutX="30.0" layoutY="259.0" text="Telefone" />
+      <TextField fx:id="telefoneEmpresa" layoutX="86.0" layoutY="255.0" onKeyTyped="#verifyTelefone" prefHeight="25.0" prefWidth="436.0" />
+      <Button layoutX="459.0" layoutY="343.0" mnemonicParsing="false" onAction="#criarEmpresa" prefHeight="26.0" prefWidth="63.0" text="Criar" />
       <Button layoutX="25.0" layoutY="28.0" mnemonicParsing="false" onAction="#voltarAtras" text="&lt;" />
-      <Label fx:id="telefoneError" layoutX="112.0" layoutY="230.0" text="Deve conter 9 digitos" textFill="RED" visible="false" />
-      <Label fx:id="nomeError" layoutX="109.0" layoutY="83.0" text="Nome de empresa já existe" textFill="#f50606" visible="false">
+      <Label fx:id="telefoneError" layoutX="86.0" layoutY="236.0" text="Deve conter 9 digitos" textFill="RED" visible="false" />
+      <Label fx:id="nomeError" layoutX="83.0" layoutY="89.0" text="Nome de empresa já existe" textFill="#f50606" visible="false">
          <font>
             <Font size="10.0" />
          </font>

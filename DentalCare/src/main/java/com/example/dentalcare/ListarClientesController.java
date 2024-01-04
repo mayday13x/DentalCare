@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -21,43 +22,34 @@ import java.util.ResourceBundle;
 public class ListarClientesController implements Initializable{
 
     @FXML
-    private TextField cc;
+    private Label cc;
 
     @FXML
     private ListView<String> clientesListView;
 
     @FXML
-    private TextField localidade;
+    private Label localidade;
 
     @FXML
-    private TextField morada;
+    private Label morada;
 
     @FXML
-    private TextField nif;
+    private Label nif;
 
     @FXML
-    private TextField nome;
+    private Label nome;
 
     @FXML
-    private PasswordField password;
+    private Label password;
 
     @FXML
-    private TextField telefone;
+    private Label telefone;
 
     @FXML
-    private TextField utilizadorId;
+    private Label utilizadorId;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        cc.setEditable(false);
-        localidade.setEditable(false);
-        morada.setEditable(false);
-        nif.setEditable(false);
-        nome.setEditable(false);
-        password.setEditable(false);
-        telefone.setEditable(false);
-        utilizadorId.setEditable(false);
-
 
         for(Cliente cliente: Repositorio.getRepositorio().getClientes()){
             clientesListView.getItems().addAll(cliente.getNome());
