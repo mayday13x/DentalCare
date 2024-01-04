@@ -22,10 +22,20 @@ public class Consulta implements Serializable {
 
     private String horaConsulta;
 
+    private String MotivoCancelada;
+
     public Consulta(){}
 
     public EstadoPagamento getEstadoPagamento() {
         return estadoPagamento;
+    }
+
+    public String getMotivoCancelada() {
+        return MotivoCancelada;
+    }
+
+    public void setMotivoCancelada(String motivoCancelada) {
+        MotivoCancelada = motivoCancelada;
     }
 
     public void setEstadoPagamento(EstadoPagamento estadoPagamento) {

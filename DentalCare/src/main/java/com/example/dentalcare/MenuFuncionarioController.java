@@ -22,7 +22,8 @@ public class MenuFuncionarioController {
             stage.setTitle("Consulatar Marcacoes");
             stage.show();
         }catch (IOException ex){
-            System.out.println("Erro: " + ex.getMessage());
+            System.out.println("Erro ao acessar menu de confirmacao: " + ex.getMessage());
+            ex.printStackTrace();
         }
     }
 

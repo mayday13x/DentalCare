@@ -25,9 +25,6 @@ public class MarcarConsultaController implements Initializable {
     private ChoiceBox<String> escolherConsultorio;
 
     @FXML
-    private ChoiceBox<String> escolherEmpresa;
-
-    @FXML
     private ChoiceBox<String> escolherFuncionario;
 
     @FXML
@@ -95,55 +92,61 @@ public class MarcarConsultaController implements Initializable {
             }
         });
 
-
-        for (Empresa empresa : repo.getEmpresas().values()) {
-            if(empresa.getEstado().equals(EstadoDonoEmpresa.ATIVADA)){
-                escolherEmpresa.getItems().addAll(empresa.getNome()); // adiciona as empresas a choicebox
-            }
-
-            List<Consultorio> consultorioList = empresa.getConsultorios();
-
-            if (consultorioList != null) {
-                for (Consultorio consultorio : consultorioList) {
-                    escolherConsultorio.getItems().addAll(consultorio.getNome()); // adicionar os consultorios a choicebox
+            for(List<Consultorio> consultorios:Repositorio.getRepositorio().getConsultorios().values()) {
+                List<Consultorio> consultorioList = consultorios;
+                if (consultorioList != null) {
+                    for (Consultorio consultorio : consultorioList) {
+                        escolherConsultorio.getItems().addAll(consultorio.getNome()); // adicionar os consultorios a choicebox
+                    }
                 }
             }
+
 
             escolherConsultorio.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {  // atualiza a lista de funcionarios de acordo com o consultorio
                 @Override
                 public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
                     escolherFuncionario.getItems().clear();
-                    if(consultorioList != null){
-                        for (Consultorio consultorio : consultorioList) {
-                            if(consultorio.getNome().equals(escolherConsultorio.getValue())){
-                                List<Funcionario> funcionarioList = consultorio.getFuncionarios();
-                                for (Funcionario funcionario : funcionarioList) {
-                                    escolherFuncionario.getItems().addAll(funcionario.getNome());// adicionar os funcionarioa a choicebox
-                                }
 
-                                especialidadeConsultorio.setText(consultorio.getEspecialidade());
-                                if(consultorio.getEspecialidade().equals("Geral")){
-                                    precoTotal.setText("25");
-                                }
-                                if(consultorio.getEspecialidade().equals("LIMPEZA DENTES")) {
-                                    precoTotal.setText("35");
-                                }
-                                if(consultorio.getEspecialidade().equals("DESTARTARIZACAO")) {
-                                    precoTotal.setText("45");
+                    for(List<Consultorio> consultorios:Repositorio.getRepositorio().getConsultorios().values()) {
+                        List<Consultorio> consultorioList = consultorios;
+                        if (consultorioList != null) {
+                            for (Consultorio consultorio : consultorioList) {
+                                if (consultorio.getNome().equals(escolherConsultorio.getValue())) {
+                                    List<Funcionario> funcionarioList = consultorio.getFuncionarios();
+                                    for (Funcionario funcionario : funcionarioList) {
+                                        escolherFuncionario.getItems().addAll(funcionario.getNome());// adicionar os funcionarioa a choicebox
+                                    }
+
+                                    especialidadeConsultorio.setText(consultorio.getEspecialidade());
+                                    if (consultorio.getEspecialidade().equals("Geral")) {
+                                        precoTotal.setText("25");
+                                    }
+                                    if (consultorio.getEspecialidade().equals("LIMPEZA DENTES")) {
+                                        precoTotal.setText("35");
+                                    }
+                                    if (consultorio.getEspecialidade().equals("DESTARTARIZACAO")) {
+                                        precoTotal.setText("45");
+                                    }
                                 }
                             }
+                        }
                     }
+                    for(Empresa empresa: Repositorio.getRepositorio().getEmpresas().values()){
+                        List<Consultorio> consultoriosList = empresa.getConsultorios();
+
+                        for(Consultorio consultorio: consultoriosList){
+                            if(consultorio.getNome().equals(escolherConsultorio.getSelectionModel().getSelectedItem())){
+                                for (Servico servico : Repositorio.getRepositorio().getServicos()) {
+                                    if (servico.getEmpresa().equals(empresa.getNome()) ) {
+                                        Servico.getItems().addAll(servico.getNomeServico());// adiciona os servicos a choicebox
+
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             });
-
-        for (Servico servico : Repositorio.getRepositorio().getServicos()) {
-            if (servico.getEmpresa().equals(empresa.getNome())) {
-                Servico.getItems().addAll(servico.getNomeServico()); // adiciona os servicos a choicebox
-            }
-        }
-    }
-
 }
 
     public void MarcarConsulta(ActionEvent event){
@@ -157,29 +160,22 @@ public class MarcarConsultaController implements Initializable {
             consulta.setEstadoConsulta(EstadoConsulta.PORCOMFIRMAR);
             consulta.setEstadoPagamento(EstadoPagamento.NAOPAGA);
             consulta.setConsultorio(escolherConsultorio.getValue());
-            consulta.setEmpresa(escolherEmpresa.getValue());
             consulta.setHoraConsulta(horarioConsulta.getValue());
+            consulta.setPrecoTotal(Float.parseFloat(precoTotal.getText()));
 
             for(Empresa empresa: Repositorio.getRepositorio().getEmpresas().values()){
-                if(empresa.getNome().equals(escolherEmpresa.getValue())){
                     List<Consultorio> consultorioList = empresa.getConsultorios();
                     for(Consultorio consultorio: consultorioList){
                         if(consultorio.getNome().equals(escolherConsultorio.getValue())){
                             consulta.setEspecialidade(consultorio.getEspecialidade());
+                            consulta.setEmpresa(empresa.getNome());
                         }
                     }
                 }
-            }
+
 
             consulta.setEspecialidade(especialidadeConsultorio.getText());
             consulta.setServico(Servico.getValue());
-
-            String servico = consulta.getServico();
-            for(Servico serv: Repositorio.getRepositorio().getServicos()){
-                if(serv.getNomeServico().equals(servico)){
-                    consulta.setPrecoTotal(serv.getPrecoServico());
-                }
-            }
 
             MarcarConsultaBLL.adicionarConsulta(consulta);
 

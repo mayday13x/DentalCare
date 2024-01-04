@@ -3,13 +3,17 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="477.0" prefWidth="605.0" style="-fx-background-color: #d8dfe9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.MenuClienteController">
+<AnchorPane prefHeight="326.0" prefWidth="534.0" style="-fx-background-color: #d8dfe9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.MenuClienteController">
    <children>
-      <Label layoutX="263.0" layoutY="45.0" text=" Menu Cliente" />
-      <Button fx:id="marcarConsulta" layoutX="94.0" layoutY="93.0" mnemonicParsing="false" onAction="#marcarConsulta" prefHeight="41.0" prefWidth="115.0" text="Marcar Consulta" />
-      <Button fx:id="pagamentoConsulta" layoutX="313.0" layoutY="92.0" mnemonicParsing="false" onAction="#pagamentoConsulta" prefHeight="41.0" prefWidth="97.0" text="Pagamentos" />
-      <Button layoutX="94.0" layoutY="180.0" mnemonicParsing="false" onAction="#listarMarcacoes" prefHeight="41.0" prefWidth="115.0" text="Listar Marcacoes" />
+      <Label layoutX="202.0" layoutY="32.0" text=" Menu Cliente">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Button fx:id="marcarConsulta" layoutX="94.0" layoutY="93.0" mnemonicParsing="false" onAction="#marcarConsulta" prefHeight="41.0" prefWidth="133.0" text="Marcar Consulta" />
+      <Button fx:id="pagamentoConsulta" layoutX="313.0" layoutY="92.0" mnemonicParsing="false" onAction="#pagamentoConsulta" prefHeight="41.0" prefWidth="133.0" text="Pagamentos" />
+      <Button layoutX="98.0" layoutY="181.0" mnemonicParsing="false" onAction="#listarMarcacoes" prefHeight="41.0" prefWidth="127.0" text="Listar Marcacoes" />
       <Button layoutX="24.0" layoutY="29.0" mnemonicParsing="false" onAction="#voltarAtras" text="&lt;" />
    </children>
 </AnchorPane>

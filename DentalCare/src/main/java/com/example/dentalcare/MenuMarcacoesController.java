@@ -29,47 +29,47 @@ public class MenuMarcacoesController  implements Initializable {
     private Button Guardar;
 
     @FXML
-    private TextField clienteConsulta;
+    private Label clienteConsulta;
 
     @FXML
-    private TextField dataConulta;
+    private Label dataConsulta;
 
     @FXML
     private ListView<Integer> escolherConsultas;
 
     @FXML
-    private TextField especialidadeConsulta;
+    private Label especialidadeConsulta;
 
     @FXML
-    private TextField estadoConsulta;
+    private Label estadoConsulta;
 
     @FXML
     private ChoiceBox<EstadoConsulta> estadoChoiceBox;
 
     @FXML
-    private TextField funcionarioConsulta;
+    private Label funcionarioConsulta;
 
     @FXML
-    private TextField idConsulta;
+    private Label idConsulta;
 
     @FXML
-    private TextField precoConsulta;
+    private Label precoConsulta;
 
     @FXML
-    private TextField servicoConsulta;
+    private Label servicoConsulta;
+
+
+    @FXML
+    private Label MotivoText;
+
+    @FXML
+    private TextField MotivoTextField;
+
 
     Consulta consultaAtual;
 
     @Override
     public void initialize(URL url, ResourceBundle rb){
-        clienteConsulta.setEditable(false);
-        dataConulta.setEditable(false);
-        especialidadeConsulta.setEditable(false);
-        precoConsulta.setEditable(false);
-        servicoConsulta.setEditable(false);
-        idConsulta.setEditable(false);
-        funcionarioConsulta.setEditable(false);
-        estadoConsulta.setEditable(false);
 
 
         for(Consulta consulta:Repositorio.getRepositorio().getConsultas()){
@@ -90,7 +90,7 @@ public class MenuMarcacoesController  implements Initializable {
                     }
 
                     idConsulta.setText(String.valueOf(consultaAtual.getIdConsulta()));
-                    dataConulta.setText(String.valueOf(consultaAtual.getDataConsulta()));
+                    dataConsulta.setText(String.valueOf(consultaAtual.getDataConsulta()));
                     especialidadeConsulta.setText(consultaAtual.getEspecialidade());
                     precoConsulta.setText(String.valueOf(consultaAtual.getPrecoTotal()));
                     funcionarioConsulta.setText(consultaAtual.getFuncionario());
@@ -101,6 +101,16 @@ public class MenuMarcacoesController  implements Initializable {
 
                 }
             });
+
+            estadoChoiceBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<EstadoConsulta>() {
+                @Override
+                public void changed(ObservableValue<? extends EstadoConsulta> observableValue, EstadoConsulta estadoConsulta, EstadoConsulta t1) {
+                    if(estadoChoiceBox.getSelectionModel().getSelectedItem().equals(EstadoConsulta.CANCELADA)){
+                        MotivoText.setVisible(true);
+                        MotivoTextField.setVisible(true);
+                    }
+                }
+            });
         }
 
         public void AlterarMarcacoes(ActionEvent event){
@@ -109,7 +119,7 @@ public class MenuMarcacoesController  implements Initializable {
             estadoChoiceBox.setVisible(true);
             Cancelar.setVisible(true);
             Guardar.setVisible(true);
-            estadoChoiceBox.getItems().addAll(EstadoConsulta.values());
+            estadoChoiceBox.getItems().addAll(EstadoConsulta.CONFIRMADA,EstadoConsulta.CANCELADA);
         }
 
         public void GuardarAlteracoes(ActionEvent event){
@@ -120,6 +130,7 @@ public class MenuMarcacoesController  implements Initializable {
                             consulta.setEstadoConsulta(EstadoConsulta.CONFIRMADA);
                         } if(estadoChoiceBox.getValue() == EstadoConsulta.CANCELADA){
                             consulta.setEstadoConsulta(EstadoConsulta.CANCELADA);
+                            consulta.setMotivoCancelada(MotivoTextField.getText());
                         }
                     }
                 }

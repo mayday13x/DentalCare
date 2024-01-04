@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -21,29 +22,30 @@ import java.util.ResourceBundle;
 public class PagamentoConsultaController implements Initializable {
 
     @FXML
-    private TextField clienteConsulta;
+    private Label clienteConsulta;
 
     @FXML
     private ListView<Integer> consultaListView;
 
     @FXML
-    private TextField estadoConsulta;
+    private Label estadoConsulta;
 
     @FXML
-    private TextField idConsulta;
+    private Label idConsulta;
+
+    @FXML
+    private Label pagamento;
 
     Consulta consultaAtual;
 
     @Override
     public void initialize(URL url, ResourceBundle rb){
-        clienteConsulta.setEditable(false);
-        estadoConsulta.setEditable(false);
-        idConsulta.setEditable(false);
+
 
         for(Consulta consulta:Repositorio.getRepositorio().getConsultas()){
             for(Empresa empresa: Repositorio.getRepositorio().getEmpresas().values()){
                 if(consulta.getCliente().getNome().equals(DataSessao.cliente.getNome())
-                        && consulta.getEstadoPagamento() == EstadoPagamento.NAOPAGA && empresa.getNome().equals(consulta.getEmpresa()) && empresa.getEstado().equals(EstadoDonoEmpresa.ATIVADA)){
+                        && consulta.getEstadoPagamento() == EstadoPagamento.NAOPAGA && empresa.getNome().equals(consulta.getEmpresa()) && empresa.getEstado().equals(EstadoDonoEmpresa.ATIVADA) && consulta.getEstadoConsulta().equals(EstadoConsulta.CONFIRMADA)){
                     consultaListView.getItems().addAll(consulta.getIdConsulta());
                 }
             }
@@ -62,6 +64,7 @@ public class PagamentoConsultaController implements Initializable {
                 clienteConsulta.setText(consultaAtual.getCliente().getNome());
                 estadoConsulta.setText(String.valueOf(consultaAtual.getEstadoConsulta()));
                 idConsulta.setText(String.valueOf(consultaAtual.getIdConsulta()));
+                pagamento.setText(String.valueOf(consultaAtual.getEstadoPagamento()));
             }
         });
     }
@@ -73,7 +76,7 @@ public class PagamentoConsultaController implements Initializable {
             if(consulta.getIdConsulta() == id ){
                 consulta.setEstadoPagamento(EstadoPagamento.PAGA);
             }
-            estadoConsulta.setText(String.valueOf(consulta.getEstadoConsulta()));
+           pagamento.setText(String.valueOf(consulta.getEstadoPagamento()));
 
         }
         System.out.println("O pagamento foi bem sucedido!");
