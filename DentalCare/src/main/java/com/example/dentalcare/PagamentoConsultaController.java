@@ -43,7 +43,7 @@ public class PagamentoConsultaController implements Initializable {
         for(Consulta consulta:Repositorio.getRepositorio().getConsultas()){
             for(Empresa empresa: Repositorio.getRepositorio().getEmpresas().values()){
                 if(consulta.getCliente().getNome().equals(DataSessao.cliente.getNome())
-                        && consulta.getEstadoConsulta() == EstadoConsulta.NAOPAGA && empresa.getNome().equals(consulta.getEmpresa()) && empresa.getEstado().equals(EstadoDonoEmpresa.ATIVADA)){
+                        && consulta.getEstadoPagamento() == EstadoPagamento.NAOPAGA && empresa.getNome().equals(consulta.getEmpresa()) && empresa.getEstado().equals(EstadoDonoEmpresa.ATIVADA)){
                     consultaListView.getItems().addAll(consulta.getIdConsulta());
                 }
             }
@@ -70,8 +70,8 @@ public class PagamentoConsultaController implements Initializable {
 
         for(Consulta consulta: Repositorio.getRepositorio().getConsultas()){
             int id =  Integer.parseInt(idConsulta.getText());
-            if(consulta.getIdConsulta() == id){
-                consulta.setEstadoConsulta(EstadoConsulta.PAGA);
+            if(consulta.getIdConsulta() == id ){
+                consulta.setEstadoPagamento(EstadoPagamento.PAGA);
             }
             estadoConsulta.setText(String.valueOf(consulta.getEstadoConsulta()));
 

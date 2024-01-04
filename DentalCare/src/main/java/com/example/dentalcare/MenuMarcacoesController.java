@@ -115,17 +115,11 @@ public class MenuMarcacoesController  implements Initializable {
         public void GuardarAlteracoes(ActionEvent event){
             try {
                 for(Consulta consulta: Repositorio.getRepositorio().getConsultas()) {
-                    if (Objects.equals(consulta.getFuncionario(), DataSessao.funcionario.getNome()) && consulta.getIdConsulta() == escolherConsultas.getSelectionModel().getSelectedItem()) {
+                    if (Objects.equals(consulta.getFuncionario(), DataSessao.funcionario.getNome()) && consulta.getIdConsulta() == escolherConsultas.getSelectionModel().getSelectedItem() && consulta.getEstadoPagamento() == EstadoPagamento.NAOPAGA) {
                         if(estadoChoiceBox.getValue() == EstadoConsulta.CONFIRMADA){
                             consulta.setEstadoConsulta(EstadoConsulta.CONFIRMADA);
                         } if(estadoChoiceBox.getValue() == EstadoConsulta.CANCELADA){
                             consulta.setEstadoConsulta(EstadoConsulta.CANCELADA);
-                        } if(estadoChoiceBox.getValue() == EstadoConsulta.PAGA){
-                            consulta.setEstadoConsulta(EstadoConsulta.PAGA);
-                        } if(estadoChoiceBox.getValue() == EstadoConsulta.NAOPAGA){
-                            consulta.setEstadoConsulta(EstadoConsulta.NAOPAGA);
-                        } if(estadoChoiceBox.getValue() == EstadoConsulta.PROCESSADA){
-                            consulta.setEstadoConsulta(EstadoConsulta.PROCESSADA);
                         }
                     }
                 }

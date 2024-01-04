@@ -18,9 +18,19 @@ public class Consulta implements Serializable {
     private String consultorio;
     private EstadoConsulta estadoConsulta;
 
+    private EstadoPagamento estadoPagamento;
+
     private String horaConsulta;
 
     public Consulta(){}
+
+    public EstadoPagamento getEstadoPagamento() {
+        return estadoPagamento;
+    }
+
+    public void setEstadoPagamento(EstadoPagamento estadoPagamento) {
+        this.estadoPagamento = estadoPagamento;
+    }
 
     public String getHoraConsulta() {
         return horaConsulta;
