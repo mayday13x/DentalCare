@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="477.0" prefWidth="605.0" style="-fx-background-color: #d8dfe9;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.RegistarController">
+<AnchorPane prefHeight="477.0" prefWidth="605.0" style="-fx-background-color: #d8dfe9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.RegistarController">
    <children>
-      <TextField fx:id="utilizadorId" layoutX="229.0" layoutY="150.0" />
+      <TextField fx:id="utilizadorId" layoutX="229.0" layoutY="150.0" onKeyTyped="#verificarUtilizador" />
       <Label layoutX="252.0" layoutY="24.0" text="Registar Utilizador" />
       <Label layoutX="227.0" layoutY="125.0" text="Utilizador" />
       <Label layoutX="411.0" layoutY="125.0" text="Password" />
       <TextField fx:id="nome" layoutX="39.0" layoutY="228.0" />
       <Label layoutX="45.0" layoutY="207.0" text="Nome" />
-      <TextField fx:id="nif" layoutX="229.0" layoutY="228.0" onKeyTyped="#verifyNif" />
-      <TextField fx:id="telefone" layoutX="39.0" layoutY="307.0" onKeyTyped="#verifyTelefone" />
+      <TextField fx:id="nif" layoutX="229.0" layoutY="228.0" onKeyTyped="#verificarNif" />
+      <TextField fx:id="telefone" layoutX="39.0" layoutY="307.0" onKeyTyped="#verificarTelefone" />
       <TextField fx:id="morada" layoutX="229.0" layoutY="307.0" />
-      <TextField fx:id="cc" layoutX="409.0" layoutY="228.0" onKeyTyped="#verifyCC" />
+      <TextField fx:id="cc" layoutX="409.0" layoutY="228.0" onKeyTyped="#verificarCC" />
       <TextField fx:id="localidade" layoutX="409.0" layoutY="307.0" />
       <Label layoutX="409.0" layoutY="207.0" text="CC" />
       <Label layoutX="45.0" layoutY="284.0" text="Telefone" />
@@ -38,6 +42,11 @@
          </font>
       </Label>
       <Label fx:id="telefoneError" layoutX="104.0" layoutY="285.0" text="Deve conter 9 digitos" textFill="#dd0707" visible="false">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <Label fx:id="utilizadorError" layoutX="290.0" layoutY="126.0" text="Utilizador já existe" textFill="#fc0202" visible="false">
          <font>
             <Font size="10.0" />
          </font>

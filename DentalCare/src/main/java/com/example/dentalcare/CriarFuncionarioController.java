@@ -72,6 +72,9 @@ public class CriarFuncionarioController implements Initializable {
     private Label ccError;
 
     @FXML
+    private Label utilizadorError;
+
+    @FXML
     private Label numCpText;
 
     boolean ccEstado = false;
@@ -80,6 +83,7 @@ public class CriarFuncionarioController implements Initializable {
 
     boolean telefoneEstado = false;
 
+    boolean utilizadorEstado = false;
 
     @Override
     public void initialize(URL url, ResourceBundle rb){
@@ -125,7 +129,7 @@ public class CriarFuncionarioController implements Initializable {
 
     public void registarFuncionario(ActionEvent event){
 
-        if(telefoneEstado && ccEstado && nifEstado){
+        if(telefoneEstado && ccEstado && nifEstado && utilizadorEstado){
             try {
                 Funcionario fn = new Funcionario();
 
@@ -175,7 +179,7 @@ public class CriarFuncionarioController implements Initializable {
     }
 
     @FXML
-    void verifyNif(KeyEvent event){
+    void verificarNif(KeyEvent event){
         String text = nif.getText();
         if(text.matches("[0-9]*")){
             nifError.setVisible(false);
@@ -192,7 +196,7 @@ public class CriarFuncionarioController implements Initializable {
     }
 
     @FXML
-    void verifyCC(KeyEvent event){
+    void verificarCC(KeyEvent event){
         String text = cc.getText();
 
         if(text.matches("[0-9]*")){
@@ -211,7 +215,7 @@ public class CriarFuncionarioController implements Initializable {
     }
 
     @FXML
-    void verifyTelefone(KeyEvent event){
+    void verificarTelefone(KeyEvent event){
         String text = telefone.getText();
 
         if(text.matches("[0-9]*")){
@@ -225,6 +229,41 @@ public class CriarFuncionarioController implements Initializable {
         }else {
             telefoneError.setVisible(true);
             telefoneEstado = false;
+        }
+    }
+
+    @FXML
+    void verificarUtilizador(KeyEvent event){
+        String text = utilizadorId.getText();
+        utilizadorError.setVisible(false);
+        utilizadorEstado = true;
+
+        for (Cliente cliente: Repositorio.getRepositorio().getClientes()){
+            if(cliente.getUtilizador().equals(text)){
+                utilizadorError.setVisible(true);
+                utilizadorEstado = false;
+            }
+        }
+
+        for (Dono dono: Repositorio.getRepositorio().getDonos()){
+            if(dono.getUtilizador().equals(text)){
+                utilizadorError.setVisible(true);
+                utilizadorEstado = false;
+            }
+        }
+
+        for(Admin admin: Repositorio.getRepositorio().getAdmins()){
+            if(admin.getUtilizador().equals(text)){
+                utilizadorError.setVisible(true);
+                utilizadorEstado = false;
+            }
+        }
+
+        for(Funcionario funcionario: Repositorio.getRepositorio().getFuncionarios()){
+            if(funcionario.getUtilizador().equals(text)){
+                utilizadorError.setVisible(true);
+                utilizadorEstado = false;
+            }
         }
     }
 

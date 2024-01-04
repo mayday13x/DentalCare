@@ -51,15 +51,21 @@ public class RegistarAdminController implements Initializable {
     @FXML
     private Label ccError;
 
+    @FXML
+    private Label utilizadorError;
+
     boolean ccEstado = false;
 
     boolean nifEstado = false;
 
     boolean telefoneEstado = false;
 
+    boolean utilizadorEstado = false;
+
+
     public void registarAdmin(ActionEvent event){
 
-        if(telefoneEstado && ccEstado && nifEstado){
+        if(telefoneEstado && ccEstado && nifEstado && utilizadorEstado){
             try {
                 Admin admin = new Admin();
 
@@ -90,7 +96,7 @@ public class RegistarAdminController implements Initializable {
     }
 
     @FXML
-    void verifyNif(KeyEvent event){
+    void verificarNif(KeyEvent event){
         String text = nif.getText();
         if(text.matches("[0-9]*")){
             nifError.setVisible(false);
@@ -107,7 +113,7 @@ public class RegistarAdminController implements Initializable {
     }
 
     @FXML
-    void verifyCC(KeyEvent event){
+    void verificarCC(KeyEvent event){
         String text = cc.getText();
 
         if(text.matches("[0-9]*")){
@@ -126,7 +132,7 @@ public class RegistarAdminController implements Initializable {
     }
 
     @FXML
-    void verifyTelefone(KeyEvent event){
+    void verificarTelefone(KeyEvent event){
         String text = telefone.getText();
 
         if(text.matches("[0-9]*")){
@@ -158,6 +164,41 @@ public class RegistarAdminController implements Initializable {
         }
 
 
+    }
+
+    @FXML
+    void verificarUtilizador(KeyEvent event){
+        String text = utilizadorId.getText();
+        utilizadorError.setVisible(false);
+        utilizadorEstado = true;
+
+        for (Cliente cliente: Repositorio.getRepositorio().getClientes()){
+            if(cliente.getUtilizador().equals(text)){
+                utilizadorError.setVisible(true);
+                utilizadorEstado = false;
+            }
+        }
+
+        for (Dono dono: Repositorio.getRepositorio().getDonos()){
+            if(dono.getUtilizador().equals(text)){
+                utilizadorError.setVisible(true);
+                utilizadorEstado = false;
+            }
+        }
+
+        for(Admin admin: Repositorio.getRepositorio().getAdmins()){
+            if(admin.getUtilizador().equals(text)){
+                utilizadorError.setVisible(true);
+                utilizadorEstado = false;
+            }
+        }
+
+        for(Funcionario funcionario: Repositorio.getRepositorio().getFuncionarios()){
+            if(funcionario.getUtilizador().equals(text)){
+                utilizadorError.setVisible(true);
+                utilizadorEstado = false;
+            }
+        }
     }
 
 }
