@@ -87,7 +87,9 @@ public class MarcarConsultaController implements Initializable {
             public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
                 for(Servico servico: Repositorio.getRepositorio().getServicos()){
                     if(servico.getNomeServico().equals(Servico.getValue())){
-                        precoTotal.setText(String.valueOf(servico.getPrecoServico()));
+                        float preco = Integer.parseInt(precoTotal.getText());
+                        preco = preco + servico.getPrecoServico();
+                        precoTotal.setText(String.valueOf(preco));
                     }
                 }
             }
@@ -120,6 +122,15 @@ public class MarcarConsultaController implements Initializable {
                                 }
 
                                 especialidadeConsultorio.setText(consultorio.getEspecialidade());
+                                if(consultorio.getEspecialidade().equals("Geral")){
+                                    precoTotal.setText("25");
+                                }
+                                if(consultorio.getEspecialidade().equals("LIMPEZA DENTES")) {
+                                    precoTotal.setText("35");
+                                }
+                                if(consultorio.getEspecialidade().equals("DESTARTARIZACAO")) {
+                                    precoTotal.setText("45");
+                                }
                             }
                     }
                     }

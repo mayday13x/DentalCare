@@ -34,12 +34,14 @@ public class CriarEmpresaController implements Initializable {
     @FXML
     private Label telefoneError;
 
+    @FXML
+    private Label nomeError;
     boolean telefoneEstado = false;
 
-
+    boolean nomeEstado;
 
     public void criarEmpresa(ActionEvent event){
-        if(telefoneEstado){
+        if(telefoneEstado && nomeEstado){
             try{
                 Empresa emp = new Empresa();
 
@@ -101,6 +103,21 @@ public class CriarEmpresaController implements Initializable {
         }else {
             telefoneError.setVisible(true);
             telefoneEstado = false;
+        }
+    }
+
+    @FXML
+    void verifyNome(KeyEvent event){
+        String text = nomeEmpresa.getText();
+        nomeError.setVisible(false);
+        nomeEstado = true;
+
+
+        for(Empresa empresa: Repositorio.getRepositorio().getEmpresas().values()){
+            if(empresa.getNome().equals(text)){
+                nomeError.setVisible(true);
+                nomeEstado = false;
+            }
         }
     }
 
