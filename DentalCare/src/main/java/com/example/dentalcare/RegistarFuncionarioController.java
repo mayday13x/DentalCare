@@ -2,7 +2,6 @@ package com.example.dentalcare;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,10 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
@@ -21,10 +17,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.Objects;
-import java.util.Observable;
 import java.util.ResourceBundle;
 
-public class CriarFuncionarioController implements Initializable {
+public class RegistarFuncionarioController implements Initializable {
 
     @FXML
     private PasswordField password;
@@ -129,7 +124,14 @@ public class CriarFuncionarioController implements Initializable {
 
     public void registarFuncionario(ActionEvent event){
 
-        if(telefoneEstado && ccEstado && nifEstado && utilizadorEstado){
+        if(telefone.getText().isEmpty() || utilizadorId.getText().isEmpty() || password.getText().isEmpty()
+                || nif.getText().isEmpty()  ||  nome.getText().isEmpty() ||  morada.getText().isEmpty()
+                || localidade.getText().isEmpty() || cc.getText().isEmpty() || cc.getText().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setHeaderText("Campos obrigatorios por preencher");
+            alert.setTitle("Aviso");
+            alert.show();
+        }else if(telefoneEstado && ccEstado && nifEstado && utilizadorEstado){
             try {
                 Funcionario fn = new Funcionario();
 
@@ -142,8 +144,13 @@ public class CriarFuncionarioController implements Initializable {
                 fn.setMorada(morada.getText());
                 fn.setLocalidade(localidade.getText());
                 fn.setProfissao(escolherProfissao.getValue());
-                if(escolherProfissao.getSelectionModel().getSelectedItem().equals(ProfissaoFuncionario.DENTISTA)){
+                if(escolherProfissao.getSelectionModel().getSelectedItem().equals(ProfissaoFuncionario.DENTISTA) && !numCarteiraProfisional.getText().isEmpty()){
                     fn.setNumCarteiraProfissional(numCarteiraProfisional.getText());
+                }else if(escolherProfissao.getSelectionModel().getSelectedItem().equals(ProfissaoFuncionario.DENTISTA) && numCarteiraProfisional.getText().isEmpty()){
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setHeaderText("Campos obrigatorios por preencher");
+                    alert.setTitle("Aviso");
+                    alert.show();
                 }else {
                     fn.setNumCarteiraProfissional("Não definida");
                 }

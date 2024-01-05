@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
@@ -41,7 +42,13 @@ public class CriarEmpresaController implements Initializable {
     boolean nomeEstado;
 
     public void criarEmpresa(ActionEvent event){
-        if(telefoneEstado && nomeEstado){
+        if(localidadeEmpresa.getText().isEmpty() || moradaEmpresa.getText().isEmpty() || nomeEmpresa.getText().isEmpty()
+                || telefoneEmpresa.getText().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setHeaderText("Campos obrigatorios por preencher");
+            alert.setTitle("Aviso");
+            alert.show();
+        }else if(telefoneEstado && nomeEstado){
             try{
                 Empresa emp = new Empresa();
 

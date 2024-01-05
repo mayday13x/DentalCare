@@ -51,6 +51,8 @@ public class MarcarConsultaController implements Initializable {
         especialidadeConsultorio.setEditable(false);
         precoTotal.setEditable(false);
 
+
+
         escolherFuncionario.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
@@ -118,19 +120,21 @@ public class MarcarConsultaController implements Initializable {
                                     }
 
                                     especialidadeConsultorio.setText(consultorio.getEspecialidade());
-                                    if (consultorio.getEspecialidade().equals("Geral")) {
-                                        precoTotal.setText("25");
-                                    }
-                                    if (consultorio.getEspecialidade().equals("LIMPEZA DENTES")) {
-                                        precoTotal.setText("35");
-                                    }
-                                    if (consultorio.getEspecialidade().equals("DESTARTARIZACAO")) {
-                                        precoTotal.setText("45");
-                                    }
                                 }
                             }
                         }
                     }
+
+                    for(String tipo:Repositorio.getRepositorio().getPrecoConsultas().keySet()){
+                        if(Objects.equals(tipo,especialidadeConsultorio.getText())){
+                            System.out.println(tipo);
+                            int preco = Repositorio.getRepositorio().getPrecoConsultas().get(tipo);
+                            precoTotal.setText(String.valueOf(preco));
+                        }
+                    }
+
+
+
                     for(Empresa empresa: Repositorio.getRepositorio().getEmpresas().values()){
                         List<Consultorio> consultoriosList = empresa.getConsultorios();
 

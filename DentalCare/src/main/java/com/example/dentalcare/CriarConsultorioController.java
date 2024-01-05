@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -81,7 +82,13 @@ public class CriarConsultorioController implements Initializable {
     @FXML
     public void criarConsulturio(ActionEvent event){
             try {
-                if(telefoneEstado){
+                if(nomeConsultorio.getText().isEmpty() || moradaConsultorio.getText().isEmpty() || localidadeConsultorio.getText().isEmpty()
+                        || telefoneConsultorio.getText().isEmpty() || especialidadeConsultorio.getValue().isEmpty() || escolherEmpresa.getValue().isEmpty()){
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setHeaderText("Campos obrigatorios por preencher");
+                    alert.setTitle("Aviso");
+                    alert.show();
+                }else if(telefoneEstado){
                     Consultorio con = new Consultorio();
                     List<Consultorio> consultorioList = new ArrayList<>();
 

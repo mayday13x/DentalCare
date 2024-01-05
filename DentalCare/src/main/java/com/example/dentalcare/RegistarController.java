@@ -8,10 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
@@ -89,7 +86,15 @@ public class RegistarController implements Initializable {
 
     @FXML
     public void registar(ActionEvent event) {
-        if(telefoneEstado && ccEstado && nifEstado && utilizadorEstado){
+
+        if(telefone.getText().isEmpty() || utilizadorId.getText().isEmpty() || password.getText().isEmpty()
+                || nif.getText().isEmpty()  ||  nome.getText().isEmpty() ||  morada.getText().isEmpty()
+                || localidade.getText().isEmpty() || cc.getText().isEmpty() || cc.getText().isEmpty() || tipoUtilizador.getValue().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setHeaderText("Campos obrigatorios por preencher");
+            alert.setTitle("Aviso");
+            alert.show();
+        }else if(telefoneEstado && ccEstado && nifEstado && utilizadorEstado){
             try{
                 if(tipoUtilizador.getValue().equals("Cliente")){
                     Cliente cl = new Cliente();

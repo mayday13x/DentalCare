@@ -21,6 +21,8 @@ public class Repositorio implements Serializable {
 
     private List<Consulta> consultas = new ArrayList<>();
 
+    private Map<String, Integer> precoConsultas = new HashMap<>();
+
     private Map<String, Empresa> localidade = new HashMap<>();
 
     private Map<Dono,Empresa> empresas = new HashMap<>();
@@ -60,6 +62,12 @@ public class Repositorio implements Serializable {
         }
         return consultas;
     }
+    public Map<String, Integer> getPrecoConsultas(){
+        if(precoConsultas == null){
+            precoConsultas = new HashMap<>();
+        }
+            return precoConsultas;
+        }
 
     public Map<String, Empresa> getLocalidade(){return localidade;}
 

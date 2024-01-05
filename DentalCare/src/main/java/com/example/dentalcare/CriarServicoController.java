@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -40,42 +41,51 @@ public class CriarServicoController implements Initializable {
 
     public void criarServico(ActionEvent event){
 
-        try{
-            Servico servi = new Servico();
+        if(escolherEmpresa.getValue().isEmpty() || nomeServico.getText().isEmpty() || precoServico.getText().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setHeaderText("Campos obrigatorios por preencher");
+            alert.setTitle("Aviso");
+            alert.show();
+        }else {
+            try{
+                Servico servi = new Servico();
 
-            servi.setIdServico(Repositorio.getRepositorio().getServicos().size() + 1);
-            servi.setNomeServico(nomeServico.getText());
-            servi.setPrecoServico(Float.parseFloat(precoServico.getText()));
-            String empresa = escolherEmpresa.getValue();
+                servi.setIdServico(Repositorio.getRepositorio().getServicos().size() + 1);
+                servi.setNomeServico(nomeServico.getText());
+                servi.setPrecoServico(Float.parseFloat(precoServico.getText()));
+                String empresa = escolherEmpresa.getValue();
 
-            for(Empresa emp: Repositorio.getRepositorio().getEmpresas().values()){
-                if(emp.getNome().equals(empresa)){
-                servi.setEmpresa(emp.getNome());
+                for(Empresa emp: Repositorio.getRepositorio().getEmpresas().values()){
+                    if(emp.getNome().equals(empresa)){
+                        servi.setEmpresa(emp.getNome());
+                    }
                 }
+
+                System.out.println("Nome: " + servi.getNomeServico());
+                System.out.println("Id: " + servi.getIdServico());
+                System.out.println("Preco: " + servi.getPrecoServico());
+                System.out.println("Empresa: " + servi.getEmpresa());
+
+                ServicoBLL.adicionarServico(servi);
+            }catch (Exception e){
+                System.out.println("Erro ao adicionar servico: " + e.getMessage());
+                e.printStackTrace();
             }
 
-            System.out.println("Nome: " + servi.getNomeServico());
-            System.out.println("Id: " + servi.getIdServico());
-            System.out.println("Preco: " + servi.getPrecoServico());
-            System.out.println("Empresa: " + servi.getEmpresa());
 
-            ServicoBLL.adicionarServico(servi);
-        }catch (Exception e){
-            System.out.println("Erro ao adicionar servico: " + e.getMessage());
-            e.printStackTrace();
+            try {
+                Parent root = FXMLLoader.load(getClass().getResource("menuDono.fxml"));
+                Scene regCena = new Scene(root);
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(regCena);
+                stage.setTitle("Menu Donos");
+                stage.show();
+            }catch (IOException ex){
+                System.out.println("Erro no login: " + ex.getMessage());
+            }
         }
 
 
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("menuDono.fxml"));
-            Scene regCena = new Scene(root);
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(regCena);
-            stage.setTitle("Menu Donos");
-            stage.show();
-        }catch (IOException ex){
-            System.out.println("Erro no login: " + ex.getMessage());
-        }
     }
 
     @FXML

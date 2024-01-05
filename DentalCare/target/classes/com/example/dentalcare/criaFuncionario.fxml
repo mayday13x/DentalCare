@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="631.0" prefWidth="614.0" style="-fx-background-color: #d8dfe9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.CriarFuncionarioController">
+<AnchorPane prefHeight="631.0" prefWidth="614.0" style="-fx-background-color: #d8dfe9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.RegistarFuncionarioController">
     <children>
         <TextField fx:id="utilizadorId" layoutX="313.0" layoutY="45.0" onKeyTyped="#verificarUtilizador" prefHeight="25.0" prefWidth="221.0" />
         <Label layoutX="200.0" layoutY="10.0" text="Registar Funcionario">

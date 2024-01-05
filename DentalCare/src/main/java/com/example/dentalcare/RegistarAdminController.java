@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -65,7 +66,14 @@ public class RegistarAdminController implements Initializable {
 
     public void registarAdmin(ActionEvent event){
 
-        if(telefoneEstado && ccEstado && nifEstado && utilizadorEstado){
+        if(telefone.getText().isEmpty() || utilizadorId.getText().isEmpty() || password.getText().isEmpty()
+                || nif.getText().isEmpty()  ||  nome.getText().isEmpty() ||  morada.getText().isEmpty()
+                || localidade.getText().isEmpty() || cc.getText().isEmpty() || cc.getText().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setHeaderText("Campos obrigatorios por preencher");
+            alert.setTitle("Aviso");
+            alert.show();
+        }else if(telefoneEstado && ccEstado && nifEstado && utilizadorEstado){
             try {
                 Admin admin = new Admin();
 
@@ -153,7 +161,7 @@ public class RegistarAdminController implements Initializable {
     public void voltarAtras(ActionEvent event) {
 
         try{
-            Parent root = FXMLLoader.load(getClass().getResource("MenuAdmin.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("menuAdmins.fxml"));
             Scene regCena = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(regCena);

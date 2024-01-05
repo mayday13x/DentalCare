@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 
 public class MainApp extends Application {
@@ -33,6 +34,14 @@ public class MainApp extends Application {
        //Admin admin = new Admin("Admin",123456789, 987654321, 123987654,"Hax", "Hax", "admin",  "admin");
        //Repositorio.getRepositorio().getAdmins().add(admin);
        //Repositorio.getRepositorio().serializar("DentalCare\\src\\main\\resources\\repo\\repositorio.dat");
+
+
+        //Repositorio.getRepositorio().getPrecoConsultas().put("Geral", 45);
+        //Repositorio.getRepositorio().getPrecoConsultas().put("LIMPEZA_DENTES", 35);
+        //Repositorio.getRepositorio().getPrecoConsultas().put("DESTARTARIZACAO", 40);
+        //Repositorio.getRepositorio().getPrecoConsultas().put("OUTRO", 50);
+        //System.out.println(Repositorio.getRepositorio().getPrecoConsultas());
+        //Repositorio.getRepositorio().serializar("DentalCare\\src\\main\\resources\\repo\\repositorio.dat");
 
         for(Admin adm: Repositorio.getRepositorio().getAdmins()){
             System.out.println("Admins");

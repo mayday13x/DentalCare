@@ -25,8 +25,8 @@
       <Label layoutX="257.0" layoutY="183.0" prefHeight="17.0" prefWidth="85.0" text="Funcionario" />
       <Label layoutX="246.0" layoutY="224.0" prefHeight="17.0" prefWidth="85.0" text="Data Consulta" />
       <Button layoutX="493.0" layoutY="410.0" mnemonicParsing="false" onAction="#MarcarConsulta" prefHeight="25.0" prefWidth="62.0" text="Marcar" />
-      <TextField fx:id="precoTotal" layoutX="334.0" layoutY="363.0" />
-      <TextField fx:id="especialidadeConsultorio" layoutX="334.0" layoutY="315.0" />
+      <TextField fx:id="precoTotal" layoutX="334.0" layoutY="363.0" prefHeight="26.0" prefWidth="198.0" />
+      <TextField fx:id="especialidadeConsultorio" layoutX="334.0" layoutY="315.0" prefHeight="26.0" prefWidth="198.0" />
       <Label layoutX="249.0" layoutY="319.0" text="Especialidade:" />
       <Label layoutX="262.0" layoutY="367.0" text="Preco:" />
       <Button layoutX="14.0" layoutY="26.0" mnemonicParsing="false" onAction="#voltarAtras" text="&lt;" />
