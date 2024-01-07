@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -22,40 +23,33 @@ public class ListarMarcacoesController implements Initializable {
     private ListView<Integer> MarcacoesListView;
 
     @FXML
-    private TextField Funcionario;
+    private Label Funcionario;
 
     @FXML
-    private TextField Servico;
+    private Label Servico;
 
     @FXML
-    private TextField cliente;
+    private Label cliente;
 
     @FXML
-    private TextField dataMarcada;
+    private Label dataMarcada;
 
     @FXML
-    private TextField especialidadeConsultorio;
+    private Label especialidadeConsultorio;
 
     @FXML
-    private TextField precoTotal;
+    private Label precoTotal;
 
     @FXML
-    private TextField estado;
+    private Label estado;
 
     @FXML
-    private TextField horaConsulta;
+    private Label horaConsulta;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Funcionario.setEditable(false);
-        Servico.setEditable(false);
-        cliente.setEditable(false);
-        dataMarcada.setEditable(false);
-        especialidadeConsultorio.setEditable(false);
-        precoTotal.setEditable(false);
-        estado.setEditable(false);
-        horaConsulta.setEditable(false);
+
 
         for(Consulta consulta: Repositorio.getRepositorio().getConsultas()){
             MarcacoesListView.getItems().addAll(consulta.getIdConsulta());

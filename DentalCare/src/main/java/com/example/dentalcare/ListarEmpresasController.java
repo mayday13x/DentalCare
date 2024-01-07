@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -25,24 +26,21 @@ public class ListarEmpresasController implements Initializable {
     private ListView<String> consultoriosViewList;
 
     @FXML
-    private TextField localidadeEmpresa;
+    private Label localidadeEmpresa;
 
     @FXML
-    private TextField moradaEmpresa;
+    private Label moradaEmpresa;
 
     @FXML
-    private TextField nomeEmpresa;
+    private Label  nomeEmpresa;
 
     @FXML
-    private TextField telefoneEmpresa;
+    private Label telefoneEmpresa;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        localidadeEmpresa.setEditable(false);
-        moradaEmpresa.setEditable(false);
-        nomeEmpresa.setEditable(false);
-        telefoneEmpresa.setEditable(false);
+
 
         for(Empresa empresa:Repositorio.getRepositorio().getEmpresas().values()){
             empresaListView.getItems().addAll(empresa.getNome());

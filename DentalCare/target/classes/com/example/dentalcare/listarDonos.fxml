@@ -5,24 +5,24 @@
 
 <AnchorPane prefHeight="477.0" prefWidth="605.0" style="-fx-background-color: #d8dfe9;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.ListarDonosController">
     <children>
-        <TextField fx:id="utilizadorId" layoutX="88.0" layoutY="190.0" />
+        <Label fx:id="utilizadorId" layoutX="90.0" layoutY="194.0" prefHeight="17.0" prefWidth="177.0" />
         <Label layoutX="250.0" layoutY="24.0" text="Listar Donos" />
         <Label layoutX="27.0" layoutY="194.0" text="Utilizador" />
         <Label layoutX="343.0" layoutY="194.0" text="Password" />
-        <TextField fx:id="nome" layoutX="88.0" layoutY="234.0" />
-        <Label layoutX="36.0" layoutY="234.0" text="Nome" />
-        <TextField fx:id="nif" layoutX="414.0" layoutY="229.0" />
-        <TextField fx:id="telefone" layoutX="88.0" layoutY="320.0" />
-        <TextField fx:id="morada" layoutX="414.0" layoutY="272.0" />
-        <TextField fx:id="cc" layoutX="88.0" layoutY="276.0" />
-        <TextField fx:id="localidade" layoutX="414.0" layoutY="315.0" />
+        <Label fx:id="nome" layoutX="88.0" layoutY="230.0" prefHeight="17.0" prefWidth="177.0" />
+        <Label layoutX="36.0" layoutY="230.0" text="Nome" />
+        <Label fx:id="nif" layoutX="414.0" layoutY="233.0" prefHeight="17.0" prefWidth="177.0" />
+        <Label fx:id="telefone" layoutX="90.0" layoutY="324.0" prefHeight="17.0" prefWidth="177.0" />
+        <Label fx:id="morada" layoutX="414.0" layoutY="280.0" prefHeight="17.0" prefWidth="177.0" />
+        <Label fx:id="cc" layoutX="88.0" layoutY="280.0" prefHeight="17.0" prefWidth="177.0" />
+        <Label fx:id="localidade" layoutX="414.0" layoutY="324.0" prefHeight="17.0" prefWidth="177.0" />
         <Label layoutX="45.0" layoutY="280.0" text="CC" />
         <Label layoutX="29.0" layoutY="324.0" text="Telefone" />
         <Label layoutX="366.0" layoutY="233.0" prefHeight="8.0" prefWidth="19.0" text="NIF" />
-        <Label layoutX="347.0" layoutY="276.0" text="Morada" />
-        <Label layoutX="347.0" layoutY="319.0" text="Localidade" />
+        <Label layoutX="345.0" layoutY="280.0" text="Morada" />
+        <Label layoutX="347.0" layoutY="324.0" text="Localidade" />
         <Button layoutX="27.0" layoutY="20.0" mnemonicParsing="false" onAction="#voltarAtras" text="&lt;" />
-        <PasswordField fx:id="password" layoutX="414.0" layoutY="190.0" prefHeight="0.0" prefWidth="149.0" />
+        <Label fx:id="password" layoutX="414.0" layoutY="194.0" prefHeight="17.0" prefWidth="177.0" />
         <ListView fx:id="DonosListView" layoutX="57.0" layoutY="53.0" prefHeight="118.0" prefWidth="502.0" />
       <ListView fx:id="EmpresasListView1" layoutX="88.0" layoutY="375.0" prefHeight="87.0" prefWidth="474.0" />
       <Label layoutX="27.0" layoutY="367.0" text="Empresas" />

@@ -1,5 +1,7 @@
 package com.example.dentalcare;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -40,17 +42,25 @@ public class ConsultarDadosEmpresaController implements Initializable {
     private ToggleButton alterarDados;
 
     @FXML
+    private Label localidadeLabel;
+
+    @FXML
+    private Label moradaLabel;
+
+    @FXML
+    private Label nomeLabel;
+
+    @FXML
+    private Label telefoneLabel;
+
+
+    @FXML
     private Label telefoneError;
 
     boolean telefoneEstado = false;
 
     @Override
     public void initialize(URL url, ResourceBundle rb){
-        nomeEmpresa.setEditable(false);
-        moradaEmpresa.setEditable(false);
-        localidadeEmpresa.setEditable(false);
-        NumTelefone.setEditable(false);
-        telefoneError.setVisible(false);
         Repositorio repo = Repositorio.getRepositorio();
 
         for(Empresa empresa: repo.getEmpresas().values()){
@@ -58,26 +68,29 @@ public class ConsultarDadosEmpresaController implements Initializable {
                 escolherEmpresa.getItems().addAll(empresa.getNome());
             }
         }
-    }
-
-    public void visualizarDados(ActionEvent event){
-
-        for(Empresa empresa: Repositorio.getRepositorio().getEmpresas().values()){
-            if(escolherEmpresa.getValue().equals(empresa.getNome())){
-                nomeEmpresa.setText(empresa.getNome());
-                moradaEmpresa.setText(empresa.getMorada());
-                localidadeEmpresa.setText(empresa.getLocalidade());
-                NumTelefone.setText(empresa.getNumTelefone());
+        escolherEmpresa.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                for(Empresa empresa: Repositorio.getRepositorio().getEmpresas().values()){
+                    if(escolherEmpresa.getValue().equals(empresa.getNome())){
+                        nomeLabel.setText(empresa.getNome());
+                        moradaLabel.setText(empresa.getMorada());
+                        localidadeLabel.setText(empresa.getLocalidade());
+                        telefoneLabel.setText(empresa.getNumTelefone());
+                    }
+                }
             }
-        }
+        });
     }
+
 
     public void alterarDados(ActionEvent event){
         if(alterarDados.isSelected()){
-            nomeEmpresa.setEditable(true);
-            moradaEmpresa.setEditable(true);
-            localidadeEmpresa.setEditable(true);
-            NumTelefone.setEditable(true);
+            mudarEstado(true);
+            nomeLabel.setVisible(false);
+            moradaLabel.setVisible(false);
+            localidadeLabel.setVisible(false);
+            telefoneLabel.setVisible(false);
 
             for(Empresa empresa: Repositorio.getRepositorio().getEmpresas().values()){
                 if(escolherEmpresa.getValue().equals(empresa.getNome())){
@@ -88,10 +101,11 @@ public class ConsultarDadosEmpresaController implements Initializable {
                 }
             }
         }else if (!alterarDados.isSelected()){
-            nomeEmpresa.setEditable(false);
-            moradaEmpresa.setEditable(false);
-            localidadeEmpresa.setEditable(false);
-            NumTelefone.setEditable(false);
+          mudarEstado(false);
+            nomeLabel.setVisible(true);
+            moradaLabel.setVisible(true);
+            localidadeLabel.setVisible(true);
+            telefoneLabel.setVisible(true);
         }
     }
 
@@ -111,6 +125,18 @@ public class ConsultarDadosEmpresaController implements Initializable {
                 System.out.println("Erro ao tentar guardar os dados");
             }
         }
+    }
+
+    @FXML
+    void mudarEstado(boolean status){
+        nomeEmpresa.setVisible(status);
+        moradaEmpresa.setVisible(status);
+        localidadeEmpresa.setVisible(status);
+        NumTelefone.setVisible(status);
+        nomeEmpresa.setEditable(status);
+        moradaEmpresa.setEditable(status);
+        localidadeEmpresa.setEditable(status);
+        NumTelefone.setEditable(status);
     }
 
     @FXML

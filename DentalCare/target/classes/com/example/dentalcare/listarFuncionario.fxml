@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="477.0" prefWidth="605.0" style="-fx-background-color: #d8dfe9;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.ListarFuncionarioController">
+<AnchorPane prefHeight="477.0" prefWidth="605.0" style="-fx-background-color: #d8dfe9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentalcare.ListarFuncionarioController">
     <children>
-        <TextField fx:id="utilizadorId" layoutX="75.0" layoutY="251.0" />
         <Label layoutX="250.0" layoutY="24.0" text="Listar Funcionarios" />
         <Label layoutX="14.0" layoutY="255.0" text="Utilizador" />
-        <Label layoutX="343.0" layoutY="255.0" text="Password" />
-        <TextField fx:id="nome" layoutX="75.0" layoutY="295.0" />
-        <Label layoutX="23.0" layoutY="269.0" text="Nome" />
-        <TextField fx:id="nif" layoutX="414.0" layoutY="303.0" />
-        <TextField fx:id="telefone" layoutX="75.0" layoutY="381.0" />
-        <TextField fx:id="morada" layoutX="414.0" layoutY="345.0" />
-        <TextField fx:id="cc" layoutX="75.0" layoutY="337.0" />
-        <TextField fx:id="localidade" layoutX="414.0" layoutY="389.0" />
-        <Label layoutX="32.0" layoutY="315.0" text="CC" />
+        <Label layoutX="332.0" layoutY="255.0" text="Password" />
+        <Label layoutX="23.0" layoutY="299.0" text="Nome" />
+        <Label layoutX="32.0" layoutY="341.0" text="CC" />
         <Label layoutX="16.0" layoutY="385.0" text="Telefone" />
-        <Label layoutX="372.0" layoutY="307.0" prefHeight="8.0" prefWidth="19.0" text="NIF" />
-        <Label layoutX="347.0" layoutY="349.0" text="Morada" />
-        <Label layoutX="347.0" layoutY="393.0" text="Localidade" />
+        <Label layoutX="336.0" layoutY="299.0" prefHeight="8.0" prefWidth="19.0" text="NIF" />
+        <Label layoutX="336.0" layoutY="341.0" text="Morada" />
+        <Label layoutX="338.0" layoutY="385.0" text="Localidade" />
         <Button layoutX="27.0" layoutY="20.0" mnemonicParsing="false" onAction="#voltarAtras" text="&lt;" />
-        <PasswordField fx:id="password" layoutX="414.0" layoutY="251.0" prefHeight="0.0" prefWidth="149.0" />
         <ListView fx:id="FuncionariosListView" layoutX="57.0" layoutY="53.0" prefHeight="164.0" prefWidth="520.0" />
+      <Label fx:id="utilizadorId" layoutX="93.0" layoutY="255.0" prefHeight="17.0" prefWidth="142.0" />
+      <Label fx:id="nome" layoutX="93.0" layoutY="299.0" prefHeight="17.0" prefWidth="142.0" />
+      <Label fx:id="cc" layoutX="93.0" layoutY="341.0" prefHeight="17.0" prefWidth="142.0" />
+      <Label fx:id="telefone" layoutX="93.0" layoutY="385.0" prefHeight="17.0" prefWidth="142.0" />
+      <Label fx:id="password" layoutX="408.0" layoutY="255.0" prefHeight="17.0" prefWidth="142.0" />
+      <Label fx:id="nif" layoutX="408.0" layoutY="299.0" prefHeight="17.0" prefWidth="142.0" />
+      <Label fx:id="morada" layoutX="408.0" layoutY="341.0" prefHeight="17.0" prefWidth="142.0" />
+      <Label fx:id="localidade" layoutX="408.0" layoutY="385.0" prefHeight="17.0" prefWidth="142.0" />
     </children>
 </AnchorPane>
